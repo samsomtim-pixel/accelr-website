@@ -87,13 +87,15 @@ function Hero() {
           ))}
         </div>
         
-        {/* Main headline */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tight mb-8">
-          ACCELR
-        </h1>
+        {/* Logo */}
+        <div className="flex items-center mb-8">
+          <span className="text-6xl md:text-7xl lg:text-8xl font-bold text-white">accelr</span>
+          <span className="w-2 h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 bg-[#0052CC] rounded-full ml-1 md:ml-1.5 lg:ml-2 mb-6 md:mb-8 lg:mb-10"></span>
+        </div>
         
         <p className="text-gray-400 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
-          We bouwen voorspelbare revenue pipelines voor B2B-bedrijven. We werken met teams die langetermijndenken en met vertrouwen willen groeien.
+          Voorspelbare omzet voor MKB. Duurzame groei, geen shortcuts.<br />
+          Accelr regelt je sales, jij focust op je product.
         </p>
         
         {/* CTA */}
@@ -114,19 +116,19 @@ function Services() {
   const services = [
     {
       title: 'Lead Generation',
-      description: 'We ontwerpen en voeren op maat gemaakte outbound campagnes uit via e-mailsequences en LinkedIn outreach. Gecombineerd met contentstrategie en AI-gestuurde kwalificatie helpen we je de juiste prospects te bereiken.',
+      description: 'Accelr ontwerpt en voert op maat gemaakte outbound campagnes uit via e-mailsequences en LinkedIn outreach. Gecombineerd met contentstrategie en AI-gestuurde kwalificatie helpt Accelr je de juiste prospects te bereiken.',
     },
     {
       title: 'Sales Qualification',
-      description: 'Ons team verzorgt discovery calls, lead scoring en BANT-kwalificatie. We zorgen dat alleen hoogwaardige kansen in je pipeline komen, zodat je geen tijd verspilt aan ongekwalificeerde leads.',
+      description: 'Accelr verzorgt discovery calls, lead scoring en BANT-kwalificatie. Accelr zorgt dat alleen hoogwaardige kansen in je pipeline komen, zodat je geen tijd verspilt aan ongekwalificeerde leads.',
     },
     {
       title: 'Deal Closing',
-      description: 'We voeren sales calls voor je uit, geven demos, schrijven proposals en verzorgen onderhandelingen. Onze AI call assistant vangt inzichten op uit elk gesprek.',
+      description: 'Accelr voert sales calls voor je uit, geeft demos, schrijft proposals en verzorgt onderhandelingen. Accelr\'s AI call assistant vangt inzichten op uit elk gesprek.',
     },
     {
       title: 'Revenue Operations',
-      description: 'We helpen je schalen met CRM-setup, pipeline dashboards, sales playbooks en teamtraining. Bouw een sales machine die zonder jou draait.',
+      description: 'Accelr helpt je schalen met CRM-setup, pipeline dashboards, sales playbooks en teamtraining. Bouw een sales machine die zonder jou draait.',
     },
   ]
 
@@ -135,7 +137,6 @@ function Services() {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="mb-16">
-          <p className="text-[#0052CC] text-sm font-medium mb-4">01 Diensten</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white max-w-xl">
             Niet alleen leads — een solide basis voor langetermijngroei
           </h2>
@@ -178,11 +179,11 @@ function Services() {
 // Process Section
 function Process() {
   const steps = [
-    { num: '01', title: 'Ontdekking', description: 'We nemen de tijd om je business, ICP en doelen te begrijpen. Deze fase legt de basis voor een op maat gemaakte aanpak.' },
-    { num: '02', title: 'Strategie', description: 'Op basis van de ontdekking definiëren we een heldere sales playbook die aansluit bij je doelen en groeifase.' },
-    { num: '03', title: 'Uitvoering', description: 'We brengen de strategie tot leven via gerichte outreach, kwalificatie en deal management.' },
-    { num: '04', title: 'Optimalisatie', description: 'We analyseren resultaten, A/B testen messaging en verfijnen de aanpak om conversiepercentages te verbeteren.' },
-    { num: '05', title: 'Doorlopende ondersteuning', description: 'We blijven ondersteunen terwijl je schaalt. Of je nu opschaalt of interne teams bouwt, we passen ons aan.' },
+    { num: '01', title: 'Ontdekking', description: 'Accelr neemt de tijd om je business, ICP en doelen te begrijpen. Deze fase legt de basis voor een op maat gemaakte aanpak.' },
+    { num: '02', title: 'Strategie', description: 'Op basis van de ontdekking definieert Accelr een heldere sales playbook die aansluit bij je doelen en groeifase.' },
+    { num: '03', title: 'Uitvoering', description: 'Accelr brengt de strategie tot leven via gerichte outreach, kwalificatie en deal management.' },
+    { num: '04', title: 'Optimalisatie', description: 'Accelr analyseert resultaten, A/B test messaging en verfijnt de aanpak om conversiepercentages te verbeteren.' },
+    { num: '05', title: 'Doorlopende ondersteuning', description: 'Accelr blijft ondersteunen terwijl je schaalt. Of je nu opschaalt of interne teams bouwt, Accelr past zich aan.' },
   ]
 
   return (
@@ -190,7 +191,6 @@ function Process() {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="mb-16">
-          <p className="text-[#0052CC] text-sm font-medium mb-4">02 Werkwijze</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white max-w-xl">
             Geen giswerk, gewoon een heldere route van intro → revenue
           </h2>
@@ -250,7 +250,6 @@ function Pricing() {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="mb-16">
-          <p className="text-[#0052CC] text-sm font-medium mb-4">03 Prijzen</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white max-w-xl">
             Vaste prijzen. Geen commissie. Schaal wanneer je klaar bent.
           </h2>
@@ -314,28 +313,28 @@ function FAQ() {
   
   const faqs = [
     {
-      q: 'Met welke soorten bedrijven werken jullie?',
-      a: 'We werken het beste met B2B-bedrijven (5-50 medewerkers) die product-market fit hebben bewezen, deal sizes tussen €50k-500k hebben en klaar zijn om hun sales te schalen. Geen dedicated sales team nodig — daar zijn wij voor.',
+      q: 'Met welke soorten bedrijven werkt Accelr?',
+      a: 'Accelr werkt het beste met B2B-bedrijven (5-50 medewerkers) die product-market fit hebben bewezen, deal sizes tussen €50k-500k hebben en klaar zijn om hun sales te schalen. Geen dedicated sales team nodig — daar is Accelr voor.',
     },
     {
       q: 'Hoe snel kunnen we resultaten verwachten?',
       a: 'De meeste klanten zien hun eerste gekwalificeerde meetings binnen 2-3 weken na lancering. Een volledige sales cycle van lead tot gesloten deal duurt meestal 1-3 maanden, afhankelijk van je markt en deal size.',
     },
     {
-      q: 'Sluiten jullie daadwerkelijk deals, of genereren jullie alleen leads?',
-      a: 'Beide. Onze Full Cycle en Growth Partner tiers omvatten deal closing — we voeren sales calls uit, geven demos, schrijven proposals en onderhandelen namens jou. Dat onderscheidt ons van typische lead gen agencies.',
+      q: 'Sluit Accelr daadwerkelijk deals, of genereert Accelr alleen leads?',
+      a: 'Beide. Accelr\'s Full Cycle en Growth Partner tiers omvatten deal closing — Accelr voert sales calls uit, geeft demos, schrijft proposals en onderhandelt namens jou. Dat onderscheidt Accelr van typische lead gen agencies.',
     },
     {
-      q: 'Welke tools en tech gebruiken jullie?',
-      a: 'We gebruiken industry-leading tools: Instantly/Lemlist voor email, Expandi voor LinkedIn, Apollo/Clay voor lead sourcing, en HubSpot/Pipedrive voor CRM. Plus onze custom AI call assistant gebouwd op Twilio + Deepgram.',
+      q: 'Welke tools en tech gebruikt Accelr?',
+      a: 'Accelr gebruikt industry-leading tools: Instantly/Lemlist voor email, Expandi voor LinkedIn, Apollo/Clay voor lead sourcing, en HubSpot/Pipedrive voor CRM. Plus Accelr\'s custom AI call assistant gebouwd op Twilio + Deepgram.',
     },
     {
       q: 'Hoe werkt de pricing? Zijn er verborgen kosten?',
-      a: 'Eenvoudige maandelijkse retainer. Geen commissie, geen verborgen kosten, geen langetermijncontracten. Begin met wat je nodig hebt, schaal op wanneer je klaar bent. We geloven in het elke maand verdienen van je business.',
+      a: 'Eenvoudige maandelijkse retainer. Geen commissie, geen verborgen kosten, geen langetermijncontracten. Begin met wat je nodig hebt, schaal op wanneer je klaar bent. Accelr gelooft in het elke maand verdienen van je business.',
     },
     {
-      q: 'Kunnen jullie ons later helpen een intern sales team op te bouwen?',
-      a: 'Ja — onze Growth Partner tier omvat wervingsondersteuning, sales playbook documentatie en teamtraining. We helpen je de overstap maken van outsourced naar in-house wanneer je klaar bent.',
+      q: 'Kan Accelr je later helpen een intern sales team op te bouwen?',
+      a: 'Ja — Accelr\'s Growth Partner tier omvat wervingsondersteuning, sales playbook documentatie en teamtraining. Accelr helpt je de overstap maken van outsourced naar in-house wanneer je klaar bent.',
     },
   ]
 
@@ -344,7 +343,6 @@ function FAQ() {
       <div className="max-w-3xl mx-auto">
         {/* Section header */}
         <div className="mb-16">
-          <p className="text-[#0052CC] text-sm font-medium mb-4">04 FAQ</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white">
             Vragen? Antwoorden.
           </h2>
@@ -387,12 +385,11 @@ function Contact() {
       <div className="max-w-6xl mx-auto">
         <div className="bg-gradient-to-br from-[#0052CC]/20 to-transparent border border-white/10 rounded-3xl p-12 md:p-16">
           <div className="max-w-2xl">
-            <p className="text-[#0052CC] text-sm font-medium mb-4">05 Contact</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Klaar om een voorspelbare pipeline te bouwen?
             </h2>
             <p className="text-gray-400 text-lg mb-10">
-              30 minuten. Geen pitch. We bespreken je situatie en kijken of het past.
+              30 minuten. Geen pitch. Accelr bespreekt je situatie en kijkt of het past.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
