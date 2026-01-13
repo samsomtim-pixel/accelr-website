@@ -1,0 +1,228 @@
+# Accelr Website - Cursor AI Context
+
+## Brand Identity
+
+**Company**: Accelr - Full-stack B2B sales agency
+**Tagline**: "We close deals. You grow."
+**Domain**: accelr.io
+**Style**: Dark theme, minimal, premium agency aesthetic
+
+---
+
+## Design System
+
+### Colors
+```
+Primary Blue:     #0052CC
+Background:       #0A0A0A
+Surface:          rgba(255,255,255,0.05)
+Surface Hover:    rgba(255,255,255,0.10)
+Border:           rgba(255,255,255,0.10)
+Border Hover:     rgba(255,255,255,0.20)
+Text Primary:     #FFFFFF
+Text Secondary:   #9CA3AF (gray-400)
+Text Muted:       #6B7280 (gray-500)
+```
+
+### Typography
+- **Font**: Inter (Google Fonts)
+- **Weights**: 400 (body), 500 (medium), 600 (semibold), 700 (bold), 800 (extrabold)
+- **Headings**: White, bold/extrabold
+- **Body**: gray-400, regular
+- **Section labels**: Blue (#0052CC), small, uppercase or medium weight
+
+### Spacing & Sizing
+- Section padding: py-24 px-6
+- Max width: max-w-6xl
+- Card padding: p-8
+- Border radius: rounded-2xl (cards), rounded-full (buttons), rounded-xl (small elements)
+- Gap between cards: gap-6
+
+### Components
+
+**Buttons**
+```jsx
+// Primary (white)
+className="bg-white text-[#0A0A0A] px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition"
+
+// Secondary (ghost)
+className="bg-white/10 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition"
+
+// Blue accent
+className="bg-[#0052CC] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#0052CC]/90 transition"
+```
+
+**Cards**
+```jsx
+className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+```
+
+**Section Headers**
+```jsx
+<p className="text-[#0052CC] text-sm font-medium mb-4">01 Section Name</p>
+<h2 className="text-3xl md:text-4xl font-bold text-white max-w-xl">
+  Headline here
+</h2>
+```
+
+---
+
+## Business Model
+
+### Service Tiers
+
+| Tier | Name | Price | What's Included |
+|------|------|-------|-----------------|
+| 1 | Lead Gen | €3-4k/mo | Email sequences, LinkedIn outreach, lead sourcing, content strategy, discovery calls, lead scoring |
+| 2 | Full Cycle | €6-8k/mo | Everything in Tier 1 + sales calls, demos, proposals, negotiation, AI call assistant |
+| 3 | Growth Partner | €9-12k/mo | Everything in Tier 2 + CRM setup, dashboards, sales playbook, hiring support, team training |
+
+### Ideal Customer Profile (ICP)
+- B2B companies
+- 5-50 employees
+- Product-market fit proven
+- No dedicated sales team (or underperforming)
+- €50k-500k deal sizes
+- Netherlands / Benelux
+
+### Tech Stack
+- Email: Instantly / Lemlist
+- LinkedIn: Expandi / LinkedHelper
+- Lead sourcing: Apollo / Clay
+- CRM: HubSpot / Pipedrive
+- Call assistant: Custom (Twilio + Deepgram + AI)
+- Content: Taplio / Shield
+
+---
+
+## Site Structure
+
+### Pages
+1. **Homepage** (`/`) - Main landing page with all sections
+2. **Contact** (`/contact`) - Dedicated contact form (optional)
+
+### Sections on Homepage
+1. **Hero** - Stats counters, headline "ACCELR", subtitle, CTA
+2. **Services** (01) - 4 service cards + blue CTA card
+3. **Process** (02) - 5 numbered steps
+4. **Pricing** (03) - 3 tier cards, middle featured
+5. **FAQ** (04) - Accordion with 6 questions
+6. **Contact** (05) - Gradient card with email + LinkedIn
+7. **Footer** - Logo, nav links, copyright
+
+---
+
+## Code Patterns
+
+### Animated Counter
+```tsx
+function AnimatedCounter({ end, suffix = '' }: { end: number; suffix?: string }) {
+  const [count, setCount] = useState(0)
+  
+  useEffect(() => {
+    const duration = 2000
+    const steps = 60
+    const increment = end / steps
+    let current = 0
+    
+    const timer = setInterval(() => {
+      current += increment
+      if (current >= end) {
+        setCount(end)
+        clearInterval(timer)
+      } else {
+        setCount(Math.floor(current))
+      }
+    }, duration / steps)
+    
+    return () => clearInterval(timer)
+  }, [end])
+  
+  return <span>{count}{suffix}</span>
+}
+```
+
+### FAQ Accordion
+```tsx
+const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+<button onClick={() => setOpenIndex(openIndex === i ? null : i)}>
+  <ChevronDown className={`transition-transform ${openIndex === i ? 'rotate-180' : ''}`} />
+</button>
+{openIndex === i && <div>Answer content</div>}
+```
+
+### Scroll-triggered Nav
+```tsx
+const [scrolled, setScrolled] = useState(false)
+
+useEffect(() => {
+  const handleScroll = () => setScrolled(window.scrollY > 50)
+  window.addEventListener('scroll', handleScroll)
+  return () => window.removeEventListener('scroll', handleScroll)
+}, [])
+
+<nav className={scrolled ? 'bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/10' : ''}>
+```
+
+---
+
+## Contact Info
+
+- **Email**: tim@accelr.io
+- **LinkedIn**: linkedin.com/in/timsam
+- **Website**: accelr.io
+
+---
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Font**: Inter (Google Fonts)
+
+---
+
+## File Structure
+
+```
+accelr-website/
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx      # Root layout, metadata, fonts
+│   │   └── page.tsx        # Homepage with all sections
+│   └── styles/
+│       └── globals.css     # Tailwind + custom styles
+├── tailwind.config.js      # Colors, fonts
+├── tsconfig.json
+├── next.config.js
+└── package.json
+```
+
+---
+
+## Tone of Voice
+
+### We Are
+- **Direct** - Say what we mean, no fluff
+- **Confident** - We know sales
+- **Results-focused** - Meetings, deals, revenue
+
+### We Are Not
+- **Salesy** - No pushy tactics or hype
+- **Vague** - No buzzwords like "synergy"
+- **Arrogant** - Partners, not know-it-alls
+
+### Writing Examples
+
+❌ "We leverage cutting-edge AI to synergize your sales pipeline..."
+✅ "We book meetings and close deals. AI helps us do it faster."
+
+❌ "Our team would be delighted to explore potential synergies..."
+✅ "Let's talk. 15 minutes. I'll show you how we'd approach your sales."
+
+❌ "Results may vary depending on various factors."
+✅ "Expect 8-12 qualified meetings per month for €50K ACV products."
