@@ -52,7 +52,7 @@ function Navigation() {
           <a href="#process" className="text-gray-400 hover:text-white transition text-sm">Werkwijze</a>
           <a href="#pricing" className="text-gray-400 hover:text-white transition text-sm">Prijzen</a>
           <a href="#faq" className="text-gray-400 hover:text-white transition text-sm">FAQ</a>
-          <a href="#contact" className="bg-white text-[#0A0A0A] px-5 py-2.5 rounded-full font-medium text-sm hover:bg-gray-200 transition">
+          <a href="#contact" className="bg-[#0052CC] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#0052CC]/90 transition">
             Neem contact op
           </a>
         </div>
@@ -93,10 +93,17 @@ function Hero() {
           <span className="w-2 h-2 md:w-2.5 md:h-2.5 lg:w-3 lg:h-3 bg-[#0052CC] rounded-full ml-1 md:ml-1.5 lg:ml-2 mb-6 md:mb-8 lg:mb-10"></span>
         </div>
         
-        <p className="text-gray-400 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
-          Voorspelbare omzet voor MKB. Duurzame groei, geen shortcuts.<br />
-          Accelr regelt je sales, jij focust op je product.
-        </p>
+        <div className="max-w-2xl mb-12">
+          <h1 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+            Omzet. Zonder gedoe.
+          </h1>
+          <p className="text-gray-400 text-lg md:text-xl mb-4 leading-relaxed">
+            Jij bouwt het product. Wij sluiten de deals.
+          </p>
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+            Binnen 60 dagen omzet, zonder commissies of kleine lettertjes.
+          </p>
+        </div>
         
         {/* CTA */}
         <a 
@@ -116,19 +123,19 @@ function Services() {
   const services = [
     {
       title: 'Lead Generation',
-      description: 'Accelr ontwerpt en voert op maat gemaakte outbound campagnes uit via e-mailsequences en LinkedIn outreach. Gecombineerd met contentstrategie en AI-gestuurde kwalificatie helpt Accelr je de juiste prospects te bereiken.',
+      description: 'Accelr ontwerpt en voert outboundcampagnes uit via e-mail en LinkedIn. Met slimme, contentgestuurde targeting bereik je precies de prospects die ertoe doen.',
     },
     {
       title: 'Sales Qualification',
-      description: 'Accelr verzorgt discovery calls, lead scoring en BANT-kwalificatie. Accelr zorgt dat alleen hoogwaardige kansen in je pipeline komen, zodat je geen tijd verspilt aan ongekwalificeerde leads.',
+      description: 'Accelr voert discovery calls en kwalificaties uit, zodat alleen de juiste kansen in je pipeline komen. Geen tijdverlies aan leads die niet passen.',
     },
     {
       title: 'Deal Closing',
-      description: 'Accelr voert sales calls voor je uit, geeft demos, schrijft proposals en verzorgt onderhandelingen. Accelr\'s AI call assistant vangt inzichten op uit elk gesprek.',
+      description: 'Wij voeren sales calls, geven demos, schrijven proposals en sluiten deals namens jou. Onze call assistant zorgt dat geen enkel inzicht verloren gaat.',
     },
     {
       title: 'Revenue Operations',
-      description: 'Accelr helpt je schalen met CRM-setup, pipeline dashboards, sales playbooks en teamtraining. Bouw een sales machine die zonder jou draait.',
+      description: 'We helpen je schalen met CRM, dashboards en sales playbooks en bouwen een salesmachine die blijft draaien, ook als jij even niet aan tafel zit.',
     },
   ]
 
@@ -137,8 +144,8 @@ function Services() {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white max-w-xl">
-            Niet alleen leads — een solide basis voor langetermijngroei
+          <h2 className="text-3xl md:text-4xl font-bold text-white whitespace-nowrap">
+            Een solide basis voor langetermijn groei
           </h2>
         </div>
         
@@ -161,15 +168,10 @@ function Services() {
         {/* CTA Card */}
         <a 
           href="#contact"
-          className="mt-8 block bg-[#0052CC] rounded-2xl p-8 hover:bg-[#0052CC]/90 transition group"
+          className="mt-8 inline-flex items-center gap-2 bg-[#0052CC] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#0052CC]/90 transition group"
         >
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-white/70 text-sm mb-1">Klaar om te beginnen?</p>
-              <p className="text-white text-xl font-semibold">Neem contact op</p>
-            </div>
-            <ArrowRight size={24} className="text-white group-hover:translate-x-2 transition-transform" />
-          </div>
+          Neem contact op
+          <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
     </section>
@@ -179,11 +181,11 @@ function Services() {
 // Process Section
 function Process() {
   const steps = [
-    { num: '01', title: 'Ontdekking', description: 'Accelr neemt de tijd om je business, ICP en doelen te begrijpen. Deze fase legt de basis voor een op maat gemaakte aanpak.' },
-    { num: '02', title: 'Strategie', description: 'Op basis van de ontdekking definieert Accelr een heldere sales playbook die aansluit bij je doelen en groeifase.' },
-    { num: '03', title: 'Uitvoering', description: 'Accelr brengt de strategie tot leven via gerichte outreach, kwalificatie en deal management.' },
-    { num: '04', title: 'Optimalisatie', description: 'Accelr analyseert resultaten, A/B test messaging en verfijnt de aanpak om conversiepercentages te verbeteren.' },
-    { num: '05', title: 'Doorlopende ondersteuning', description: 'Accelr blijft ondersteunen terwijl je schaalt. Of je nu opschaalt of interne teams bouwt, Accelr past zich aan.' },
+    { num: '01', title: 'Analyse', description: 'Accelr neemt de tijd om je business, ICP en doelen te begrijpen. Deze fase vormt de basis voor een aanpak op maat.' },
+    { num: '02', title: 'Strategie', description: 'Op basis van de analyse ontwikkelt Accelr een helder sales playbook dat aansluit bij je groeifase en doelen.' },
+    { num: '03', title: 'Uitvoering', description: 'Wij brengen de strategie tot leven met gerichte outreach, kwalificatie en deal management.' },
+    { num: '04', title: 'Optimalisatie', description: 'We analyseren resultaten, testen en verfijnen de aanpak om conversies continu te verbeteren.' },
+    { num: '05', title: 'Doorlopende ondersteuning', description: 'Accelr blijft ondersteunen terwijl jij schaalt.' },
   ]
 
   return (
@@ -191,8 +193,8 @@ function Process() {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white max-w-xl">
-            Geen giswerk, gewoon een heldere route van intro → revenue
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
+            Een bewezen salesproces = transparant, meetbaar en voorspelbaar.
           </h2>
         </div>
         
@@ -208,7 +210,7 @@ function Process() {
               </span>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
-                <p className="text-gray-400 max-w-xl">{step.description}</p>
+                <p className="text-gray-400">{step.description}</p>
               </div>
             </div>
           ))}
