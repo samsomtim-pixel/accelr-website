@@ -318,7 +318,7 @@ function Pricing() {
     {
       name: 'Build + Run',
       subtitle: 'Volledig beheerde outbound',
-      price: 'Vanaf €3k',
+      price: 'Vanaf €5k',
       priceSuffix: '/maand',
       period: 'Na eenmalige setup',
       features: ['Volledige stack setup', 'Minimaal 10 meetings/maand', 'Dagelijkse optimalisatie', 'Wekelijkse call + rapport', 'Opzegbaar na 3 maanden'],
