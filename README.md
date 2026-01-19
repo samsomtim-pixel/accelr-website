@@ -73,8 +73,8 @@ vercel
 
 ### Update contact info
 Edit `src/app/page.tsx`:
-- Email: Search for `tim@accelr.io`
-- LinkedIn: Search for `linkedin.com/in/timsam`
+- Email: Search for `tim@accelr.nl`
+- LinkedIn: Search for `linkedin.com/in/timsamsom`
 
 ### Update pricing
 Edit the `tiers` array in the `Pricing` component.

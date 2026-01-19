@@ -42,7 +42,7 @@ function Navigation() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/10' : ''}`}>
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        <a href="#" className="flex items-center">
+        <a href="/" className="flex items-center">
           <span className="text-2xl font-bold text-white">accelr</span>
           <span className="w-1.5 h-1.5 bg-[#0052CC] rounded-full ml-0.5 mb-3"></span>
         </a>
@@ -216,7 +216,7 @@ function Process() {
     </section>
   )
 }
-
+ 
 // ICP Statement Section
 function ICPStatement() {
   return (
@@ -554,3 +554,4 @@ export default function Home() {
     </main>
   )
 }
+
