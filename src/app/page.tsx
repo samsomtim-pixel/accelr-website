@@ -52,8 +52,8 @@ function Navigation() {
           <a href="#process" className="text-gray-400 hover:text-white transition text-sm">Werkwijze</a>
           <a href="#pricing" className="text-gray-400 hover:text-white transition text-sm">Prijzen</a>
           <a href="#faq" className="text-gray-400 hover:text-white transition text-sm">FAQ</a>
-          <a href="#contact" className="bg-[#0052CC] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#0052CC]/90 transition">
-            Plan je diagnose
+          <a href="#contact" className="bg-white text-[#0A0A0A] px-5 py-2.5 rounded-full font-medium text-sm hover:bg-gray-200 transition">
+            Neem contact op
           </a>
         </div>
       </div>
@@ -64,9 +64,9 @@ function Navigation() {
 // Hero Section
 function Hero() {
   const stats = [
+    { value: 50, suffix: '+', label: 'Deals gesloten' },
     { value: 8, suffix: '+', label: 'Jaar ervaring' },
-    { value: 50, suffix: '+', label: 'Stacks gebouwd' },
-    { value: 100, suffix: '%', label: 'Eigenaarschap voor jou' },
+    { value: 95, suffix: '%', label: 'Klantbehoud' },
   ]
 
   return (
@@ -95,10 +95,13 @@ function Hero() {
         
         <div className="max-w-2xl mb-12">
           <h1 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
-            Build once. Scale forever.
+            Omzet. Zonder gedoe.
           </h1>
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-            Wij bouwen de sales infrastructuur die meetings boekt terwijl jij focust op strategie.&nbsp;Van oprichter-gedreven naar schaalbaar in 90 dagen.
+          <p className="text-gray-400 text-lg md:text-xl mb-4 leading-relaxed">
+            Jij bouwt het product. Wij sluiten de deals.
+          </p>
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+            Binnen 60 dagen omzet, zonder commissies of kleine lettertjes.
           </p>
         </div>
         
@@ -107,7 +110,7 @@ function Hero() {
           href="#contact" 
           className="inline-flex items-center gap-2 bg-white text-[#0A0A0A] px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition group"
         >
-          Plan je diagnose 
+          Start gesprek 
           <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
@@ -119,20 +122,20 @@ function Hero() {
 function Services() {
   const services = [
     {
-      title: 'Leads op de automatische piloot',
-      description: 'De juiste tools, slim gekoppeld. Prospecting, outreach, calling, CRM. Alles geïntegreerd, alles werkend.',
+      title: 'Lead Generation',
+      description: 'Accelr ontwerpt en voert op maat gemaakte outbound campagnes uit via e-mailsequences en LinkedIn outreach. Gecombineerd met contentstrategie en AI-gestuurde kwalificatie helpt Accelr je de juiste prospects te bereiken.',
     },
     {
-      title: 'Alles in één dashboard',
-      description: 'Eén overzicht van je hele pipeline. Geen 5 tabs. Geen exports. Real-time metrics van lead tot deal.',
+      title: 'Sales Qualification',
+      description: 'Accelr verzorgt discovery calls, lead scoring en BANT-kwalificatie. Accelr zorgt dat alleen hoogwaardige kansen in je pipeline komen, zodat je geen tijd verspilt aan ongekwalificeerde leads.',
     },
     {
-      title: 'Bewezen scripts die converteren',
-      description: 'Email sequences en call frameworks die werken. Klaar om te gebruiken, geoptimaliseerd voor jouw markt.',
+      title: 'Deal Closing',
+      description: 'Accelr voert sales calls voor je uit, geeft demos, schrijft proposals en verzorgt onderhandelingen. Accelr\'s AI call assistant vangt inzichten op uit elk gesprek.',
     },
     {
-      title: 'Jullie team runt het of wij nemen dit uit handen',
-      description: 'Training zodat jullie de stack zelf kunnen runnen. Of wij blijven het voor je doen.',
+      title: 'Revenue Operations',
+      description: 'Accelr helpt je schalen met CRM-setup, pipeline dashboards, sales playbooks en teamtraining. Bouw een sales machine die zonder jou draait.',
     },
   ]
 
@@ -142,7 +145,7 @@ function Services() {
         {/* Section header */}
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white max-w-xl">
-            Wat je krijgt
+            Niet alleen leads — een solide basis voor langetermijngroei
           </h2>
         </div>
         
@@ -165,10 +168,15 @@ function Services() {
         {/* CTA Card */}
         <a 
           href="#contact"
-          className="mt-8 inline-flex items-center gap-2 bg-[#0052CC] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#0052CC]/90 transition group"
+          className="mt-8 block bg-[#0052CC] rounded-2xl p-8 hover:bg-[#0052CC]/90 transition group"
         >
-          Plan je diagnose
-          <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-white/70 text-sm mb-1">Klaar om te beginnen?</p>
+              <p className="text-white text-xl font-semibold">Neem contact op</p>
+            </div>
+            <ArrowRight size={24} className="text-white group-hover:translate-x-2 transition-transform" />
+          </div>
         </a>
       </div>
     </section>
@@ -178,11 +186,11 @@ function Services() {
 // Process Section
 function Process() {
   const steps = [
-    { num: '01', title: 'Diagnose', description: 'Jouw business, doelen en situatie. De basis voor een aanpak op maat.' },
-    { num: '02', title: 'Ontwerp', description: 'De juiste tools, slim gekoppeld, heldere workflows. Pas na jouw akkoord aan de slag.' },
-    { num: '03', title: 'Implementatie', description: 'Alles gebouwd en werkend opgeleverd. Jij hoeft niks te doen.' },
-    { num: '04', title: 'Training', description: 'Jouw team leert de stack runnen. Of het wordt voor je gedaan.' },
-    { num: '05', title: 'Support', description: 'Blijvende ondersteuning terwijl jij schaalt.' },
+    { num: '01', title: 'Ontdekking', description: 'Accelr neemt de tijd om je business, ICP en doelen te begrijpen. Deze fase legt de basis voor een op maat gemaakte aanpak.' },
+    { num: '02', title: 'Strategie', description: 'Op basis van de ontdekking definieert Accelr een heldere sales playbook die aansluit bij je doelen en groeifase.' },
+    { num: '03', title: 'Uitvoering', description: 'Accelr brengt de strategie tot leven via gerichte outreach, kwalificatie en deal management.' },
+    { num: '04', title: 'Optimalisatie', description: 'Accelr analyseert resultaten, A/B test messaging en verfijnt de aanpak om conversiepercentages te verbeteren.' },
+    { num: '05', title: 'Doorlopende ondersteuning', description: 'Accelr blijft ondersteunen terwijl je schaalt. Of je nu opschaalt of interne teams bouwt, Accelr past zich aan.' },
   ]
 
   return (
@@ -190,8 +198,8 @@ function Process() {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Binnen 4 weken aantoonbaar resultaat.
+          <h2 className="text-3xl md:text-4xl font-bold text-white max-w-xl">
+            Geen giswerk, gewoon een heldere route van intro → revenue
           </h2>
         </div>
         
@@ -207,90 +215,10 @@ function Process() {
               </span>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
-                <p className="text-gray-400">{step.description}</p>
+                <p className="text-gray-400 max-w-xl">{step.description}</p>
               </div>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// ICP Statement Section
-function ICPStatement() {
-  return (
-    <section className="py-24 px-6 bg-white/[0.02]">
-      <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Voor wie dit werkt
-          </h2>
-          <p className="text-gray-400 text-lg leading-relaxed">
-            B2B founders met €1-20M ARR die nog steeds de beste verkoper zijn.
-          </p>
-          <p className="text-gray-400 text-lg leading-relaxed mt-4">
-            Je hebt tools, maar geen systeem. Je wilt schalen, maar mist een effectief proces of de juiste mensen om het te doen.
-          </p>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// Differentiation Section
-function Differentiation() {
-  const comparisons = [
-    {
-      vs: 'zelf doen',
-      text: '6 maanden trial-and-error of 6 weken met ons.',
-    },
-    {
-      vs: 'agencies',
-      text: 'Zij boeken meetings. Accelr bouwt het systeem dat blijft werken zonder ons.',
-    },
-    {
-      vs: 'consultants',
-      text: 'Zij leveren slides. Accelr levert een werkende stack.',
-    },
-    {
-      vs: 'Tools',
-      text: 'Tools zijn instrumenten. Accelr de dirigent.',
-    },
-  ]
-
-  return (
-    <section className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
-          Waarom Accelr?
-        </h2>
-        
-        <div className="grid md:grid-cols-2 gap-6">
-          {comparisons.map((comp, i) => (
-            <div 
-              key={i}
-              className="bg-white/5 border border-white/10 rounded-2xl p-8"
-            >
-              <div className="text-[#0052CC] text-sm font-medium mb-3">vs. {comp.vs}</div>
-              <p className="text-gray-400 leading-relaxed">{comp.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-// Social Proof Section
-function SocialProof() {
-  return (
-    <section className="py-24 px-6 bg-white/[0.02]">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-gradient-to-r from-[#0052CC]/20 to-transparent border border-white/10 rounded-2xl p-8 md:p-12">
-          <p className="text-xl md:text-2xl font-semibold text-white">
-            Eerste 3 pilots: 50% korting in ruil voor case study.
-          </p>
         </div>
       </div>
     </section>
@@ -301,27 +229,26 @@ function SocialProof() {
 function Pricing() {
   const tiers = [
     {
-      name: 'Build',
-      subtitle: 'Infrastructuur, klaar voor gebruik',
-      price: '€8-12k',
-      period: 'Eenmalig · 4-6 weken',
-      features: ['Tool selectie & configuratie', 'CRM integratie', 'Email sequences', 'Unified dashboard', 'Volledige documentatie'],
+      name: 'Lead Gen',
+      price: '€3-4k',
+      description: 'Genereren + Kwalificeren',
+      features: ['Email sequences', 'LinkedIn outreach', 'Lead sourcing', 'Contentstrategie', 'Discovery calls', 'Lead scoring'],
+      output: 'Gekwalificeerde meetings in je agenda',
     },
     {
-      name: 'Build + Train',
-      subtitle: 'Infrastructuur + enabled team',
-      price: '€10-15k',
-      period: 'Eenmalig · 6-8 weken',
-      features: ['Volledige stack setup', 'Hands-on teamtraining', 'Playbook & scripts', 'Call coaching sessies', '30 dagen support'],
+      name: 'Full Cycle',
+      price: '€6-8k',
+      description: 'Lead Gen + Closing',
+      features: ['Alles uit Lead Gen', 'Sales calls voor jou', 'Product demos', 'Proposal schrijven', 'Onderhandeling', 'AI call assistant'],
+      output: 'Getekende deals',
       featured: true,
     },
     {
-      name: 'Build + Run',
-      subtitle: 'Volledig beheerde outbound',
-      price: 'Vanaf €3k',
-      priceSuffix: '/maand',
-      period: 'Na eenmalige setup',
-      features: ['Volledige stack setup', 'Minimaal 10 meetings/maand', 'Dagelijkse optimalisatie', 'Wekelijkse call + rapport', 'Opzegbaar na 3 maanden'],
+      name: 'Growth Partner',
+      price: '€9-12k',
+      description: 'Full Cycle + Scale',
+      features: ['Alles uit Full Cycle', 'CRM + dashboards', 'Sales playbook', 'Wervingsondersteuning', 'Teamtraining', 'Optioneel: Ads'],
+      output: 'Schaalbare sales machine',
     },
   ]
 
@@ -331,7 +258,7 @@ function Pricing() {
         {/* Section header */}
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white max-w-xl">
-            Helder. Geen verrassingen.
+            Vaste prijzen. Geen commissie. Schaal wanneer je klaar bent.
           </h2>
         </div>
         
@@ -340,28 +267,23 @@ function Pricing() {
           {tiers.map((tier, i) => (
             <div 
               key={i}
-              className={`rounded-2xl p-8 flex flex-col ${tier.featured ? 'bg-[#0052CC] ring-2 ring-[#0052CC]' : 'bg-white/5 border border-white/10'}`}
+              className={`rounded-2xl p-8 ${tier.featured ? 'bg-[#0052CC] ring-2 ring-[#0052CC]' : 'bg-white/5 border border-white/10'}`}
             >
               <h3 className={`text-xl font-semibold mb-1 ${tier.featured ? 'text-white' : 'text-white'}`}>
                 {tier.name}
               </h3>
               <p className={`text-sm mb-6 ${tier.featured ? 'text-white/70' : 'text-gray-500'}`}>
-                {(tier as any).subtitle}
+                {tier.description}
               </p>
               
               <div className="mb-6">
                 <span className={`text-4xl font-bold ${tier.featured ? 'text-white' : 'text-white'}`}>
                   {tier.price}
                 </span>
-                {(tier as any).priceSuffix && (
-                  <span className={tier.featured ? 'text-white/70' : 'text-gray-500'}>{(tier as any).priceSuffix}</span>
-                )}
-                <div className={`text-sm mt-2 ${tier.featured ? 'text-white/70' : 'text-gray-500'}`}>
-                  {tier.period}
-                </div>
+                <span className={tier.featured ? 'text-white/70' : 'text-gray-500'}>/month</span>
               </div>
               
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-3 mb-8">
                 {tier.features.map((feature, j) => (
                   <li key={j} className="flex items-center gap-3">
                     <Check size={16} className={tier.featured ? 'text-white' : 'text-[#0052CC]'} />
@@ -370,15 +292,19 @@ function Pricing() {
                 ))}
               </ul>
               
+              <div className={`text-sm font-medium mb-6 ${tier.featured ? 'text-white' : 'text-white'}`}>
+                → {tier.output}
+              </div>
+              
               <a 
                 href="#contact"
-                className={`block text-center py-3 rounded-full font-medium transition mt-auto ${
+                className={`block text-center py-3 rounded-full font-medium transition ${
                   tier.featured 
                     ? 'bg-white text-[#0A0A0A] hover:bg-gray-200' 
                     : 'bg-white/10 text-white hover:bg-white/20'
                 }`}
               >
-                Plan je diagnose
+                Begin
               </a>
             </div>
           ))}
@@ -394,20 +320,28 @@ function FAQ() {
   
   const faqs = [
     {
-      q: 'Moet ik zelf de tools afnemen?',
-      a: 'Ja. Jij neemt de tool-abonnementen af, wij configureren en integreren alles. Zo blijf je eigenaar van je data.',
-    },
-    {
-      q: 'Wat als ik geen sales team heb?',
-      a: 'Dan is Build + Run de beste optie. Wij runnen de stack tot je klaar bent om iemand aan te nemen.',
+      q: 'Met welke soorten bedrijven werkt Accelr?',
+      a: 'Accelr werkt het beste met B2B-bedrijven (5-50 medewerkers) die product-market fit hebben bewezen, deal sizes tussen €50k-500k hebben en klaar zijn om hun sales te schalen. Geen dedicated sales team nodig — daar is Accelr voor.',
     },
     {
       q: 'Hoe snel kunnen we resultaten verwachten?',
-      a: 'Stack is live binnen 4-6 weken. Eerste resultaten binnen 2 weken na livegang.',
+      a: 'De meeste klanten zien hun eerste gekwalificeerde meetings binnen 2-3 weken na lancering. Een volledige sales cycle van lead tot gesloten deal duurt meestal 1-3 maanden, afhankelijk van je markt en deal size.',
     },
     {
-      q: 'Welke tools worden gebruikt?',
-      a: 'Afhankelijk van jouw situatie. Meestal Apollo, Reply.io, Aircall en een CRM. Plus een eigen dashboard dat alles samenvoegt.',
+      q: 'Sluit Accelr daadwerkelijk deals, of genereert Accelr alleen leads?',
+      a: 'Beide. Accelr\'s Full Cycle en Growth Partner tiers omvatten deal closing — Accelr voert sales calls uit, geeft demos, schrijft proposals en onderhandelt namens jou. Dat onderscheidt Accelr van typische lead gen agencies.',
+    },
+    {
+      q: 'Welke tools en tech gebruikt Accelr?',
+      a: 'Accelr gebruikt industry-leading tools: Instantly/Lemlist voor email, Expandi voor LinkedIn, Apollo/Clay voor lead sourcing, en HubSpot/Pipedrive voor CRM. Plus Accelr\'s custom AI call assistant gebouwd op Twilio + Deepgram.',
+    },
+    {
+      q: 'Hoe werkt de pricing? Zijn er verborgen kosten?',
+      a: 'Eenvoudige maandelijkse retainer. Geen commissie, geen verborgen kosten, geen langetermijncontracten. Begin met wat je nodig hebt, schaal op wanneer je klaar bent. Accelr gelooft in het elke maand verdienen van je business.',
+    },
+    {
+      q: 'Kan Accelr je later helpen een intern sales team op te bouwen?',
+      a: 'Ja — Accelr\'s Growth Partner tier omvat wervingsondersteuning, sales playbook documentatie en teamtraining. Accelr helpt je de overstap maken van outsourced naar in-house wanneer je klaar bent.',
     },
   ]
 
@@ -458,20 +392,23 @@ function Contact() {
       <div className="max-w-6xl mx-auto">
         <div className="bg-gradient-to-br from-[#0052CC]/20 to-transparent border border-white/10 rounded-3xl p-12 md:p-16">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">
-              Klaar om je sales stack te bouwen?
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Klaar om een voorspelbare pipeline te bouwen?
             </h2>
+            <p className="text-gray-400 text-lg mb-10">
+              30 minuten. Geen pitch. Accelr bespreekt je situatie en kijkt of het past.
+            </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a 
-                href="mailto:tim@accelr.nl"
+                href="mailto:tim@accelr.io"
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#0A0A0A] px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition"
               >
                 <Mail size={18} />
-                tim@accelr.nl
+                tim@accelr.io
               </a>
               <a 
-                href="https://www.linkedin.com/in/timsamsom/"
+                href="https://linkedin.com/in/timsam"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition"
@@ -499,7 +436,7 @@ function Footer() {
               <span className="text-2xl font-bold text-white">accelr</span>
               <span className="w-1.5 h-1.5 bg-[#0052CC] rounded-full ml-0.5 mb-3"></span>
             </div>
-            <p className="text-gray-500 text-sm">Sales infrastructuur voor B2B groei.</p>
+            <p className="text-gray-500 text-sm">Full-stack B2B sales. Van lead tot deal.</p>
           </div>
           
           {/* Links */}
@@ -516,8 +453,8 @@ function Footer() {
             <div>
               <p className="text-gray-500 text-xs uppercase tracking-wider mb-3">Contact</p>
               <div className="flex flex-col gap-2">
-                <a href="mailto:tim@accelr.nl" className="text-gray-400 hover:text-white transition text-sm">Email</a>
-                <a href="https://www.linkedin.com/in/timsamsom/" className="text-gray-400 hover:text-white transition text-sm">LinkedIn</a>
+                <a href="mailto:tim@accelr.io" className="text-gray-400 hover:text-white transition text-sm">Email</a>
+                <a href="https://linkedin.com/in/timsam" className="text-gray-400 hover:text-white transition text-sm">LinkedIn</a>
               </div>
             </div>
           </div>
@@ -544,9 +481,6 @@ export default function Home() {
       <Hero />
       <Services />
       <Process />
-      <ICPStatement />
-      <Differentiation />
-      <SocialProof />
       <Pricing />
       <FAQ />
       <Contact />
