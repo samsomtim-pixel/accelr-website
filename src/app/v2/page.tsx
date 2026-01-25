@@ -9,19 +9,20 @@ function AnimatedCounter({ end, suffix = '' }: { end: number; suffix?: string })
   
   useEffect(() => {
     const duration = 2000
-    const steps = 60
-    const increment = end / steps
-    let current = 0
+    const startTime = Date.now()
     
     const timer = setInterval(() => {
-      current += increment
-      if (current >= end) {
+      const elapsed = Date.now() - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const current = Math.floor(end * progress)
+      
+      setCount(current)
+      
+      if (progress >= 1) {
         setCount(end)
         clearInterval(timer)
-      } else {
-        setCount(Math.floor(current))
       }
-    }, duration / steps)
+    }, 16) // ~60fps
     
     return () => clearInterval(timer)
   }, [end])
