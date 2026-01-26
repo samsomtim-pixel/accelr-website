@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.accelr.nl"
+        }
+      ],
+      "destination": "https://accelr.nl/:path*",
+      "permanent": true
+    }
+  ]
+}
+
