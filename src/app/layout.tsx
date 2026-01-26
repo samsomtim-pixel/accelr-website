@@ -5,10 +5,10 @@ import '@/styles/globals.css'
 
 export const metadata: Metadata = {
   title: 'Accelr - Sales infrastructuur voor B2B groei',
-  description: 'Build now. Scale forever. In 6-8 weken een werkend sales systeem dat structureel afspraken genereert. Start met de gratis Stack Scan.',
+  description: 'In 6-8 weken een systeem dat structureel afspraken genereert. Start met de gratis Stack Scan.',
   openGraph: {
     title: 'Accelr - Sales infrastructuur voor B2B groei',
-    description: 'Build now. Scale forever. In 6-8 weken een werkend sales systeem dat structureel afspraken genereert.',
+    description: 'In 6-8 weken een systeem dat structureel afspraken genereert.',
     url: 'https://accelr.nl',
     siteName: 'Accelr',
     locale: 'nl_NL',
@@ -17,17 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Accelr - Sales infrastructuur voor B2B groei',
-    description: 'Build now. Scale forever. In 6-8 weken een werkend sales systeem dat structureel afspraken genereert.',
-  },
-  icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
-    ],
-    apple: '/apple-touch-icon.png',
+    description: 'In 6-8 weken een systeem dat structureel afspraken genereert.',
   },
 }
 
@@ -39,21 +29,38 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <body>
+        {/* Google Analytics with Consent Mode */}
+        <Script
+          id="google-analytics-consent"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'wait_for_update': 500,
+              });
+            `,
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-W93SYHR3N4"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('consent', 'default', {
-              analytics_storage: 'denied',
-            });
-            gtag('config', 'G-W93SYHR3N4');
-          `}
-        </Script>
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-W93SYHR3N4');
+            `,
+          }}
+        />
         {children}
         <CookieBanner />
       </body>

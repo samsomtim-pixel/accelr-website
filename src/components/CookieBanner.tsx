@@ -1,146 +1,187 @@
-'use client';
+'use client'
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
+import { X, Settings, Check } from 'lucide-react'
 
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
+    dataLayer: any[]
+    gtag: (...args: any[]) => void
   }
 }
 
 export default function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
-  const [analytics, setAnalytics] = useState(true);
-  const [marketing, setMarketing] = useState(false);
+  const [showBanner, setShowBanner] = useState(false)
+  const [showSettings, setShowSettings] = useState(false)
+  const [analytics, setAnalytics] = useState(false)
+  const [marketing, setMarketing] = useState(false)
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
-    if (!consent) setShowBanner(true);
-  }, []);
+    // Check if user has already made a choice
+    const consent = localStorage.getItem('cookie-consent')
+    if (!consent) {
+      setShowBanner(true)
+    }
+  }, [])
 
-  const acceptAll = () => {
-    localStorage.setItem('cookie-consent', JSON.stringify({ analytics: true, marketing: true }));
-    setShowBanner(false);
-    window.gtag?.('consent', 'update', {
-      analytics_storage: 'granted',
-      ad_storage: 'granted',
-    });
-  };
+  const updateConsent = (analyticsValue: boolean, marketingValue: boolean) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('consent', 'update', {
+        analytics_storage: analyticsValue ? 'granted' : 'denied',
+        ad_storage: marketingValue ? 'granted' : 'denied',
+      })
+    }
+    localStorage.setItem('cookie-consent', JSON.stringify({ analytics: analyticsValue, marketing: marketingValue }))
+    setShowBanner(false)
+    setShowSettings(false)
+  }
 
-  const acceptSelected = () => {
-    localStorage.setItem('cookie-consent', JSON.stringify({ analytics, marketing }));
-    setShowBanner(false);
-    window.gtag?.('consent', 'update', {
-      analytics_storage: analytics ? 'granted' : 'denied',
-      ad_storage: marketing ? 'granted' : 'denied',
-    });
-  };
+  const handleAcceptAll = () => {
+    setAnalytics(true)
+    setMarketing(true)
+    updateConsent(true, true)
+  }
 
-  const declineAll = () => {
-    localStorage.setItem('cookie-consent', JSON.stringify({ analytics: false, marketing: false }));
-    setShowBanner(false);
-    window.gtag?.('consent', 'update', {
-      analytics_storage: 'denied',
-      ad_storage: 'denied',
-    });
-  };
+  const handleRejectAll = () => {
+    setAnalytics(false)
+    setMarketing(false)
+    updateConsent(false, false)
+  }
 
-  if (!showBanner) return null;
+  const handleSaveSettings = () => {
+    updateConsent(analytics, marketing)
+  }
+
+  if (!showBanner) return null
 
   return (
-    <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
-      <div className="bg-neutral-900 border border-neutral-700 rounded-2xl max-w-lg w-full p-6 shadow-2xl">
-        <h2 className="text-xl font-bold text-white mb-2">🍪 Cookie voorkeuren</h2>
-        <p className="text-neutral-400 text-sm mb-6">
-          Wij gebruiken cookies om je ervaring te verbeteren en ons websiteverkeer te analyseren. 
-          Kies welke cookies je wilt accepteren.{' '}
-          <a href="/privacy" className="text-green-500 underline">Privacybeleid</a>
-        </p>
-
-        {showSettings ? (
-          <div className="space-y-4 mb-6">
-            {/* Noodzakelijk */}
-            <div className="flex items-center justify-between p-3 bg-neutral-800 rounded-lg">
-              <div>
-                <p className="text-white font-medium">Noodzakelijk</p>
-                <p className="text-neutral-500 text-xs">Essentieel voor de werking van de site</p>
-              </div>
-              <div className="w-12 h-6 bg-green-500 rounded-full flex items-center justify-end px-1">
-                <div className="w-4 h-4 bg-white rounded-full"></div>
-              </div>
-            </div>
-
-            {/* Analytics */}
-            <div 
-              className="flex items-center justify-between p-3 bg-neutral-800 rounded-lg cursor-pointer"
-              onClick={() => setAnalytics(!analytics)}
-            >
-              <div>
-                <p className="text-white font-medium">Analytisch</p>
-                <p className="text-neutral-500 text-xs">Help ons de site te verbeteren</p>
-              </div>
-              <div className={`w-12 h-6 rounded-full flex items-center px-1 transition-colors ${analytics ? 'bg-green-500 justify-end' : 'bg-neutral-600 justify-start'}`}>
-                <div className="w-4 h-4 bg-white rounded-full"></div>
-              </div>
-            </div>
-
-            {/* Marketing */}
-            <div 
-              className="flex items-center justify-between p-3 bg-neutral-800 rounded-lg cursor-pointer"
-              onClick={() => setMarketing(!marketing)}
-            >
-              <div>
-                <p className="text-white font-medium">Marketing</p>
-                <p className="text-neutral-500 text-xs">Gepersonaliseerde advertenties</p>
-              </div>
-              <div className={`w-12 h-6 rounded-full flex items-center px-1 transition-colors ${marketing ? 'bg-green-500 justify-end' : 'bg-neutral-600 justify-start'}`}>
-                <div className="w-4 h-4 bg-white rounded-full"></div>
-              </div>
-            </div>
-          </div>
-        ) : null}
-
-        <div className="flex flex-col sm:flex-row gap-3">
-          {showSettings ? (
+    <>
+      {/* Overlay */}
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50" onClick={() => setShowBanner(false)} />
+      
+      {/* Banner */}
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 max-w-lg w-full shadow-2xl">
+          {!showSettings ? (
             <>
-              <button
-                onClick={declineAll}
-                className="flex-1 px-4 py-3 text-sm text-neutral-400 hover:text-white border border-neutral-700 rounded-lg"
-              >
-                Alles weigeren
-              </button>
-              <button
-                onClick={acceptSelected}
-                className="flex-1 px-4 py-3 text-sm bg-green-500 text-black font-medium rounded-lg hover:bg-green-400"
-              >
-                Selectie opslaan
-              </button>
+              <div className="flex items-start justify-between mb-6">
+                <h3 className="text-xl font-bold text-white">Cookie-instellingen</h3>
+                <button
+                  onClick={() => setShowBanner(false)}
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="Sluiten"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              <p className="text-gray-400 mb-6">
+                We gebruiken cookies om je ervaring te verbeteren en onze website te analyseren. 
+                Je kunt kiezen welke cookies je accepteert.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={handleAcceptAll}
+                  className="bg-green-500 hover:bg-green-600 text-neutral-950 font-semibold px-6 py-3 rounded-lg transition-colors flex-1"
+                >
+                  Accepteren
+                </button>
+                <button
+                  onClick={handleRejectAll}
+                  className="bg-neutral-800 hover:bg-neutral-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex-1"
+                >
+                  Weigeren
+                </button>
+                <button
+                  onClick={() => setShowSettings(true)}
+                  className="bg-neutral-800 hover:bg-neutral-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
+                >
+                  <Settings className="w-4 h-4" />
+                  Instellingen
+                </button>
+              </div>
             </>
           ) : (
             <>
-              <button
-                onClick={() => setShowSettings(true)}
-                className="flex-1 px-4 py-3 text-sm text-neutral-400 hover:text-white border border-neutral-700 rounded-lg"
-              >
-                Instellingen
-              </button>
-              <button
-                onClick={declineAll}
-                className="flex-1 px-4 py-3 text-sm text-neutral-400 hover:text-white border border-neutral-700 rounded-lg"
-              >
-                Weigeren
-              </button>
-              <button
-                onClick={acceptAll}
-                className="flex-1 px-4 py-3 text-sm bg-green-500 text-black font-medium rounded-lg hover:bg-green-400"
-              >
-                Accepteren
-              </button>
+              <div className="flex items-start justify-between mb-6">
+                <h3 className="text-xl font-bold text-white">Cookie-instellingen</h3>
+                <button
+                  onClick={() => setShowSettings(false)}
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="Terug"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              <p className="text-gray-400 mb-6">
+                Kies welke cookies je accepteert. Analytische cookies helpen ons de website te verbeteren. 
+                Marketing cookies worden gebruikt voor gepersonaliseerde advertenties.
+              </p>
+              
+              <div className="space-y-4 mb-6">
+                {/* Analytics Toggle */}
+                <div className="flex items-center justify-between p-4 bg-neutral-800 rounded-lg">
+                  <div>
+                    <p className="text-white font-medium mb-1">Analytisch</p>
+                    <p className="text-sm text-gray-400">Helpt ons de website te analyseren en verbeteren</p>
+                  </div>
+                  <button
+                    onClick={() => setAnalytics(!analytics)}
+                    className={`relative w-12 h-6 rounded-full transition-colors ${
+                      analytics ? 'bg-green-500' : 'bg-neutral-600'
+                    }`}
+                  >
+                    <span
+                      className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform ${
+                        analytics ? 'translate-x-6' : 'translate-x-0'
+                      }`}
+                    />
+                  </button>
+                </div>
+                
+                {/* Marketing Toggle */}
+                <div className="flex items-center justify-between p-4 bg-neutral-800 rounded-lg">
+                  <div>
+                    <p className="text-white font-medium mb-1">Marketing</p>
+                    <p className="text-sm text-gray-400">Voor gepersonaliseerde advertenties en content</p>
+                  </div>
+                  <button
+                    onClick={() => setMarketing(!marketing)}
+                    className={`relative w-12 h-6 rounded-full transition-colors ${
+                      marketing ? 'bg-green-500' : 'bg-neutral-600'
+                    }`}
+                  >
+                    <span
+                      className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform ${
+                        marketing ? 'translate-x-6' : 'translate-x-0'
+                      }`}
+                    />
+                  </button>
+                </div>
+              </div>
+              
+              <div className="flex gap-3">
+                <button
+                  onClick={handleSaveSettings}
+                  className="bg-green-500 hover:bg-green-600 text-neutral-950 font-semibold px-6 py-3 rounded-lg transition-colors flex-1 flex items-center justify-center gap-2"
+                >
+                  <Check className="w-4 h-4" />
+                  Instellingen opslaan
+                </button>
+                <button
+                  onClick={() => setShowSettings(false)}
+                  className="bg-neutral-800 hover:bg-neutral-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                >
+                  Annuleren
+                </button>
+              </div>
             </>
           )}
         </div>
       </div>
-    </div>
-  );
+    </>
+  )
 }
+
