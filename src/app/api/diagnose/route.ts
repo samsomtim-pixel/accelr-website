@@ -36,39 +36,7 @@ export async function POST(request: NextRequest) {
   try {
     const formData = await request.json();
     
-    const model = genAI.getGenerativeModel({ 
-      model: 'gemini-2.0-flash',
-      systemInstruction: systemInstruction
-    });
-
-    const prompt = `
-    Analyseer deze scan-antwoorden:
-    
-    1. Website URL: ${formData.websiteUrl}
-    2. Gemiddelde deal-size: ${formData.dealSize}
-    3. Aantal sales meetings per maand: ${formData.meetingsPerMonth}
-    4. Grootste groeiblokkade: ${formData.growthBlocker}
-    5. Target sector: ${formData.targetSector}
-    6. Target functie: ${formData.targetFunction}
-    7. Capaciteit salesteam (gesprekken/week): ${formData.teamCapacity}
-    8. Waarom nu prioriteit: ${formData.priority}
-    9. Huidig CRM: ${formData.currentCrm}
-    10. Huidige sales tools: ${formData.currentTools}
-    11. Ervaring met outbound: ${formData.outboundExperience}
-    
-    Contactgegevens:
-    - Naam: ${formData.name}
-    - Email: ${formData.email}
-    - Telefoon: ${formData.phone}
-    
-    Genereer het Quick Scan rapport.
-    `;
-
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const report = response.text();
-
-    // Stuur email notificatie naar Tim
+    // Stuur email notificatie naar Tim (VOOR Gemini call, zodat email altijd wordt verstuurd)
     try {
       console.log('About to send email...');
       console.log('RESEND_API_KEY exists:', !!process.env.RESEND_API_KEY);
@@ -102,6 +70,38 @@ export async function POST(request: NextRequest) {
       console.error('Resend email error:', emailError);
       // Email fout mag de response niet blokkeren
     }
+    
+    const model = genAI.getGenerativeModel({ 
+      model: 'gemini-2.0-flash',
+      systemInstruction: systemInstruction
+    });
+
+    const prompt = `
+    Analyseer deze scan-antwoorden:
+    
+    1. Website URL: ${formData.websiteUrl}
+    2. Gemiddelde deal-size: ${formData.dealSize}
+    3. Aantal sales meetings per maand: ${formData.meetingsPerMonth}
+    4. Grootste groeiblokkade: ${formData.growthBlocker}
+    5. Target sector: ${formData.targetSector}
+    6. Target functie: ${formData.targetFunction}
+    7. Capaciteit salesteam (gesprekken/week): ${formData.teamCapacity}
+    8. Waarom nu prioriteit: ${formData.priority}
+    9. Huidig CRM: ${formData.currentCrm}
+    10. Huidige sales tools: ${formData.currentTools}
+    11. Ervaring met outbound: ${formData.outboundExperience}
+    
+    Contactgegevens:
+    - Naam: ${formData.name}
+    - Email: ${formData.email}
+    - Telefoon: ${formData.phone}
+    
+    Genereer het Quick Scan rapport.
+    `;
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const report = response.text();
 
     return NextResponse.json({ success: true, report });
   } catch (error) {
