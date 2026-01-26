@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
     try {
       await resend.emails.send({
         from: 'Accelr Scan <scan@accelr.nl>',
-        to: 'tim@accelr.io',
+        to: 'tim@accelr.nl',
         subject: `🔔 Nieuwe Scan: ${formData.name} - ${formData.company || 'Geen bedrijf'}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px;">
