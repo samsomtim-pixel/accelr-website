@@ -19,6 +19,8 @@ interface FormData {
   company: string
   email: string
   phone: string
+  privacyAccepted: boolean
+  marketingOptin: boolean
 }
 
 const questions = [
@@ -243,7 +245,8 @@ export function AccelrScan() {
     if (currentQuestion.type === 'contact') {
       const nameValid = formData.name && formData.name.trim() !== ''
       const emailValid = formData.email && formData.email.trim() !== ''
-      return nameValid && emailValid
+      const privacyAccepted = formData.privacyAccepted === true
+      return nameValid && emailValid && privacyAccepted
     }
     
     if (currentQuestion.type === 'multiselect') {
@@ -559,10 +562,6 @@ export function AccelrScan() {
             </div>
           </div>
 
-          {/* Footer */}
-          <p className="text-center text-gray-500 text-sm mt-4">
-            🔒 Je gegevens zijn veilig en worden niet gedeeld met derden.
-          </p>
         </div>
       </div>
     )
@@ -675,10 +674,6 @@ export function AccelrScan() {
             </div>
           </div>
 
-          {/* Footer */}
-          <p className="text-center text-gray-500 text-sm mt-4">
-            🔒 Je gegevens zijn veilig en worden niet gedeeld met derden.
-          </p>
         </div>
       </div>
     )
@@ -829,6 +824,41 @@ export function AccelrScan() {
                       />
                     </div>
                   ))}
+                  
+                  {/* Privacy checkbox */}
+                  <div className="pt-2">
+                    <label className="flex items-start gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={formData.privacyAccepted === true}
+                        onChange={(e) => setFormData({ ...formData, privacyAccepted: e.target.checked })}
+                        className="mt-1 w-4 h-4 text-green-500 bg-neutral-800 border-neutral-700 rounded focus:ring-green-500 focus:ring-2"
+                        required
+                      />
+                      <span className="text-sm text-gray-300">
+                        Ik ga akkoord met de{' '}
+                        <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 underline">
+                          privacyvoorwaarden
+                        </a>
+                        <span className="text-green-400"> *</span>
+                      </span>
+                    </label>
+                  </div>
+                  
+                  {/* Marketing opt-in checkbox */}
+                  <div>
+                    <label className="flex items-start gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={formData.marketingOptin === true}
+                        onChange={(e) => setFormData({ ...formData, marketingOptin: e.target.checked })}
+                        className="mt-1 w-4 h-4 text-green-500 bg-neutral-800 border-neutral-700 rounded focus:ring-green-500 focus:ring-2"
+                      />
+                      <span className="text-sm text-gray-300">
+                        Ik ontvang graag sales- en marketingtips
+                      </span>
+                    </label>
+                  </div>
                 </div>
               ) : null}
             </div>
@@ -857,10 +887,6 @@ export function AccelrScan() {
           </div>
         </div>
 
-        {/* Footer */}
-        <p className="text-center text-gray-500 text-sm">
-          🔒 Je gegevens zijn veilig en worden niet gedeeld met derden.
-        </p>
       </div>
     </div>
   )

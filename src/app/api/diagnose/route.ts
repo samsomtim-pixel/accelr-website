@@ -73,6 +73,35 @@ export async function POST(request: NextRequest) {
       // Email fout mag de response niet blokkeren
     }
     
+    // Create HubSpot contact
+    try {
+      const hubspotResponse = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.HUBSPOT_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          properties: {
+            email: formData.email,
+            firstname: formData.name.split(' ')[0],
+            lastname: formData.name.split(' ').slice(1).join(' ') || '',
+            company: formData.company || '',
+            phone: formData.phone || '',
+            website: formData.websiteUrl || '',
+          }
+        })
+      });
+      
+      if (!hubspotResponse.ok) {
+        console.error('HubSpot error:', await hubspotResponse.text());
+      } else {
+        console.log('HubSpot contact created');
+      }
+    } catch (hubspotError) {
+      console.error('HubSpot error:', hubspotError);
+    }
+    
     const model = genAI.getGenerativeModel({ 
       model: 'gemini-2.0-flash-001',
       systemInstruction: systemInstruction
