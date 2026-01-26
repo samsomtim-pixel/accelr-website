@@ -93,10 +93,38 @@ export async function POST(request: NextRequest) {
         })
       });
       
-      if (!hubspotResponse.ok) {
-        console.error('HubSpot error:', await hubspotResponse.text());
+      if (hubspotResponse.ok) {
+        const contact = await hubspotResponse.json();
+        const contactId = contact.id || contact.results?.[0]?.id;
+        console.log('HubSpot contact created:', contactId);
+        
+        if (contactId) {
+          // Add note with scan details
+          const currentToolsArray = Array.isArray(formData.currentTools) 
+            ? formData.currentTools 
+            : (formData.currentTools ? [formData.currentTools] : []);
+          
+          await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${process.env.HUBSPOT_API_KEY}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              properties: {
+                hs_note_body: `Stack Scan resultaten:\n\n• Deal size: ${formData.dealSize}\n• Meetings/maand: ${formData.meetingsPerMonth}\n• Blokkade: ${formData.growthBlocker}\n• Sector: ${formData.targetSector}\n• Functie: ${formData.targetFunction}\n• Doel: ${formData.teamCapacity}\n• Prioriteit: ${formData.priority}\n• Tools: ${currentToolsArray.join(', ') || 'Geen'}\n• Ervaring: ${formData.outboundExperience}\n• Marketing opt-in: ${formData.marketingOptin ? 'Ja' : 'Nee'}`,
+                hs_timestamp: Date.now()
+              },
+              associations: [{
+                to: { id: contactId },
+                types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 202 }]
+              }]
+            })
+          });
+          console.log('HubSpot note added');
+        }
       } else {
-        console.log('HubSpot contact created');
+        console.error('HubSpot error:', await hubspotResponse.text());
       }
     } catch (hubspotError) {
       console.error('HubSpot error:', hubspotError);
