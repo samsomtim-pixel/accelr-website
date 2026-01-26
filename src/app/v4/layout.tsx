@@ -1,7 +1,16 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Accelr - Van Founder-Led naar Schaalbare Sales',
+  title: 'Accelr - Sales infrastructuur voor B2B groei',
+  description: 'In 6-8 weken een systeem dat structureel afspraken genereert. Wij selecteren de juiste tools en koppelen ze tot één werkende machine.',
+  openGraph: {
+    title: 'Accelr - Sales infrastructuur voor B2B groei',
+    description: 'In 6-8 weken een systeem dat structureel afspraken genereert.',
+    url: 'https://accelr.io',
+    siteName: 'Accelr',
+    locale: 'nl_NL',
+    type: 'website',
+  },
 }
 
 export default function V3Layout({

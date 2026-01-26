@@ -1,7 +1,9 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 const systemInstruction = `
 Jij bent de Accelr Master Architect v6.1. Je analyseert scan-data van B2B-bedrijven om een "Quick Scan" rapport te genereren.
@@ -64,6 +66,39 @@ export async function POST(request: NextRequest) {
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const report = response.text();
+
+    // Stuur email notificatie naar Tim
+    try {
+      await resend.emails.send({
+        from: 'Accelr Scan <scan@accelr.nl>',
+        to: 'tim@accelr.io',
+        subject: `🔔 Nieuwe Scan: ${formData.name} - ${formData.company || 'Geen bedrijf'}`,
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px;">
+            <h2 style="color: #10b981;">Nieuwe Stack Scan ontvangen</h2>
+            <p><strong>Naam:</strong> ${formData.name}</p>
+            <p><strong>Bedrijf:</strong> ${formData.company || 'Niet opgegeven'}</p>
+            <p><strong>Email:</strong> ${formData.email}</p>
+            <p><strong>Telefoon:</strong> ${formData.phone || 'Niet opgegeven'}</p>
+            <p><strong>Website:</strong> ${formData.websiteUrl || 'Niet opgegeven'}</p>
+            <hr style="border: 1px solid #e5e7eb; margin: 20px 0;">
+            <h3>Scan Details:</h3>
+            <ul>
+              <li>Deal size: ${formData.dealSize}</li>
+              <li>Meetings per maand: ${formData.meetingsPerMonth}</li>
+              <li>Groeiblokkade: ${formData.growthBlocker}</li>
+              <li>Target sector: ${formData.targetSector}</li>
+              <li>Target functie: ${formData.targetFunction}</li>
+              <li>Team capaciteit: ${formData.teamCapacity}</li>
+              <li>Prioriteit: ${formData.priority}</li>
+            </ul>
+          </div>
+        `,
+      });
+    } catch (emailError) {
+      console.error('Resend email error:', emailError);
+      // Email fout mag de response niet blokkeren
+    }
 
     return NextResponse.json({ success: true, report });
   } catch (error) {
