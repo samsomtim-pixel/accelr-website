@@ -32,6 +32,7 @@ Nederlands, ondernemend, direct en adviserend. Pas de stijl aan op de sector (Sa
 `;
 
 export async function POST(request: NextRequest) {
+  console.log('API route called');
   try {
     const formData = await request.json();
     
@@ -69,6 +70,8 @@ export async function POST(request: NextRequest) {
 
     // Stuur email notificatie naar Tim
     try {
+      console.log('About to send email...');
+      console.log('RESEND_API_KEY exists:', !!process.env.RESEND_API_KEY);
       await resend.emails.send({
         from: 'Accelr Scan <scan@accelr.nl>',
         to: 'tim@accelr.nl',
