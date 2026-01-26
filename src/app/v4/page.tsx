@@ -165,15 +165,11 @@ export default function V3Page() {
               </h1>
               
               <p className="text-xl text-green-400 font-semibold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                In 6-8 weken een systeem dat structureel afspraken genereert.
-              </p>
-              
-              <p className="text-lg text-gray-400 mb-4 leading-relaxed">
-                Wij selecteren de juiste tools en koppelen ze tot één werkende machine.
+                Binnen 6-8 weken een systeem dat afspraken genereert.
               </p>
               
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                Doe de gratis scan en ontdek waar jij omzet laat liggen.
+                Doe de scan → ontdek waar jij omzet laat liggen.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-6">

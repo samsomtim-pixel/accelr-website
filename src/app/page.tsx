@@ -160,20 +160,21 @@ export default function V3Page() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Wij koppelen de beste tools tot één werkende sales stack.
+                Build now<span className="text-green-500">.</span><br />
+                Scale forever<span className="text-green-500">.</span>
               </h1>
               
               <p className="text-xl text-green-400 font-semibold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Na 12 weken heb je een systeem dat structureel afspraken genereert.
+                Binnen 6-8 weken een systeem dat afspraken genereert.
               </p>
               
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                Apollo, Lemlist, HubSpot, Expandi, Clay — wij selecteren wat past bij jouw situatie en koppelen het tot één machine.
+                Doe de scan → ontdek waar jij omzet laat liggen.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <a href="/diagnose" className="bg-green-500 hover:bg-green-600 text-neutral-950 font-semibold px-8 py-4 rounded-lg transition-colors text-center">
-                  Start accelr scan →
+                  Start gratis scan →
                 </a>
               </div>
               
