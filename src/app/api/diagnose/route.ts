@@ -62,6 +62,8 @@ export async function POST(request: NextRequest) {
               <li>Target functie: ${formData.targetFunction}</li>
               <li>Team capaciteit: ${formData.teamCapacity}</li>
               <li>Prioriteit: ${formData.priority}</li>
+              <li>Huidige tools: ${Array.isArray(formData.currentTools) ? formData.currentTools.join(', ') : (formData.currentTools || 'Geen')}</li>
+              <li>Outbound ervaring: ${formData.outboundExperience || 'Niet opgegeven'}</li>
             </ul>
           </div>
         `,
