@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
+import CookieBanner from '@/components/CookieBanner'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
@@ -26,7 +28,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl">
-      <body>{children}</body>
+      <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-W93SYHR3N4"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+            });
+            gtag('config', 'G-W93SYHR3N4');
+          `}
+        </Script>
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   )
 }

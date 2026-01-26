@@ -145,6 +145,7 @@ export default function V3Page() {
           <a href="/" className="text-xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>accelr<span className="text-green-500">.</span></a>
           <div className="hidden md:flex items-center gap-8">
             <a href="#probleem" className="text-gray-400 hover:text-white transition-colors">Probleem</a>
+            <a href="#oplossing" className="text-gray-400 hover:text-white transition-colors">Oplossing</a>
             <a href="#pricing" className="text-gray-400 hover:text-white transition-colors">Prijzen</a>
             <a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a>
           </div>
@@ -207,7 +208,7 @@ export default function V3Page() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Herkenbaar?</h2>
           <p className="text-2xl text-green-400 font-semibold mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Sales groeit niet mee met je bedrijf.
+            Sales groeit niet hard genoeg mee met je bedrijf.
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 mb-12">
@@ -216,7 +217,7 @@ export default function V3Page() {
                 <div className="w-10 h-10 rounded-lg bg-neutral-700/50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/10 transition-colors">
                   <User className="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors" />
                 </div>
-                <p className="text-gray-300 pt-1">Elke deal hangt op 1-2 mensen</p>
+                <p className="text-gray-300 pt-1">Elke deal hangt op een paar mensen</p>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
@@ -224,7 +225,7 @@ export default function V3Page() {
                 <div className="w-10 h-10 rounded-lg bg-neutral-700/50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/10 transition-colors">
                   <Clock className="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors" />
                 </div>
-                <p className="text-gray-300 pt-1">Sales gebeurt "als er tijd is" — en die tijd komt nooit</p>
+                <p className="text-gray-300 pt-1">Outbound Sales gebeurt "als er tijd is" en die tijd komt zelden</p>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
@@ -254,7 +255,7 @@ export default function V3Page() {
       </section>
 
       {/* What You Get Section */}
-      <section className="py-20 px-6">
+      <section id="oplossing" className="py-20 px-6 bg-neutral-950">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Wat je krijgt</h2>
           
@@ -265,8 +266,8 @@ export default function V3Page() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Strategie eerst</h3>
-              <p className="text-gray-400 text-sm">We bepalen wie je ideale klant is en welke boodschap werkt — vóórdat we iets bouwen.</p>
+              <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Strategie</h3>
+              <p className="text-gray-400 text-sm">Samen bepalen wij jouw ideale klant en welke boodschap werkt — vóórdat we iets bouwen.</p>
             </div>
             
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 card-hover">
@@ -276,7 +277,7 @@ export default function V3Page() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Eén werkend systeem</h3>
-              <p className="text-gray-400 text-sm">CRM, email, LinkedIn, data — slim gekoppeld tot één machine die jij of je team kan runnen.</p>
+              <p className="text-gray-400 text-sm">CRM, email, LinkedIn, data, bellen — slim gekoppeld tot één machine die jij of je team kan runnen.</p>
             </div>
             
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 card-hover">
@@ -285,8 +286,8 @@ export default function V3Page() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Jullie runnen het (of wij)</h3>
-              <p className="text-gray-400 text-sm">Training voor je team, of wij opereren. Geen afhankelijkheid, tenzij je dat wilt.</p>
+              <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Jij runt het (of wij)</h3>
+              <p className="text-gray-400 text-sm">Training voor jou / je team, of wij opereren. Geen afhankelijkheid, tenzij je dat wilt.</p>
             </div>
             
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 card-hover">
@@ -303,41 +304,8 @@ export default function V3Page() {
       </section>
 
 
-      {/* Why Accelr Section */}
-      <section className="py-20 px-6 bg-neutral-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Waarom Accelr?</h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
-              <div className="text-sm text-green-500 font-semibold mb-2">vs. zelf doen</div>
-              <p className="text-gray-300">6 maanden trial-and-error of 6 weken met bewezen frameworks.</p>
-            </div>
-            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
-              <div className="text-sm text-green-500 font-semibold mb-2">vs. agencies</div>
-              <p className="text-gray-300">Zij verhuren leads. Wij bouwen het systeem dat jij bezit.</p>
-            </div>
-            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
-              <div className="text-sm text-green-500 font-semibold mb-2">vs. consultants</div>
-              <p className="text-gray-300">Zij leveren decks. Wij leveren werkende infrastructuur.</p>
-            </div>
-            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
-              <div className="text-sm text-green-500 font-semibold mb-2">vs. tools</div>
-              <p className="text-gray-300">Tools zijn instrumenten. Zonder strategie zijn het dure speeltjes.</p>
-            </div>
-          </div>
-          
-          {/* Pilot Offer */}
-          <div className="mt-12 bg-gradient-to-r from-green-500/10 to-green-400/5 border border-green-500/20 rounded-xl p-8 text-center">
-            <p className="text-xl text-gray-200">
-              <span className="text-green-400 font-semibold">Eerste 3 pilots:</span> 25% korting op Build in ruil voor case study.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* For Who Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-neutral-900">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
@@ -353,7 +321,7 @@ export default function V3Page() {
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="text-gray-300">Sales is te afhankelijk van 1-2 mensen</span>
+                  <span className="text-gray-300">Sales is te afhankelijk van een paar mensen</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -365,13 +333,7 @@ export default function V3Page() {
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="text-gray-300">Je wilt schalen zonder 6 maanden te experimenteren</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span className="text-gray-300">Je wilt eigenaarschap, geen afhankelijkheid</span>
+                  <span className="text-gray-300">Je wilt schalen zonder maanden te experimenteren</span>
                 </li>
               </ul>
             </div>
@@ -389,7 +351,7 @@ export default function V3Page() {
                   <svg className="w-6 h-6 text-red-400/60 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                   </svg>
-                  <span className="text-gray-500">Je wilt alleen "leads kopen" zonder systeem</span>
+                  <span className="text-gray-500">Je wilt "leads kopen" zonder systeem</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-red-400/60 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -401,10 +363,58 @@ export default function V3Page() {
                   <svg className="w-6 h-6 text-red-400/60 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                   </svg>
-                  <span className="text-gray-500">Je omzet is &lt;€500k (founder-led is dan prima)</span>
+                  <span className="text-gray-500">Als je al maximaal rendement uit je tijd haalt</span>
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Accelr Section */}
+      <section className="py-20 px-6 bg-neutral-950">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Waarom Accelr?</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+              <div className="text-sm text-green-500 font-semibold mb-2">vs. zelf doen</div>
+              <p className="text-gray-300">Maanden trial-and-error of in slechts weken met bewezen frameworks.</p>
+            </div>
+            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+              <div className="text-sm text-green-500 font-semibold mb-2">vs. agencies</div>
+              <p className="text-gray-300">Zij verhuren leads. Wij bouwen het systeem dat jij bezit.</p>
+            </div>
+            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+              <div className="text-sm text-green-500 font-semibold mb-2">vs. consultants</div>
+              <p className="text-gray-300">Zij leveren decks. Wij leveren werkende infrastructuur.</p>
+            </div>
+            <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+              <div className="text-sm text-green-500 font-semibold mb-2">vs. tools</div>
+              <p className="text-gray-300">Tools zijn instrumenten. Zonder strategie zijn het dure speeltjes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Founder Section */}
+      <section className="py-20 px-6 bg-neutral-900">
+        <div className="max-w-6xl mx-auto flex items-center gap-8">
+          <div className="w-56 h-56 rounded-full overflow-hidden flex-shrink-0 bg-neutral-800">
+            <img 
+              src="/tim-sam.jpeg" 
+              alt="Tim Samsom" 
+              className="w-full h-full object-cover object-top scale-150"
+            />
+          </div>
+          <div className="flex-1">
+            <h2 className="text-3xl font-bold mb-6">Over de founder</h2>
+            <p className="text-xl text-white mb-2">Tim Samsom</p>
+            <p className="text-neutral-400 mb-4">10+ jaar ervaring in adtech en B2B sales. Nu help ik B2B bedrijven hun sales schaalbaar maken.</p>
+            <a href="https://linkedin.com/in/timsam" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-400 flex items-center gap-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
           </div>
         </div>
       </section>
@@ -482,8 +492,8 @@ export default function V3Page() {
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 transition-all duration-200 hover:border-[#10b981] group flex flex-col">
               <h3 className="text-xl font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Train of Run</h3>
               <p className="text-sm text-gray-400 mb-4">Na de Build</p>
-              <div className="text-3xl font-bold text-[#10b981] mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Vanaf €3k/mnd</div>
-              <div className="text-sm text-gray-500 mb-6">of €3-5k eenmalig</div>
+              <div className="text-3xl font-bold text-[#10b981] mb-1 whitespace-nowrap" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Vanaf €3k/mnd</div>
+              <div className="text-sm text-gray-500 mb-6"><br /></div>
               <ul className="space-y-2 text-sm text-gray-300 mb-6 flex-grow">
                 <li className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -537,6 +547,13 @@ export default function V3Page() {
                 </li>
               </ul>
             </div>
+          </div>
+          
+          {/* Pilot Offer */}
+          <div className="mt-12 bg-gradient-to-r from-green-500/10 to-green-400/5 border border-green-500/20 rounded-xl p-8 text-center">
+            <p className="text-xl text-gray-200">
+              <span className="text-green-400 font-semibold">Eerste 3 pilots:</span> 25% korting in ruil voor case study
+            </p>
           </div>
         </div>
       </section>
