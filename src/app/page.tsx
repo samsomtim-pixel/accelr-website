@@ -327,9 +327,9 @@ export default function V3Page() {
               <p className="text-sm text-neutral-400 mb-1">Over de founder</p>
               <p className="text-xl text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Tim Samsom</p>
               <div className="text-neutral-400 mb-4 space-y-3">
-                <p>10+ jaar ervaring in adtech en B2B sales bij snelgroeiende tech-bedrijven. Ik heb salesteams opgebouwd, strategieën geïmplementeerd die werken, en outbound machines gebouwd die consistent omzet opleveren.</p>
-                <p>Wat ik keer op keer zag: bedrijven die groeien maar uiteindelijk vastlopen op sales. Te afhankelijk van de founder of een paar key mensen, geen systeem, of tools die niet samenwerken.</p>
-                <p>Nu help ik B2B bedrijven hiermee — niet met adviezen of decks, maar met werkende infrastructuur die je zelf kunt runnen.</p>
+                <p>10+ jaar ervaring in adtech en B2B sales bij snelgroeiende tech-bedrijven. Ik heb salesteams opgebouwd, strategieën geïmplementeerd, en outbound flows gebouwd die consistent omzet opleveren.</p>
+                <p>Wat ik veel zie: bedrijven die groeien maar uiteindelijk vastlopen op sales. Te afhankelijk van de founder of een paar key mensen, geen systeem, of tools die niet goed samenwerken.</p>
+                <p>Nu help ik B2B bedrijven met het bouwen van een werkende infrastructuur die ze zelf kunnen runnen.</p>
               </div>
               <a href="https://linkedin.com/in/timsamsom" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-400 flex items-center gap-2">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
