@@ -143,8 +143,9 @@ export default function V3Page() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="text-xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>accelr<span className="text-green-500">.</span></a>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#probleem" className="text-gray-400 hover:text-white transition-colors">Probleem</a>
-            <a href="#pricing" className="text-gray-400 hover:text-white transition-colors">Prijzen</a>
+            <a href="#uitdaging" className="text-gray-400 hover:text-white transition-colors">Uitdaging</a>
+            <a href="#oplossing" className="text-gray-400 hover:text-white transition-colors">Oplossing</a>
+            <a href="#pricing" className="text-gray-400 hover:text-white transition-colors">Prijs</a>
             <a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a>
           </div>
           <a href="/diagnose" className="border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-5 py-2.5 rounded-lg transition-colors">
@@ -164,7 +165,7 @@ export default function V3Page() {
               </h1>
               
               <p className="text-xl text-green-400 font-semibold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Binnen 6-8 weken een systeem dat afspraken genereert.
+                Binnen 6-8 weken een systeem dat structureel kwalitatieve afspraken oplevert.
               </p>
               
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
@@ -177,13 +178,19 @@ export default function V3Page() {
                 </a>
               </div>
               
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
-                <span className="text-green-400">✓</span>
-                <span>3 minuten</span>
-                <span className="text-green-400">✓</span>
-                <span>Gratis rapport</span>
-                <span className="text-green-400">✓</span>
-                <span>Geen verplichtingen</span>
+              <div className="flex flex-col min-[400px]:flex-row min-[400px]:flex-nowrap items-start min-[400px]:items-center gap-2 min-[400px]:gap-4 text-sm text-gray-400">
+                <div className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span>
+                  <span>3 minuten</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span>
+                  <span>Gratis rapport</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span>
+                  <span>Geen verplichtingen</span>
+                </div>
               </div>
             </div>
             
@@ -202,7 +209,7 @@ export default function V3Page() {
       </section>
 
       {/* Problem Section */}
-      <section id="probleem" className="px-6 bg-neutral-900 pt-20 pb-20 -mt-[5vh] md:-mt-[10vh] lg:-mt-[5vh] relative z-10">
+      <section id="uitdaging" className="px-6 bg-neutral-900 pt-20 pb-20 -mt-[5vh] md:-mt-[10vh] lg:-mt-[5vh] relative z-10">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Herkenbaar?</h2>
           <p className="text-2xl text-green-400 font-semibold mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -253,7 +260,7 @@ export default function V3Page() {
       </section>
 
       {/* What You Get Section */}
-      <section className="py-20 px-6">
+      <section id="oplossing" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Wat je krijgt</h2>
           
@@ -304,18 +311,18 @@ export default function V3Page() {
       {/* About Founder Section */}
       <section className="py-20 px-6 bg-neutral-900">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-start gap-8">
-            <div className="w-56 h-56 rounded-full overflow-hidden flex-shrink-0">
+          <div className="flex flex-col md:flex-row items-start gap-8">
+            <div className="w-full md:w-56 h-56 rounded-full overflow-hidden flex-shrink-0 mx-auto md:mx-0">
               <img 
                 src="/tim-sam.jpeg" 
                 alt="Tim Sam" 
                 className="w-full h-full object-cover object-top scale-[1.5]"
               />
             </div>
-            <div>
+            <div className="w-full md:w-auto">
               <p className="text-sm text-neutral-400 mb-1">Over de founder</p>
               <p className="text-xl text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Tim Sam</p>
-              <p className="text-neutral-400 mb-4">10+ jaar ervaring in adtech en B2B sales. Nu help ik B2B bedrijven hun sales schaalbaar maken.</p>
+              <p className="text-neutral-400 mb-4">10+ jaar adtech en B2B sales. Van chaos naar structuur - pipelines gebouwd, teams laten presteren. Nu help ik B2B bedrijven hetzelfde doen.</p>
               <a href="https://linkedin.com/in/timsamsom" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-400 flex items-center gap-2">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 LinkedIn
@@ -362,13 +369,13 @@ export default function V3Page() {
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="text-gray-300">B2B bedrijf, €500k-20M omzet</span>
+                  <span className="text-gray-300">Groeiend B2B bedrijf (€500k-20M omzet)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="text-gray-300">Sales is te afhankelijk van een aantal mensen</span>
+                  <span className="text-gray-300">Sales draait om individuen, niet om een systeem</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -386,7 +393,7 @@ export default function V3Page() {
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="text-gray-300">Als je meer afspraken wilt met het zelfde aantal FTE</span>
+                  <span className="text-gray-300">Je wilt meer afspraken met hetzelfde aantal FTE</span>
                 </li>
               </ul>
             </div>
@@ -422,7 +429,7 @@ export default function V3Page() {
                   <svg className="w-6 h-6 text-red-400/60 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                   </svg>
-                  <span className="text-gray-500">Je bent voorzien en realiseert te veel omzet</span>
+                  <span className="text-gray-500">Je hebt al meer leads dan je aankan</span>
                 </li>
               </ul>
             </div>
@@ -448,7 +455,7 @@ export default function V3Page() {
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  Analyse van je situatie
+                  Situatie analyse
                 </li>
                 <li className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -460,7 +467,7 @@ export default function V3Page() {
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  30 min diagnose
+                  30 min. diagnose
                 </li>
               </ul>
               <a href="/diagnose" className="block w-full bg-green-500 hover:bg-green-600 text-neutral-950 font-semibold py-3 rounded-lg transition-colors text-center mt-auto">
@@ -516,7 +523,7 @@ export default function V3Page() {
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  We trainen jouw team
+                  Wij trainen jouw team
                 </li>
                 <li className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -563,7 +570,7 @@ export default function V3Page() {
           {/* Pilot Offer */}
           <div className="mt-12 bg-gradient-to-r from-green-500/10 to-green-400/5 border border-green-500/20 rounded-xl p-8 text-center">
             <p className="text-xl text-gray-200">
-              <span className="text-green-400 font-semibold">Eerste 3 pilots:</span> 25% korting op Build in ruil voor case study.
+              <span className="text-green-400 font-semibold">Eerste 3 pilots:</span> 25% korting in ruil voor case study.
             </p>
           </div>
         </div>
@@ -620,8 +627,9 @@ export default function V3Page() {
             </div>
             
             <div className="flex items-center gap-8 text-sm text-gray-400">
-              <a href="#probleem" className="hover:text-white transition-colors">Probleem</a>
-              <a href="#pricing" className="hover:text-white transition-colors">Prijzen</a>
+              <a href="#uitdaging" className="hover:text-white transition-colors">Uitdaging</a>
+              <a href="#oplossing" className="hover:text-white transition-colors">Oplossing</a>
+              <a href="#pricing" className="hover:text-white transition-colors">Prijs</a>
               <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
             </div>
             
