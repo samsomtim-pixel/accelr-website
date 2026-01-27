@@ -595,7 +595,7 @@ export default function V3Page() {
               },
               {
                 q: 'Moet ik zelf de tools afnemen?',
-                a: 'Ja. Alles staat op jouw naam — je bent 100% eigenaar van de data, strategieën en playbooks. Wij adviseren welke tools, jij betaalt ze direct. Meestal €200-500/maand.',
+                a: 'Ja. Alles staat op jouw naam en bent 100% eigenaar van de data, strategieën en playbooks. Wij adviseren welke tools, jij betaalt ze direct. Meestal €200-500/maand.',
               },
               {
                 q: 'Welke tools gebruiken jullie?',
