@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { User, Clock, HelpCircle, ArrowRight } from 'lucide-react'
 
 const results = {
   '0-2': {
@@ -219,33 +218,25 @@ export default function V3Page() {
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-neutral-700/50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/10 transition-colors">
-                  <User className="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors" />
-                </div>
+                <span className="text-green-500 text-xl flex-shrink-0">•</span>
                 <p className="text-gray-300 pt-1">Elke deal hangt op een aantal mensen</p>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-neutral-700/50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/10 transition-colors">
-                  <Clock className="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors" />
-                </div>
-                <p className="text-gray-300 pt-1">Acquisitie gebeurt als er tijd is — en die tijd komt zelden</p>
+                <span className="text-green-500 text-xl flex-shrink-0">•</span>
+                <p className="text-gray-300 pt-1">Acquisitie gebeurt als er tijd is en die tijd komt zelden</p>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-neutral-700/50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/10 transition-colors">
-                  <HelpCircle className="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors" />
-                </div>
+                <span className="text-green-500 text-xl flex-shrink-0">•</span>
                 <p className="text-gray-300 pt-1">Je weet dat je moet schalen, maar waar begin je?</p>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-neutral-700/50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/10 transition-colors">
-                  <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors" />
-                </div>
+                <span className="text-green-500 text-xl flex-shrink-0">•</span>
                 <p className="text-gray-300 pt-1">Hiring is duur, agencies leveren wisselende kwaliteit</p>
               </div>
             </div>
