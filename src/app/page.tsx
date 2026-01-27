@@ -589,19 +589,19 @@ export default function V3Page() {
               },
               {
                 q: 'Hoe snel zie ik resultaat?',
-                a: 'Diagnose: 1-2 weken. Build: 4-6 weken. Eerste meetings: week 6-8. Consistente pipeline: maand 3.',
+                a: 'Diagnose: 1-2 weken. Build: 4-6 weken. Eerste meetings: week 6-8. Consistente pipeline: vanaf maand 3.',
               },
               {
                 q: 'Moet ik zelf de tools afnemen?',
-                a: 'Ja. Alles staat op jouw naam — dat is het punt: 100% eigenaarschap. Wij adviseren welke tools, jij betaalt ze direct. Meestal €200-500/maand.',
+                a: 'Ja. Alles staat op jouw naam — je bent 100% eigenaar van de data, strategieën en playbooks. Wij adviseren welke tools, jij betaalt ze direct. Meestal €200-500/maand.',
               },
               {
                 q: 'Welke tools gebruiken jullie?',
-                a: 'Hangt af van je situatie. Meestal: HubSpot of Pipedrive (CRM), Apollo of Clay (data), Instantly of Smartlead (email), LinkedIn Sales Navigator. We kiezen op basis van jouw situatie, niet op basis van partnerships.',
+                a: 'Hangt af van de situatie. Meestal: HubSpot of Pipedrive (CRM), Apollo of Clay (data), Instantly of Smartlead (email), LinkedIn Sales Navigator. We kiezen op basis van jouw situatie, niet op basis van partnerships.',
               },
               {
                 q: 'Wat als de diagnose uitwijst dat ik iets anders nodig heb?',
-                a: 'Dan zeggen we dat. Soms is het antwoord: "Hire eerst een goede AE" of "Fix je product-market fit eerst." We verkopen geen Build als Diagnose zegt dat het zinloos is.',
+                a: 'Dan zeggen we dat. Soms is het antwoord: \'Neem eerst een goede sales manager aan\' of \'Kijk kritisch naar je product-market fit.\' We verkopen geen Build als Diagnose zegt dat het zinloos is.',
               },
               {
                 q: 'Waarom is de scan gratis?',
