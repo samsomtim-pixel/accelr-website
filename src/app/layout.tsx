@@ -6,6 +6,14 @@ import '@/styles/globals.css'
 export const metadata: Metadata = {
   title: 'Accelr - Sales infrastructuur voor B2B groei',
   description: 'In 6-8 weken een systeem dat structureel afspraken genereert. Start met de gratis Stack Scan.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: 'Accelr - Sales infrastructuur voor B2B groei',
     description: 'In 6-8 weken een systeem dat structureel afspraken genereert.',

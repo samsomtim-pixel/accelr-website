@@ -262,7 +262,10 @@ export default function V3Page() {
       {/* What You Get Section */}
       <section id="oplossing" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Wat je krijgt</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Wat je krijgt</h2>
+          <p className="text-lg text-gray-400 mb-12 leading-relaxed max-w-3xl">
+            Geen losse tools of vage adviezen. Je krijgt een compleet systeem dat werkt — build once, scale forever.
+          </p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 card-hover">
@@ -440,7 +443,10 @@ export default function V3Page() {
       {/* Pricing Section */}
       <section id="pricing" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Helder. Geen verrassingen.</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Helder. Geen verrassingen.</h2>
+          <p className="text-lg text-gray-400 mb-12 leading-relaxed max-w-3xl">
+            Build je infrastructuur één keer goed, en scale zonder grenzen.
+          </p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Scan + Diagnose */}
