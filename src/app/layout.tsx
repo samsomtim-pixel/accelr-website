@@ -5,7 +5,7 @@ import '@/styles/globals.css'
 
 export const metadata: Metadata = {
   title: 'Accelr - Sales infrastructuur voor B2B groei',
-  description: 'In 6-8 weken een systeem dat structureel afspraken genereert. Start met de gratis Stack Scan.',
+  description: 'In 6-8 weken structureel meer kwalitatieve afspraken.',
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Accelr - Sales infrastructuur voor B2B groei',
-    description: 'In 6-8 weken een systeem dat structureel afspraken genereert.',
+    description: 'In 6-8 weken structureel meer kwalitatieve afspraken.',
     url: 'https://accelr.nl',
     siteName: 'Accelr',
     locale: 'nl_NL',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Accelr - Sales infrastructuur voor B2B groei',
-    description: 'In 6-8 weken een systeem dat structureel afspraken genereert.',
+    description: 'In 6-8 weken structureel meer kwalitatieve afspraken.',
   },
 }
 
