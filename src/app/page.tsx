@@ -585,7 +585,7 @@ export default function V3Page() {
             {[
               {
                 q: 'Wat als ik nog geen sales team heb?',
-                a: 'Dan kies je voor Train of Run. Wij voeren uit tot je klaar bent om te hiren. Of je blijft bij ons — geen lock-in, maar ook geen druk.',
+                a: 'Dan kies je voor Train of Run. Wij voeren uit tot je klaar bent om het zelf over te nemen. Of je blijft bij ons — geen lock-in, maar ook geen druk.',
               },
               {
                 q: 'Hoe snel zie ik resultaat?',
@@ -593,11 +593,11 @@ export default function V3Page() {
               },
               {
                 q: 'Moet ik zelf de tools afnemen?',
-                a: 'Ja. Alles staat op jouw naam — dat is het punt: 100% eigenaarschap. Wij adviseren welke tools, jij betaalt ze direct. Typisch €200-500/maand.',
+                a: 'Ja. Alles staat op jouw naam — dat is het punt: 100% eigenaarschap. Wij adviseren welke tools, jij betaalt ze direct. Meestal €200-500/maand.',
               },
               {
                 q: 'Welke tools gebruiken jullie?',
-                a: 'Hangt af van je situatie. Meestal: HubSpot of Pipedrive (CRM), Apollo of Clay (data), Instantly of Smartlead (email), LinkedIn Sales Navigator. We kiezen op basis van je needs, niet op basis van partnerships.',
+                a: 'Hangt af van je situatie. Meestal: HubSpot of Pipedrive (CRM), Apollo of Clay (data), Instantly of Smartlead (email), LinkedIn Sales Navigator. We kiezen op basis van jouw situatie, niet op basis van partnerships.',
               },
               {
                 q: 'Wat als de diagnose uitwijst dat ik iets anders nodig heb?',
