@@ -215,7 +215,7 @@ export default function V3Page() {
                 <div className="w-10 h-10 rounded-lg bg-neutral-700/50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/10 transition-colors">
                   <User className="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors" />
                 </div>
-                <p className="text-gray-300 pt-1">Elke deal hangt op 1-2 mensen</p>
+                <p className="text-gray-300 pt-1">Elke deal hangt op een aantal mensen</p>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
@@ -223,7 +223,7 @@ export default function V3Page() {
                 <div className="w-10 h-10 rounded-lg bg-neutral-700/50 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/10 transition-colors">
                   <Clock className="w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors" />
                 </div>
-                <p className="text-gray-300 pt-1">Sales gebeurt "als er tijd is" — en die tijd komt nooit</p>
+                <p className="text-gray-300 pt-1">Acquisitie gebeurt als er tijd is — en die tijd komt zelden</p>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
@@ -264,8 +264,8 @@ export default function V3Page() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Strategie eerst</h3>
-              <p className="text-gray-400 text-sm">We bepalen wie je ideale klant is en welke boodschap werkt — vóórdat we iets bouwen.</p>
+              <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Strategie</h3>
+              <p className="text-gray-400 text-sm">Wij bepalen wie je ideale klant is en welke boodschap werkt — vóórdat we iets bouwen.</p>
             </div>
             
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 card-hover">
@@ -275,7 +275,7 @@ export default function V3Page() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Eén werkend systeem</h3>
-              <p className="text-gray-400 text-sm">CRM, email, LinkedIn, data — slim gekoppeld tot één machine die jij of je team kan runnen.</p>
+              <p className="text-gray-400 text-sm">CRM, email, LinkedIn, data, calling — slim gekoppeld tot één machine die jij of je team kan runnen.</p>
             </div>
             
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 card-hover">
@@ -333,11 +333,11 @@ export default function V3Page() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
               <div className="text-sm text-green-500 font-semibold mb-2">vs. zelf doen</div>
-              <p className="text-gray-300">6 maanden trial-and-error of 6 weken met bewezen frameworks.</p>
+              <p className="text-gray-300">Maanden trial-and-error of in weken met bewezen frameworks en strategieën.</p>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
               <div className="text-sm text-green-500 font-semibold mb-2">vs. agencies</div>
-              <p className="text-gray-300">Zij verhuren leads. Wij bouwen het systeem dat jij bezit.</p>
+              <p className="text-gray-300">Zij verhuren leads. Wij bouwen het systeem en de playbooks die jij bezit.</p>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
               <div className="text-sm text-green-500 font-semibold mb-2">vs. consultants</div>
@@ -345,7 +345,7 @@ export default function V3Page() {
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6">
               <div className="text-sm text-green-500 font-semibold mb-2">vs. tools</div>
-              <p className="text-gray-300">Tools zijn instrumenten. Zonder strategie zijn het dure speeltjes.</p>
+              <p className="text-gray-300">Tools zijn instrumenten. Zonder structuur zijn het dure speeltjes.</p>
             </div>
           </div>
         </div>
@@ -368,7 +368,7 @@ export default function V3Page() {
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="text-gray-300">Sales is te afhankelijk van 1-2 mensen</span>
+                  <span className="text-gray-300">Sales is te afhankelijk van een aantal mensen</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -380,13 +380,13 @@ export default function V3Page() {
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="text-gray-300">Je wilt schalen zonder 6 maanden te experimenteren</span>
+                  <span className="text-gray-300">Je wilt schalen zonder maanden te experimenteren</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <span className="text-gray-300">Je wilt eigenaarschap, geen afhankelijkheid</span>
+                  <span className="text-gray-300">Als je meer afspraken wilt met het zelfde aantal FTE</span>
                 </li>
               </ul>
             </div>
@@ -416,7 +416,13 @@ export default function V3Page() {
                   <svg className="w-6 h-6 text-red-400/60 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                   </svg>
-                  <span className="text-gray-500">Je omzet is &lt;€500k (founder-led is dan prima)</span>
+                  <span className="text-gray-500">Je wilt geen geld investeren in een betere sales structuur</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-red-400/60 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                  <span className="text-gray-500">Je bent voorzien en realiseert te veel omzet</span>
                 </li>
               </ul>
             </div>
@@ -436,7 +442,7 @@ export default function V3Page() {
               <h3 className="text-xl font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Scan + Diagnose</h3>
               <p className="text-sm text-gray-400 mb-4">Weet waar je staat</p>
               <div className="text-3xl font-bold text-[#10b981] mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Gratis</div>
-              <div className="text-sm text-gray-500 mb-6">3 min + 24 uur</div>
+              <div className="text-sm text-gray-500 mb-6">2 min + 24 uur</div>
               <ul className="space-y-2 text-sm text-gray-300 mb-6 flex-grow">
                 <li className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -497,8 +503,8 @@ export default function V3Page() {
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 transition-all duration-200 hover:border-[#10b981] group flex flex-col">
               <h3 className="text-xl font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Train of Run</h3>
               <p className="text-sm text-gray-400 mb-4">Na de Build</p>
-              <div className="text-3xl font-bold text-[#10b981] mb-1" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Vanaf €3k/mnd</div>
-              <div className="text-sm text-gray-500 mb-6">of €3-5k eenmalig</div>
+              <div className="text-3xl font-bold text-[#10b981] mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Vanaf 3k / mnd</div>
+              <div className="mb-4"></div>
               <ul className="space-y-2 text-sm text-gray-300 mb-6 flex-grow">
                 <li className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -533,19 +539,19 @@ export default function V3Page() {
               <p className="text-sm text-gray-400 mb-4">Coming soon</p>
               <ul className="space-y-2 text-sm text-gray-300 mb-6 flex-grow">
                 <li className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-green-400 flex-shrink-0 opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                   Extra kanalen
                 </li>
                 <li className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-green-400 flex-shrink-0 opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                   Hiring support
                 </li>
                 <li className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-green-400 flex-shrink-0 opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                   RevOps
