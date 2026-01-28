@@ -212,7 +212,7 @@ export default function V3Page() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Herkenbaar?</h2>
           <p className="text-2xl text-green-400 font-semibold mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Sales groeit niet mee met je bedrijf.
+            Acquisitie gebeurt ad hoc — en dat remt je groei.
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 mb-12">
