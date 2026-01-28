@@ -255,7 +255,8 @@ export default function V3Page() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Wat je krijgt</h2>
           <p className="text-lg text-gray-400 mb-12 leading-relaxed max-w-3xl">
-            Geen losse tools of vage adviezen. Je krijgt een compleet systeem dat structureel afspraken genereert. Build once, scale forever.
+            Geen losse tools of vage adviezen. Je krijgt een compleet systeem dat structureel afspraken genereert.<br />
+            <span className="text-green-500">Build once, scale forever.</span>
           </p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
