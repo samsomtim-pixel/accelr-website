@@ -164,11 +164,11 @@ export default function V3Page() {
               </h1>
               
               <p className="text-xl text-green-400 font-semibold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Binnen 6-8 weken een systeem dat structureel kwalitatieve afspraken oplevert.
+                Wij bouwen sales systemen voor B2B bedrijven die willen groeien in omzet
               </p>
               
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                Doe de scan → ontdek waar jij omzet laat liggen.
+                Binnen 6-8 weken een werkend outbound systeem. Doe de scan en ontdek waar jij kansen laat liggen.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
