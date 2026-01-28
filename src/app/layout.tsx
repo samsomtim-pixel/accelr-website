@@ -69,6 +69,12 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* HubSpot Tracking */}
+        <Script
+          id="hs-script-loader"
+          strategy="afterInteractive"
+          src="//js-eu1.hs-scripts.com/147636880.js"
+        />
         {children}
         <CookieBanner />
       </body>
