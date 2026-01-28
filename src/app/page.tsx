@@ -244,7 +244,7 @@ export default function V3Page() {
           
           <div className="bg-gradient-to-r from-green-500/10 to-green-400/5 border border-green-500/20 rounded-xl p-8">
             <p className="text-xl text-gray-200">
-              <span className="text-green-400 font-semibold">Het echte probleem:</span> De wil is er, de strategie ontbreekt.
+              <span className="text-green-400 font-semibold">Het echte probleem:</span> de wil is er, maar de strategie en het draagvlak ontbreken.
             </p>
           </div>
         </div>
