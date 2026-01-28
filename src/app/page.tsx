@@ -267,7 +267,7 @@ export default function V3Page() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Strategie</h3>
-              <p className="text-gray-400 text-sm">Gerichte strategie: de juiste mensen, de juiste boodschap, het juiste kanaal.</p>
+              <p className="text-gray-400 text-sm">Strategie die werkt: doelgroep, messaging, kanalen — uitgedacht en bewezen.</p>
             </div>
             
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 card-hover">
