@@ -164,11 +164,11 @@ export default function V3Page() {
               </h1>
               
               <p className="text-xl text-green-400 font-semibold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                Wij bouwen sales systemen voor B2B bedrijven die willen groeien in omzet
+                Wij bouwen sales systemen voor B2B bedrijven die willen groeien.
               </p>
               
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                Binnen 6-8 weken een werkend outbound systeem. Doe de scan en ontdek waar jij kansen laat liggen.
+                Binnen 6-8 weken een werkend outbound systeem. Doe de scan en ontdek hoe je structureel meer afspraken maakt.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
@@ -255,7 +255,7 @@ export default function V3Page() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Wat je krijgt</h2>
           <p className="text-lg text-gray-400 mb-12 leading-relaxed max-w-3xl">
-            <span className="whitespace-nowrap">Geen losse tools of vage adviezen. Je krijgt een compleet systeem dat structureel afspraken genereert.</span><br />
+            <span className="whitespace-nowrap">Geen losse tools of vage adviezen. Je krijgt één systeem: strategie en tools slim samengevoegd tot een machine die structureel afspraken genereert.</span><br />
             <span className="text-green-500">Build once, scale forever.</span>
           </p>
           
@@ -277,7 +277,7 @@ export default function V3Page() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Eén werkend systeem</h3>
-              <p className="text-gray-400 text-sm">CRM, email, LinkedIn, data, calling — slim gekoppeld tot één machine die jij of je team kan runnen.</p>
+              <p className="text-gray-400 text-sm">CRM, email, LinkedIn, data, calling — slim gekoppeld tot één machine die continu doorwerkt.</p>
             </div>
             
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 card-hover">
