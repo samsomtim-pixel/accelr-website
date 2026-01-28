@@ -267,7 +267,7 @@ export default function V3Page() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Strategie</h3>
-              <p className="text-gray-400 text-sm">Wij bepalen wie je ideale klant is en welke boodschap werkt — vóórdat we iets bouwen.</p>
+              <p className="text-gray-400 text-sm">Gerichte strategie: de juiste mensen, de juiste boodschap, het juiste kanaal.</p>
             </div>
             
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 card-hover">
@@ -277,7 +277,7 @@ export default function V3Page() {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Eén werkend systeem</h3>
-              <p className="text-gray-400 text-sm">CRM, email, LinkedIn, data, calling — slim gekoppeld tot één machine die continu doorwerkt.</p>
+              <p className="text-gray-400 text-sm">Voor elke situatie de juiste mix: email, LinkedIn, data, calling — gebundeld in playbooks op maat.</p>
             </div>
             
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 card-hover">
