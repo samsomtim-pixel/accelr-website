@@ -219,32 +219,32 @@ export default function V3Page() {
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
               <div className="flex items-start gap-4">
                 <span className="text-green-500 text-xl flex-shrink-0">•</span>
-                <p className="text-gray-300 pt-1">Elke deal hangt op een aantal mensen</p>
+                <p className="text-gray-300 pt-1">Je weet dat je moet bellen en mailen, maar er is geen tijd</p>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
               <div className="flex items-start gap-4">
                 <span className="text-green-500 text-xl flex-shrink-0">•</span>
-                <p className="text-gray-300 pt-1">Acquisitie gebeurt als er tijd is en die tijd komt zelden</p>
+                <p className="text-gray-300 pt-1">Koude acquisitie voelt als schieten met hagel — geen strategie</p>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
               <div className="flex items-start gap-4">
                 <span className="text-green-500 text-xl flex-shrink-0">•</span>
-                <p className="text-gray-300 pt-1">Je weet dat je moet schalen, maar waar begin je?</p>
+                <p className="text-gray-300 pt-1">LinkedIn en email kosten uren, maar leveren weinig op</p>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-6 relative transition-all duration-200 hover:scale-[1.02] hover:border-[#10b981] group">
               <div className="flex items-start gap-4">
                 <span className="text-green-500 text-xl flex-shrink-0">•</span>
-                <p className="text-gray-300 pt-1">Hiring is duur, agencies leveren wisselende kwaliteit</p>
+                <p className="text-gray-300 pt-1">Elke deal hangt op de founder of een paar key mensen</p>
               </div>
             </div>
           </div>
           
           <div className="bg-gradient-to-r from-green-500/10 to-green-400/5 border border-green-500/20 rounded-xl p-8">
             <p className="text-xl text-gray-200">
-              <span className="text-green-400 font-semibold">Het echte probleem:</span> Je mist geen tools. Je mist een salesarchitectuur die schaalt.
+              <span className="text-green-400 font-semibold">Het echte probleem:</span> De wil is er, de strategie ontbreekt.
             </p>
           </div>
         </div>
