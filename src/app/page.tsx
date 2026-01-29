@@ -254,8 +254,8 @@ export default function V3Page() {
       <section id="oplossing" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Wat je krijgt</h2>
-          <p className="text-lg text-gray-400 mb-12 leading-relaxed max-w-3xl">
-            <span className="whitespace-nowrap">Geen losse tools of vage adviezen. Je krijgt één systeem: strategie en tools slim samengevoegd tot een machine die structureel afspraken genereert.</span><br />
+          <p className="text-lg text-gray-400 mb-12 leading-relaxed max-w-3xl break-words">
+            <span className="whitespace-normal md:whitespace-nowrap">Geen losse tools of vage adviezen. Je krijgt één systeem: strategie en tools slim samengevoegd tot een machine die structureel afspraken genereert.</span><br />
             <span className="text-green-500">Build once, scale forever.</span>
           </p>
           
