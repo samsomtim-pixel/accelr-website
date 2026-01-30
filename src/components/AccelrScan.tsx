@@ -80,7 +80,7 @@ const questions = [
       { value: 'SaaS', label: 'SaaS' },
       { value: 'IT', label: 'IT' },
       { value: 'Zakelijke Dienstverlening', label: 'Zakelijke Dienstverlening' },
-      { value: 'Marketing', label: 'Marketing' },
+      { value: 'Marketing & Media', label: 'Marketing & Media' },
       { value: 'Bouw', label: 'Bouw' },
       { value: 'Productie', label: 'Productie' },
       { value: 'Logistiek', label: 'Logistiek' },
@@ -187,6 +187,8 @@ export function AccelrScan() {
   const [potential, setPotential] = useState(0)
   const [gaps, setGaps] = useState<string[]>([])
   const [gapTexts, setGapTexts] = useState<string[]>([])
+  const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const currentQuestion = step > 0 ? questions[step - 1] : null
   const totalSteps = questions.length + 1 // +1 for intro
@@ -406,41 +408,56 @@ export function AccelrScan() {
     setGapTexts(identifiedGaps.map(g => g.text))
     setShowScore(true)
 
-    // Start API call in background
+    // Start webhook call
     setError(null)
+    setSubmitError(null)
+    setLoading(true)
+    setSubmitted(false)
 
     try {
-      // Convert array fields to string for API compatibility
-      const submitData = {
-        ...formData,
-        currentTools: Array.isArray(formData.currentTools) 
-          ? formData.currentTools.join(', ') 
-          : formData.currentTools || '',
-        targetFunction: Array.isArray(formData.targetFunction) 
-          ? formData.targetFunction.join(', ') 
-          : formData.targetFunction || ''
+      // Map form data to webhook format - only include fields that exist
+      const webhookData: Record<string, any> = {}
+      
+      if (formData.company) webhookData.company_name = formData.company
+      if (formData.name) webhookData.name = formData.name
+      if (formData.email) webhookData.email = formData.email
+      if (formData.websiteUrl) webhookData.website = formData.websiteUrl
+      if (formData.targetSector) webhookData.sector = formData.targetSector
+      if (formData.dealSize) webhookData.deal_size = formData.dealSize
+      if (formData.growthBlocker) webhookData.biggest_blocker = formData.growthBlocker
+      if (formData.meetingsPerMonth) webhookData.current_meetings = formData.meetingsPerMonth
+      if (formData.targetFunction) {
+        webhookData.target_function = Array.isArray(formData.targetFunction) 
+          ? formData.targetFunction.join(', ')
+          : formData.targetFunction
       }
+      if (formData.teamCapacity) webhookData.growth_goal = formData.teamCapacity
+      if (formData.priority) webhookData.why_now = formData.priority
+      if (formData.outboundExperience) webhookData.outbound_experience = formData.outboundExperience
 
-      const response = await fetch('/api/diagnose', {
+      const response = await fetch('https://accelr.app.n8n.cloud/webhook/accelr-scan', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(submitData),
+        body: JSON.stringify(webhookData),
       })
 
-      const data = await response.json()
-
-      if (!response.ok || !data.success) {
-        // Don't show error on score screen, just log it
-        console.error('Rapport generatie mislukt:', data.error)
-      } else {
-        // Store report but don't show it yet
-        setReport(data.report)
+      if (!response.ok) {
+        const errorText = await response.text()
+        throw new Error(`Webhook request failed: ${response.status} - ${errorText}`)
       }
+
+      // Success - mark as submitted
+      setSubmitted(true)
+      setLoading(false)
+      setSubmitError(null)
     } catch (err) {
-      // Don't show error on score screen, just log it
-      console.error('Rapport generatie mislukt:', err)
+      // Show error to user
+      const errorMessage = err instanceof Error ? err.message : 'Er is een fout opgetreden bij het verzenden van je scan.'
+      setSubmitError(errorMessage)
+      setLoading(false)
+      console.error('Webhook submission failed:', err)
     }
   }
 
@@ -537,6 +554,32 @@ export function AccelrScan() {
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* Loading/Success/Error message */}
+              {loading && !submitted && !submitError && (
+                <div className="mb-6 p-4 bg-blue-500/20 border border-blue-500/50 rounded-lg">
+                  <p className="text-blue-400 text-sm text-center font-medium">
+                    Je scan wordt verzonden...
+                  </p>
+                </div>
+              )}
+              {submitError && (
+                <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg">
+                  <p className="text-red-400 text-sm text-center font-medium">
+                    ⚠️ {submitError}
+                  </p>
+                  <p className="text-red-300 text-xs text-center mt-2">
+                    Je score is wel berekend. Probeer het later opnieuw of neem contact met ons op.
+                  </p>
+                </div>
+              )}
+              {submitted && !submitError && (
+                <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
+                  <p className="text-green-400 text-sm text-center font-medium">
+                    ✓ Je scan is succesvol verzonden!
+                  </p>
                 </div>
               )}
 
