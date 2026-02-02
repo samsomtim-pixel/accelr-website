@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import CookieBanner from '@/components/CookieBanner'
 import '@/styles/globals.css'
 
@@ -77,6 +78,7 @@ export default function RootLayout({
         />
         {children}
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   )
