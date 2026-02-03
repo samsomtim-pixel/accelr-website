@@ -434,6 +434,27 @@ export function AccelrScan() {
       if (formData.teamCapacity) webhookData.growth_goal = formData.teamCapacity
       if (formData.priority) webhookData.why_now = formData.priority
       if (formData.outboundExperience) webhookData.outbound_experience = formData.outboundExperience
+      
+      // Handle current_tools (join array to string)
+      if (formData.currentTools) {
+        const toolsArray = Array.isArray(formData.currentTools) 
+          ? formData.currentTools 
+          : [formData.currentTools]
+        webhookData.current_tools = toolsArray.join(', ')
+      }
+      
+      // Handle current_crm (extract from currentTools if CRM is selected, otherwise empty string)
+      if (formData.currentTools) {
+        const toolsArray = Array.isArray(formData.currentTools) 
+          ? formData.currentTools 
+          : [formData.currentTools]
+        const hasCRM = toolsArray.some(tool => 
+          typeof tool === 'string' && tool.toLowerCase().includes('crm')
+        )
+        webhookData.current_crm = hasCRM ? 'Ja' : ''
+      } else {
+        webhookData.current_crm = ''
+      }
 
       const response = await fetch('https://accelr.app.n8n.cloud/webhook/accelr-scan', {
         method: 'POST',
