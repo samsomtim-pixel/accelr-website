@@ -37,6 +37,26 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <body>
+        {/* Theme initialization - must run before page render */}
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const stored = localStorage.getItem('theme');
+                  const theme = stored || 'light';
+                  if (document.documentElement) {
+                    document.documentElement.setAttribute('data-theme', theme);
+                  }
+                } catch (e) {
+                  console.error('Theme init error:', e);
+                }
+              })();
+            `,
+          }}
+        />
         {/* Google Analytics with Consent Mode */}
         <Script
           id="google-analytics-consent"

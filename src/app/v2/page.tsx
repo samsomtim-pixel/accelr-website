@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { ArrowRight, Check, Mail, Linkedin, ChevronDown, ArrowUpRight } from 'lucide-react'
+import ThemeToggle from '@/components/ThemeToggle'
 
 // Animated Counter Component
 function AnimatedCounter({ end, suffix = '' }: { end: number; suffix?: string }) {
@@ -41,19 +42,24 @@ function Navigation() {
   }, [])
   
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/10' : ''}`}>
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md border-b' : ''}`}
+      data-scrolled={scrolled}
+      style={scrolled ? {} : {}}
+    >
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <a href="/" className="flex items-center">
-          <span className="text-2xl font-bold text-white">accelr</span>
+          <span className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>accelr</span>
           <span className="w-1.5 h-1.5 bg-[#0052CC] rounded-full ml-0.5 mb-3"></span>
         </a>
         
         <div className="hidden md:flex items-center gap-8">
-          <a href="#services" className="text-gray-400 hover:text-white transition text-sm">Diensten</a>
-          <a href="#process" className="text-gray-400 hover:text-white transition text-sm">Werkwijze</a>
-          <a href="#pricing" className="text-gray-400 hover:text-white transition text-sm">Prijzen</a>
-          <a href="#faq" className="text-gray-400 hover:text-white transition text-sm">FAQ</a>
-          <a href="#contact" className="bg-[#0052CC] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#0052CC]/90 transition">
+          <a href="#services" className="nav-link text-sm">Diensten</a>
+          <a href="#process" className="nav-link text-sm">Werkwijze</a>
+          <a href="#pricing" className="nav-link text-sm">Prijzen</a>
+          <a href="#faq" className="nav-link text-sm">FAQ</a>
+          <ThemeToggle />
+          <a href="#contact" className="px-8 py-4 rounded-full font-semibold transition-colors text-white hover:opacity-90" style={{ backgroundColor: 'var(--accent-blue)' }}>
             Plan je diagnose
           </a>
         </div>
