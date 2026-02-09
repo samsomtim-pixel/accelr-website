@@ -1,0 +1,189 @@
+{
+  "nav": {
+    "services": "Diensten",
+    "score": "Score",
+    "cases": "Cases",
+    "resources": "Kennisbank",
+    "about": "Over ons",
+    "cta": "Start gratis Score"
+  },
+  "hero": {
+    "subtitle": "AI-powered sales infrastructuur voor B2B",
+    "title": "Wij bouwen de sales machine. Powered by AI. Eigendom van jou.",
+    "description": "95% van AI-implementaties faalt. Niet omdat de technologie slecht is — maar omdat niemand het werkend maakt. Wij bouwen AI-powered sales systemen die 24/7 draaien, voor minder dan de kosten van één junior SDR.",
+    "cta_primary": "Check je Sales Readiness →",
+    "cta_secondary": "Bekijk diensten →",
+    "trust": "✓ 3 minuten ✓ Gratis rapport ✓ Geen verplichtingen",
+    "social_proof": "Gemiddeld 3x meer gekwalificeerde afspraken binnen 90 dagen"
+  },
+  "problems": {
+    "title": "Je hebt het allemaal al geprobeerd",
+    "cards": {
+      "tools": "Tools gekocht die niemand gebruikt",
+      "founder": "De founder blijft de beste verkoper",
+      "spam": "Outreach die in spam belandt",
+      "ai": "AI geprobeerd, nul resultaat"
+    },
+    "conclusion": "Het probleem is niet de technologie. Het probleem is dat niemand het werkend heeft gemaakt in jouw bedrijf. Dat is precies wat wij doen — met AI als versneller, niet als vervanging."
+  },
+  "services": {
+    "title": "Drie paden naar een werkend systeem",
+    "build": {
+      "title": "BUILD",
+      "subtitle": "Van nul naar werkend systeem",
+      "description": "In 8-12 weken bouwen we je complete AI-powered sales machine: ICP definitie, AI SDR deployment, CRM integratie, outreach-automatie, playbooks en AVG-compliance. Daarna is het van jou.",
+      "price": "€5.000 – €15.000",
+      "cta": "Meer over BUILD →"
+    },
+    "run": {
+      "title": "RUN",
+      "subtitle": "Jouw AI sales machine draaiend houden",
+      "description": "AI SDR's vereisen 15-20 uur menselijk toezicht per week. Die uren heb je niet. Wij monitoren, tunen en optimaliseren je systeem continu — zodat jij je kunt focussen op deals sluiten.",
+      "price": "€1.500 – €3.500 /maand",
+      "cta": "Meer over RUN →"
+    },
+    "grow": {
+      "title": "GROW",
+      "subtitle": "Schalen met data en strategie",
+      "description": "Voor bedrijven die de basis hebben staan en willen versnellen. Strategische salesarchitectuur, geavanceerde analytics, closing coaching en kwartaal-reviews. Wij worden je fractional VP Sales.",
+      "price": "€3.500 – €7.000 /maand",
+      "cta": "Meer over GROW →"
+    }
+  },
+  "expertise": {
+    "title": "Expertise over de hele sales funnel",
+    "subtitle": "Elke BUILD, RUN of GROW dienst combineert deze vier expertisegebieden op maat van jouw situatie.",
+    "target": "TARGET → ICP, lead intelligence, koopsignalen",
+    "outreach": "OUTREACH → AI SDR, email automatie, LinkedIn, multi-channel",
+    "convert": "CONVERT → Playbooks, CRM, deal flow",
+    "scale": "SCALE → Dashboards, analytics, benchmarks"
+  },
+  "howItWorks": {
+    "title": "Hoe het werkt",
+    "step1": {
+      "number": "/01",
+      "title": "SCORE",
+      "description": "Diagnose van je sales readiness. Waar sta je? Waar lekt de pipeline? AI-powered rapport binnen 24 uur."
+    },
+    "step2": {
+      "number": "/02",
+      "title": "PLAN",
+      "description": "Strategie en roadmap op maat. ICP, tech stack, AI-tools selectie, en concreet implementatieplan."
+    },
+    "step3": {
+      "number": "/03",
+      "title": "BUILD",
+      "description": "Implementatie van je AI-powered sales machine. Systemen configureren, AI SDR deployen, integraties leggen, testen."
+    },
+    "step4": {
+      "number": "/04",
+      "title": "RUN",
+      "description": "Go-live, team training, continue optimalisatie. Het systeem draait. Jij bent eigenaar."
+    }
+  },
+  "socialProof": {
+    "title": "Waarom externe implementatie werkt",
+    "stats": "95% van AI-implementaties faalt (MIT). Externe implementatiepartners slagen 3x vaker (S&P Global). Slechts 11% van Europese MKB's gebruikt AI zinvol (Eurostat).",
+    "conclusion": "Wij bestaan omdat de deployment gap bestaat."
+  },
+  "comparison": {
+    "title": "Waarom Accelr anders is",
+    "aspects": {
+      "approach": "Aanpak",
+      "after": "Na het project",
+      "ai": "AI-expertise",
+      "costs": "Kosten",
+      "ownership": "Eigendom",
+      "result": "Resultaat"
+    },
+    "accelr": {
+      "approach": "AI-powered systeem bouwen + overdragen",
+      "after": "Systeem blijft draaien — het is van jou",
+      "ai": "Native in elk onderdeel, continu geoptimaliseerd",
+      "costs": "€5K-€15K eenmalig + optioneel retainer",
+      "ownership": "Jouw CRM, jouw data, jouw processen",
+      "result": "Werkend systeem in 8-12 weken"
+    },
+    "typical": {
+      "approach": "Campagnes draaien zolang je betaalt",
+      "after": "Stopt als contract stopt",
+      "ai": "Basis tooling, handmatig",
+      "costs": "€3K-€8K/maand doorlopend",
+      "ownership": "In hun platform",
+      "result": "Afhankelijk van scope"
+    },
+    "diy": {
+      "approach": "Zelf uitzoeken, 95% faalt",
+      "after": "Stopt als jij stopt",
+      "ai": "Trial-and-error",
+      "costs": "€500-€2K/maand + je eigen tijd",
+      "ownership": "Van jou, maar ongeoptimaliseerd",
+      "result": "6-12 maanden experimenteren"
+    }
+  },
+  "forWho": {
+    "title": "Voor wie",
+    "forYou": {
+      "title": "Dit is voor jou als:",
+      "items": [
+        "Je bent een B2B bedrijf met €500K - €20M omzet",
+        "Je hebt een bewezen product maar sales groeit niet zoals je wilt",
+        "Sales draait om individuen, niet om een systeem",
+        "Je wilt schalen zonder maanden te experimenteren",
+        "Je wilt eigenaar zijn van je sales infrastructuur",
+        "Je hebt moeite om goede sales mensen te vinden",
+        "Je wilt meer afspraken met hetzelfde aantal FTE",
+        "Je wilt AI inzetten voor sales maar weet niet waar te beginnen",
+        "Je hebt AI tools geprobeerd maar geen resultaat gezien"
+      ]
+    },
+    "notForYou": {
+      "title": "Dit is niet voor jou als:",
+      "items": [
+        "Je zoekt een magic bullet (die bestaat niet)",
+        "Je wilt alleen \"leads kopen\" zonder systeem",
+        "Je zoekt iemand die de verkoop voor je doet",
+        "Je hebt geen tijd om 2 uur per week te investeren",
+        "Je hebt nog geen product-market fit",
+        "Je verwacht dat AI alles oplost zonder menselijke betrokkenheid"
+      ]
+    }
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "items": {
+      "noTeam": {
+        "question": "Wat als ik nog geen sales team heb?",
+        "answer": "Geen probleem. We bouwen het systeem zo dat jij als founder het kunt runnen, en dat het klaar is om op te schalen wanneer je je eerste salesperson aanneemt."
+      },
+      "timeline": {
+        "question": "Hoe snel zie ik resultaat?",
+        "answer": "De meeste klanten zien binnen 4-6 weken de eerste meetings binnenkomen. Het volledige systeem draait na 8-12 weken."
+      },
+      "tools": {
+        "question": "Welke AI tools gebruiken jullie?",
+        "answer": "We werken met een geoptimaliseerde stack: Clay voor data-verrijking, AI SDR tools voor outbound, Instantly voor email-infrastructuur, en n8n voor custom automaties. De exacte combinatie hangt af van jouw situatie — dat bepalen we in de Score."
+      },
+      "difference": {
+        "question": "Wat is het verschil tussen BUILD, RUN en GROW?",
+        "answer": "BUILD is het opzet-project: in 8-12 weken staat je systeem. RUN is doorlopend beheer — wij houden je AI sales machine draaiend. GROW is voor bedrijven die willen versnellen met strategische sales-architectuur en closing coaching."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Klaar om te ontdekken wat AI voor jouw sales kan doen?",
+    "description": "In 3 minuten weet je waar je grootste kansen liggen. Gratis, vrijblijvend, en je krijgt binnen 24 uur een AI-powered rapport.",
+    "cta_primary": "Check je Sales Readiness →",
+    "cta_secondary": "Bekijk diensten →"
+  },
+  "footer": {
+    "tagline": "AI-powered sales infrastructuur voor B2B groei.",
+    "services": "Diensten",
+    "problems": "Problemen",
+    "contact": "Contact",
+    "email": "tim@accelr.nl",
+    "location": "Haarlem, NL",
+    "copyright": "© 2026 Accelr. Alle rechten voorbehouden."
+  }
+}
+

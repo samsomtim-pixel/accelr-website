@@ -1,0 +1,189 @@
+{
+  "nav": {
+    "services": "Services",
+    "score": "Score",
+    "cases": "Cases",
+    "resources": "Resources",
+    "about": "About",
+    "cta": "Start free Score"
+  },
+  "hero": {
+    "subtitle": "AI-powered sales infrastructure for B2B",
+    "title": "We build the sales machine. Powered by AI. Owned by you.",
+    "description": "95% of AI implementations fail. Not because the technology is bad — but because nobody makes it work. We build AI-powered sales systems that run 24/7, for less than the cost of one junior SDR.",
+    "cta_primary": "Check your Sales Readiness →",
+    "cta_secondary": "View services →",
+    "trust": "✓ 3 minutes ✓ Free report ✓ No obligations",
+    "social_proof": "Average 3x more qualified meetings within 90 days"
+  },
+  "problems": {
+    "title": "You've tried everything",
+    "cards": {
+      "tools": "Tools bought that nobody uses",
+      "founder": "The founder remains the best seller",
+      "spam": "Outreach that ends up in spam",
+      "ai": "Tried AI, zero results"
+    },
+    "conclusion": "The problem isn't the technology. The problem is that nobody made it work in your company. That's exactly what we do — with AI as an accelerator, not a replacement."
+  },
+  "services": {
+    "title": "Three paths to a working system",
+    "build": {
+      "title": "BUILD",
+      "subtitle": "From zero to working system",
+      "description": "In 8-12 weeks we build your complete AI-powered sales machine: ICP definition, AI SDR deployment, CRM integration, outreach automation, playbooks and GDPR compliance. Then it's yours.",
+      "price": "€5,000 – €15,000",
+      "cta": "More about BUILD →"
+    },
+    "run": {
+      "title": "RUN",
+      "subtitle": "Keeping your AI sales machine running",
+      "description": "AI SDRs require 15-20 hours of human oversight per week. You don't have those hours. We monitor, tune and optimize your system continuously — so you can focus on closing deals.",
+      "price": "€1,500 – €3,500 /month",
+      "cta": "More about RUN →"
+    },
+    "grow": {
+      "title": "GROW",
+      "subtitle": "Scaling with data and strategy",
+      "description": "For companies that have the basics in place and want to accelerate. Strategic sales architecture, advanced analytics, closing coaching and quarterly reviews. We become your fractional VP Sales.",
+      "price": "€3,500 – €7,000 /month",
+      "cta": "More about GROW →"
+    }
+  },
+  "expertise": {
+    "title": "Expertise across the entire sales funnel",
+    "subtitle": "Every BUILD, RUN or GROW service combines these four areas of expertise tailored to your situation.",
+    "target": "TARGET → ICP, lead intelligence, buying signals",
+    "outreach": "OUTREACH → AI SDR, email automation, LinkedIn, multi-channel",
+    "convert": "CONVERT → Playbooks, CRM, deal flow",
+    "scale": "SCALE → Dashboards, analytics, benchmarks"
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "step1": {
+      "number": "/01",
+      "title": "SCORE",
+      "description": "Diagnosis of your sales readiness. Where are you? Where is the pipeline leaking? AI-powered report within 24 hours."
+    },
+    "step2": {
+      "number": "/02",
+      "title": "PLAN",
+      "description": "Custom strategy and roadmap. ICP, tech stack, AI tools selection, and concrete implementation plan."
+    },
+    "step3": {
+      "number": "/03",
+      "title": "BUILD",
+      "description": "Implementation of your AI-powered sales machine. Configuring systems, deploying AI SDR, setting up integrations, testing."
+    },
+    "step4": {
+      "number": "/04",
+      "title": "RUN",
+      "description": "Go-live, team training, continuous optimization. The system runs. You own it."
+    }
+  },
+  "socialProof": {
+    "title": "Why external implementation works",
+    "stats": "95% of AI implementations fail (MIT). External implementation partners succeed 3x more often (S&P Global). Only 11% of European SMEs use AI meaningfully (Eurostat).",
+    "conclusion": "We exist because the deployment gap exists."
+  },
+  "comparison": {
+    "title": "Why Accelr is different",
+    "aspects": {
+      "approach": "Approach",
+      "after": "After the project",
+      "ai": "AI expertise",
+      "costs": "Costs",
+      "ownership": "Ownership",
+      "result": "Result"
+    },
+    "accelr": {
+      "approach": "Build AI-powered system + handover",
+      "after": "System keeps running — it's yours",
+      "ai": "Native in every component, continuously optimized",
+      "costs": "€5K-€15K one-time + optional retainer",
+      "ownership": "Your CRM, your data, your processes",
+      "result": "Working system in 8-12 weeks"
+    },
+    "typical": {
+      "approach": "Run campaigns as long as you pay",
+      "after": "Stops when contract stops",
+      "ai": "Basic tooling, manual",
+      "costs": "€3K-€8K/month ongoing",
+      "ownership": "In their platform",
+      "result": "Depends on scope"
+    },
+    "diy": {
+      "approach": "Figure it out yourself, 95% fails",
+      "after": "Stops when you stop",
+      "ai": "Trial-and-error",
+      "costs": "€500-€2K/month + your own time",
+      "ownership": "Yours, but unoptimized",
+      "result": "6-12 months experimenting"
+    }
+  },
+  "forWho": {
+    "title": "For who",
+    "forYou": {
+      "title": "This is for you if:",
+      "items": [
+        "You're a B2B company with €500K - €20M revenue",
+        "You have a proven product but sales isn't growing as you want",
+        "Sales revolves around individuals, not a system",
+        "You want to scale without months of experimenting",
+        "You want to own your sales infrastructure",
+        "You struggle to find good sales people",
+        "You want more meetings with the same number of FTEs",
+        "You want to use AI for sales but don't know where to start",
+        "You've tried AI tools but saw no results"
+      ]
+    },
+    "notForYou": {
+      "title": "This is not for you if:",
+      "items": [
+        "You're looking for a magic bullet (it doesn't exist)",
+        "You only want to \"buy leads\" without a system",
+        "You're looking for someone to do the selling for you",
+        "You don't have time to invest 2 hours per week",
+        "You don't have product-market fit yet",
+        "You expect AI to solve everything without human involvement"
+      ]
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": {
+      "noTeam": {
+        "question": "What if I don't have a sales team yet?",
+        "answer": "No problem. We build the system so you as founder can run it, and it's ready to scale when you hire your first salesperson."
+      },
+      "timeline": {
+        "question": "How quickly will I see results?",
+        "answer": "Most clients see the first meetings coming in within 4-6 weeks. The full system runs after 8-12 weeks."
+      },
+      "tools": {
+        "question": "Which AI tools do you use?",
+        "answer": "We work with an optimized stack: Clay for data enrichment, AI SDR tools for outbound, Instantly for email infrastructure, and n8n for custom automations. The exact combination depends on your situation — we determine that in the Score."
+      },
+      "difference": {
+        "question": "What's the difference between BUILD, RUN and GROW?",
+        "answer": "BUILD is the setup project: in 8-12 weeks your system is up. RUN is ongoing management — we keep your AI sales machine running. GROW is for companies that want to accelerate with strategic sales architecture and closing coaching."
+      }
+    }
+  },
+  "finalCta": {
+    "title": "Ready to discover what AI can do for your sales?",
+    "description": "In 3 minutes you'll know where your biggest opportunities are. Free, no obligation, and you'll receive an AI-powered report within 24 hours.",
+    "cta_primary": "Check your Sales Readiness →",
+    "cta_secondary": "View services →"
+  },
+  "footer": {
+    "tagline": "AI-powered sales infrastructure for B2B growth.",
+    "services": "Services",
+    "problems": "Problems",
+    "contact": "Contact",
+    "email": "tim@accelr.nl",
+    "location": "Haarlem, NL",
+    "copyright": "© 2026 Accelr. All rights reserved."
+  }
+}
+
