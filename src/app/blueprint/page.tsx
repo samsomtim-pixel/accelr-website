@@ -1,486 +1,454 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Navigation from '@/components/Navigation'
-import Accordion from '@/components/Accordion'
+import ProcessSteps from '@/components/ProcessSteps'
 import PricingCard from '@/components/PricingCard'
+import FAQAccordion from '@/components/FAQAccordion'
+import CTASection from '@/components/CTASection'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Sales Growth Blueprint™ | Van Ad-Hoc naar Schaalbaar in 12 Weken | Accelr',
+  description: 'Eén traject, complete sales transformatie. Van diagnose tot draaiend systeem in 8-12 weken. €5.000-€12.500. Alles inbegrepen.',
+}
 
 export default function BlueprintPage() {
-  const faqItems = [
-    {
-      question: 'Hoeveel tijd kost dit ons team?',
-      answer: 'Tijdens de Blueprint: ±2 uur totaal (kickoff + intake + oplevering). Je hoeft niets voor te bereiden — ik doe het zware werk.'
-    },
-    {
-      question: 'Wat als we al een CRM/tools hebben?',
-      answer: 'Prima. De Blueprint is stack-onafhankelijk. We werken met wat je hebt, of adviseren alternatieven als dat beter past.'
-    },
-    {
-      question: 'Wat krijgen we precies opgeleverd?',
-      answer: 'Een compleet document met: analyse, 90-dagen plan, templates, scripts, KPI-targets, en taakverdeling. Plus alle bestanden digitaal.'
-    },
-    {
-      question: 'Voor welke bedrijfsgrootte werkt dit?',
-      answer: 'B2B-bedrijven van €500K–€20M omzet. Te klein en je hebt andere prioriteiten. Te groot en je hebt waarschijnlijk al een salesteam.'
-    },
-    {
-      question: 'Wat is het verschil met een gratis adviesgesprek?',
-      answer: 'Een gratis gesprek geeft je tips. De Blueprint geeft je een compleet systeem: geanalyseerd, uitgewerkt, en klaar om te implementeren. Het verschil tussen "je zou eens moeten..." en "hier is precies hoe."'
-    },
-    {
-      question: 'Wat als het niet oplevert wat ik verwacht?',
-      answer: 'Als je niet minimaal 3 concrete, implementeerbare verbeterpunten krijgt, betaal je niets. Zo simpel is het.'
-    }
-  ]
-
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="px-6 py-20 md:py-32" style={{ paddingTop: '120px' }}>
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Hero */}
+      <section className="px-6 py-20 md:py-24" style={{ paddingTop: '100px' }}>
+        <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            In 14 dagen weet je precies waar jouw salespipeline lekt
+            Van ad-hoc naar voorspelbaar<br />
+            in 12 weken
           </h1>
-          <p className="text-xl mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            Een traject van €2.500 dat de blinde vlekken blootlegt waar je maandelijks omzet laat liggen.
+          <p className="text-xl md:text-2xl text-green-400 font-semibold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            Het Sales Growth Blueprint™ is geen adviestraject. Het is een implementatietraject. Geen rapport dat in een la verdwijnt — een compleet systeem dat draait aan het einde van het traject. En dat jij bezit.
           </p>
-          <a 
-            href="#contact"
-            className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors mb-6"
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <div className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+              €5.000 – €12.500
+            </div>
+            <span style={{ color: 'var(--text-muted)' }}>·</span>
+            <div className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+              8-12 weken
+            </div>
+            <span style={{ color: 'var(--text-muted)' }}>·</span>
+            <div className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
+              Alles inbegrepen
+            </div>
+          </div>
+          <Link
+            href="/diagnose"
+            className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full transition-colors inline-block"
           >
-            Plan je Blueprint-sessie →
-          </a>
-          <div className="flex flex-wrap justify-center gap-6 text-sm" style={{ color: 'var(--text-secondary)' }}>
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">✓</span>
-              <span>14 dagen</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">✓</span>
-              <span>Concreet plan</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">✓</span>
-              <span>Minimaal 3 verbeterpunten of geld terug</span>
-            </div>
-          </div>
+            Start met een gratis Scan →
+          </Link>
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className="py-20 px-6" style={{ backgroundColor: 'var(--bg-card)' }}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            Elk groeiend B2B-bedrijf heeft een salesplan nodig
-          </h2>
-          <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            Niet nóg een tool. Niet nóg een experiment. Een werkend systeem dat structureel meetings genereert.
-          </p>
-          <p className="text-lg leading-relaxed mt-4" style={{ color: 'var(--text-secondary)' }}>
-            De Accelr Blueprint is een 2-weeks traject dat blootlegt waar jouw salesproces vastloopt — en precies laat zien hoe je van sporadisch naar structureel gaat.
-          </p>
-        </div>
-      </section>
-
-      {/* In het kort Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>In het kort</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                num: '/01',
-                title: 'Diagnose van je huidige salesproces',
-                description: 'We ontleden je volledige funnel: van leadbron tot close. Waar lekt het? Waar ligt kans?'
-              },
-              {
-                num: '/02',
-                title: 'Drie concrete verbeterpunten met impact',
-                description: 'Geen vage adviezen. Drie specifieke acties met geschatte opbrengst in meetings of omzet.'
-              },
-              {
-                num: '/03',
-                title: 'Stack-onafhankelijk implementatieplan',
-                description: 'Werkt met je huidige tools. Of we adviseren wat beter past. Klaar om direct te bouwen.'
-              },
-              {
-                num: '/04',
-                title: 'Heldere taakverdeling',
-                description: 'Wat automatiseren we? Wat doet je team? Wat kun je uitbesteden? Geen gedoe achteraf.'
-              }
-            ].map((step, i) => (
-              <div 
-                key={i}
-                className="rounded-xl p-8"
-                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}
-              >
-                <div className="text-4xl font-bold mb-4" style={{ color: 'var(--text-muted)' }}>{step.num}</div>
-                <h3 className="text-xl font-semibold mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-                  {step.title}
-                </h3>
-                <p style={{ color: 'var(--text-secondary)' }}>{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Voor wie Section */}
-      <section className="py-20 px-6" style={{ backgroundColor: 'var(--bg-card)' }}>
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            Voor wie
-          </h2>
-          <p className="text-lg mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            <strong style={{ color: 'var(--text-primary)' }}>Voor founders en salesleads die het gevoel hebben dat ze alles zelf moeten doen.</strong>
-          </p>
-          <p className="text-lg mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            Je hebt misschien al een CRM. Misschien LinkedIn outreach geprobeerd. Misschien zelfs Apollo of Lemlist. Maar het systeem mist. Leads vallen tussen wal en schip. Follow-up gebeurt als je eraan denkt. En nieuwe business hangt af van jouw tijd en energie.
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-                De Blueprint is voor je als:
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  'Groei betekent: meer uren maken, harder werken',
-                  'Je weet dat je "iets met outbound" moet maar niet waar te beginnen',
-                  'Je tools hebt gekocht die je voor 20% gebruikt',
-                  'Je geen tijd hebt om nog een half jaar te experimenteren'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-green-400 mt-1">•</span>
-                    <span style={{ color: 'var(--text-secondary)' }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-                De Blueprint is niet voor je als:
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  'Je al een werkend salesteam van 5+ mensen hebt',
-                  'Je nog geen product-market fit hebt gevonden',
-                  'Je "even wilt proberen" zonder commitment'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="text-red-400/60 mt-1">✗</span>
-                    <span style={{ color: 'var(--text-secondary)' }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Wat verandert er Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            Wat verandert er
-          </h2>
-          <p className="text-lg mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            De meeste B2B-bedrijven doen sales op gevoel. Een LinkedIn-post hier. Een koud mailtje daar. Wachten op inbound. Hopen op referrals.
-          </p>
-          <p className="text-lg mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            <strong style={{ color: 'var(--text-primary)' }}>Het probleem: dit schaalt niet.</strong> Meer omzet = meer uren. En als jij stopt, stopt de pipeline.
-          </p>
-          
-          <div className="rounded-xl p-8" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-            <p className="text-lg mb-4" style={{ color: 'var(--text-primary)' }}>
-              De Blueprint verandert dit. Je krijgt geen adviesrapport dat in een la verdwijnt. Je krijgt een systeem dat:
-            </p>
-            <ul className="space-y-3">
-              {[
-                'Elke week nieuwe prospects bereikt — zonder dat jij het handmatig doet',
-                'Automatisch opvolgt tot er een reactie is',
-                'Meet wat werkt zodat je kunt bijsturen',
-                'Draait óók als jij op vakantie bent'
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span style={{ color: 'var(--text-secondary)' }}>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Hoe het werkt Section */}
-      <section className="py-20 px-6" style={{ backgroundColor: 'var(--bg-card)' }}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            Hoe het werkt
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                step: '/01',
-                title: 'Dag 0: Kickoff (60 min)',
-                description: 'We brengen je huidige situatie in kaart. Welke tools gebruik je? Waar komen leads vandaan? Wat heb je geprobeerd? Waar loop je vast?'
-              },
-              {
-                step: '/02',
-                title: 'Dag 1–5: Data & Analyse',
-                description: 'Je vult een korte intake in (±30 minuten). Ik analyseer je markt, concurrentie, en huidige aanpak. Ik identificeer de grootste kansen en bottlenecks.'
-              },
-              {
-                step: '/03',
-                title: 'Dag 6–12: Blueprint bouwen',
-                description: 'Ik ontwerp je salesmotor: welke kanalen, welke boodschap, welke cadans, welke tools. Inclusief templates, scripts, en KPI\'s.'
-              },
-              {
-                step: '/04',
-                title: 'Dag 14: Oplevering',
-                description: 'We lopen samen door het plan (60 min). Je weet exact wat je moet doen, in welke volgorde, met welke verwachte resultaten.'
-              }
-            ].map((item, i) => (
-              <div 
-                key={i}
-                className="rounded-xl p-6"
-                style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}
-              >
-                <div className="text-2xl font-bold mb-3" style={{ color: 'var(--text-muted)' }}>{item.step}</div>
-                <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-                  {item.title}
-                </h3>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Wat we meten Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            Wat we meten
-          </h2>
-          <p className="text-lg mb-8" style={{ color: 'var(--text-secondary)' }}>
-            Geen onderbuikgevoel. Data.
-          </p>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr style={{ borderBottomColor: 'var(--border-color)', borderBottomWidth: '2px' }}>
-                  <th className="text-left py-4 px-4 font-semibold" style={{ color: 'var(--text-primary)' }}>Metric</th>
-                  <th className="text-left py-4 px-4 font-semibold" style={{ color: 'var(--text-primary)' }}>Wat het zegt</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { metric: 'Volume', description: 'Hoeveel prospects bereik je per week?' },
-                  { metric: 'Conversie per stap', description: 'Waar haken mensen af?' },
-                  { metric: 'Tijd per activiteit', description: 'Waar zit de handmatige bottleneck?' },
-                  { metric: 'Kanaal-effectiviteit', description: 'Wat levert daadwerkelijk meetings op?' }
-                ].map((row, i) => (
-                  <tr key={i} style={{ borderBottomColor: 'var(--border-color)', borderBottomWidth: '1px' }}>
-                    <td className="py-4 px-4 font-medium" style={{ color: 'var(--text-primary)' }}>{row.metric}</td>
-                    <td className="py-4 px-4" style={{ color: 'var(--text-secondary)' }}>{row.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          
-          <p className="text-sm mt-6" style={{ color: 'var(--text-secondary)' }}>
-            Elke aanbeveling in de Blueprint is gebaseerd op cijfers, niet op aannames.
-          </p>
-        </div>
-      </section>
-
-      {/* Wat je krijgt Section */}
-      <section className="py-20 px-6" style={{ backgroundColor: 'var(--bg-card)' }}>
+      {/* Problem Section */}
+      <section className="px-6 py-20" style={{ backgroundColor: 'var(--bg-card)' }}>
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            Wat je krijgt
+            Waarom losse oplossingen niet werken
           </h2>
-          
-          <ul className="space-y-4">
-            {[
-              'Complete analyse van je huidige salesproces',
-              'Markt- en concurrentie-scan voor jouw segment',
-              '90-dagen implementatieplan met weekdoelen',
-              'Templates: email sequences, LinkedIn berichten, call scripts',
-              'KPI-dashboard opzet om voortgang te meten',
-              'Heldere taakverdeling: wat automatiseren we, wat doet je team, wat kan ik overnemen',
-              '1 uur Q&A na oplevering'
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span style={{ color: 'var(--text-secondary)' }}>{item}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="text-lg mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            Je hebt waarschijnlijk al van alles geprobeerd. Een freelancer voor LinkedIn. Een tool voor email outreach. Een CRM dat half is ingevuld. Een dashboard dat niemand bekijkt.
+          </p>
+          <p className="text-lg mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            75% van AI-oplossingen levert geen verwachte ROI. Niet omdat de technologie slecht is, maar omdat er een enorme kloof zit tussen een tool kopen en die tool werkend krijgen in jouw bedrijf.
+          </p>
+          <p className="text-lg leading-relaxed font-semibold" style={{ color: 'var(--text-primary)' }}>
+            Het probleem is niet de tools. Het probleem is dat niemand het geheel heeft ontworpen.
+          </p>
         </div>
       </section>
 
-      {/* En daarna Section */}
-      <section className="py-20 px-6">
+      {/* What's Included */}
+      <section className="px-6 py-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            En daarna?
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+            Wat zit erin
           </h2>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                num: '/01',
-                title: 'Zelf uitvoeren',
-                description: 'Je hebt het plan, de templates, de tools. Jij of je team voert uit. Ik sta klaar voor vragen.'
-              },
-              {
-                num: '/02',
-                title: 'Samen bouwen',
-                description: 'Ik zet het systeem op, train je team, en draag na 4-6 weken over. Jij runt het daarna zelf.'
-              },
-              {
-                num: '/03',
-                title: 'Volledig uitbesteden',
-                description: 'Ik bouw én run je outbound voor 3-6 maanden. Jij krijgt meetings in je agenda. Daarna evalueren we: overnemen of doorgaan.'
-              }
-            ].map((option, i) => (
-              <div 
-                key={i}
-                className="rounded-xl p-6"
-                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}
-              >
-                <div className="text-2xl font-bold mb-3" style={{ color: 'var(--text-muted)' }}>{option.num}</div>
-                <h3 className="text-lg font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-                  {option.title}
-                </h3>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{option.description}</p>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>DIAGNOSE & STRATEGIE</h3>
+              <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Sales audit van je huidige situatie</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>ICP analyse en marktgrootte berekening</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Bottleneck identificatie</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Implementatie roadmap</span>
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>TARGET SYSTEMEN</h3>
+              <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>ICP criteria operationeel gemaakt</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Lead sourcing setup</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Trigger scanning configuratie</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Prospect database opgebouwd</span>
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>OUTREACH SYSTEMEN</h3>
+              <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Email infrastructuur (SPF, DKIM, DMARC, opwarming)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Outbound sequences ontworpen en live</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>LinkedIn playbook en automation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Multi-channel orchestratie</span>
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>CONVERT SYSTEMEN</h3>
+              <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>CRM configuratie op maat</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Pipeline automations</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Sales playbook met scripts en bezwaarafhandeling</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Follow-up systemen</span>
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>SCALE SYSTEMEN</h3>
+              <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Sales dashboard met één unified view</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>KPI tracking en rapportage</span>
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>TRAINING & SUPPORT</h3>
+              <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Team training sessies</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>Complete documentatie</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-400">•</span>
+                  <span>30-90 dagen support na oplevering</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20 px-6" style={{ backgroundColor: 'var(--bg-card)' }}>
+      {/* Process Timeline */}
+      <section className="px-6 py-20" style={{ backgroundColor: 'var(--bg-card)' }}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+            Het traject
+          </h2>
+          <ProcessSteps
+            steps={[
+              { number: 'Week 1-2', title: 'SCAN', description: 'Kickoff, data verzamelen, stakeholder interviews, quick wins identificeren en direct implementeren.' },
+              { number: 'Week 3-4', title: 'PLAN', description: 'ICP definitie, tech stack selectie, prioriteiten bepalen, concrete roadmap met deadlines.' },
+              { number: 'Week 5-8', title: 'BUILD', description: 'Systemen configureren, automations bouwen, integraties leggen, sequences schrijven, testen en itereren.' },
+              { number: 'Week 9-12', title: 'RUN', description: 'Go-live, team training, bijsturing op basis van data, documentatie afronden, volledige overdracht.' },
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="investering" className="px-6 py-20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
             Investering
           </h2>
-          
           <div className="grid md:grid-cols-3 gap-6">
             <PricingCard
-              title="Blueprint"
-              subtitle="Complete analyse, plan, templates, en taakverdeling"
-              price="€2.500"
-              period="eenmalig — opgeleverd in 2 weken"
+              title="STARTER"
+              price="€5.000"
+              description="Best voor solo founder"
               features={[
-                'Complete analyse van je salesproces',
-                '90-dagen implementatieplan',
-                'Templates en scripts',
-                'Heldere taakverdeling'
+                'Best voor: Solo founder, 1 ICP',
+                'Doorlooptijd: 8 weken',
+                'Scope: 1 kanaal, basis CRM',
+                'Training: 1 sessie + docs',
+                'Support: 30 dagen',
               ]}
-              ctaText="Plan je Blueprint-sessie"
-              ctaLink="#contact"
+              cta={{ text: 'Start Scan', href: '/diagnose' }}
             />
-            
             <PricingCard
-              title="Blueprint + Setup"
-              subtitle="Alles van de Blueprint, plus: ik bouw het systeem"
-              price="€5.000 - €8.000"
-              period="opgeleverd in 4-6 weken"
+              featured
+              title="PROFESSIONAL"
+              price="€8.500"
+              description="Meest gekozen"
               features={[
-                'Alles van de Blueprint',
-                'Ik bouw het systeem',
-                'Configureer de tools',
-                'Zet sequences live',
-                'Train je team',
-                '4 weken support na oplevering'
+                'Best voor: Team 2-5 personen, meerdere ICPs',
+                'Doorlooptijd: 10 weken',
+                'Scope: Multi-channel, CRM + automations',
+                'Training: 2 sessies + playbook',
+                'Support: 60 dagen',
               ]}
-              ctaText="Plan je Blueprint-sessie"
-              ctaLink="#contact"
-              featured={true}
+              cta={{ text: 'Start Scan', href: '/diagnose' }}
             />
-            
             <PricingCard
-              title="Full Service"
-              subtitle="Ik bouw én run je volledige outbound"
-              price="€2.500 - €3.500"
-              period="/maand — minimaal 3 maanden"
+              title="ENTERPRISE"
+              price="€12.500"
+              description="Voor grotere teams"
               features={[
-                'Ik bouw én run je outbound',
-                'Gekwalificeerde meetings in je agenda',
-                'Maandelijkse rapportage',
-                'Wekelijkse call + dashboard access',
-                'Na 3 maanden evalueren we'
+                'Best voor: Groter team, complexe setup',
+                'Doorlooptijd: 12 weken',
+                'Scope: Alles + migratie + custom',
+                'Training: Complete training',
+                'Support: 90 dagen',
               ]}
-              ctaText="Plan je Blueprint-sessie"
-              ctaLink="#contact"
+              cta={{ text: 'Start Scan', href: '/diagnose' }}
             />
           </div>
-          
-          <div className="mt-12 bg-gradient-to-r from-green-500/10 to-green-400/5 border border-green-500/20 rounded-xl p-8 text-center">
-            <p className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
-              Garantie
-            </p>
-            <p style={{ color: 'var(--text-secondary)' }}>
-              Minimaal 3 concrete verbeterpunten die je direct kunt implementeren — anders betaal je niets.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            Veelgestelde vragen
-          </h2>
-          <Accordion items={faqItems} />
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section id="contact" className="py-20 px-6" style={{ backgroundColor: 'var(--bg-card)' }}>
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            Klaar om je salesproces door te lichten?
-          </h2>
-          <p className="text-lg mb-8" style={{ color: 'var(--text-secondary)' }}>
-            In 14 dagen weet je precies waar de kansen liggen — en heb je een plan om ze te pakken.
+          <p className="text-sm mt-8 text-center" style={{ color: 'var(--text-muted)' }}>
+            Niet zeker welk niveau? Start met een gratis Scan. We adviseren op basis van je situatie.
           </p>
-          <a 
-            href="mailto:tim@accelr.io"
-            className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors"
-          >
-            Plan je Blueprint-sessie →
-          </a>
         </div>
       </section>
+
+      {/* All Options */}
+      <section className="px-6 py-20" style={{ backgroundColor: 'var(--bg-card)' }}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+            Alle opties op een rij
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <PricingCard
+              label="START HIER"
+              title="Gratis Scan"
+              price="Gratis"
+              period="3 min + 24 uur"
+              description="Situatie analyse en aanbeveling"
+              features={[
+                'Situatie analyse',
+                'Geschat omzetpotentieel',
+                'Aanbeveling volgende stap',
+              ]}
+              cta={{ text: 'Start gratis Scan', href: '/diagnose' }}
+            />
+            <PricingCard
+              label="MEEST GEKOZEN"
+              featured
+              title="Sales Growth Blueprint™"
+              price="€5.000 – €12.500"
+              period="8-12 weken"
+              description="Complete transformatie"
+              features={[
+                'Complete funnel analyse en roadmap',
+                'Implementatie van alle systemen',
+                'Team training en documentatie',
+                '30-90 dagen support',
+              ]}
+              cta={{ text: 'Bekijk Blueprint', href: '#investering' }}
+            />
+            <PricingCard
+              title="Losse Engines"
+              price="Vanaf €500/maand"
+              period="of €2.500 eenmalig"
+              description="Specifieke expertise"
+              features={[
+                'ICP Engine, Data Engine, Signal Engine',
+                'Email Engine, LinkedIn Engine',
+                'Sales Playbook, CRM Systeem',
+                'Dashboards, Analytics',
+              ]}
+              cta={{ text: 'Bekijk alle expertise', href: '/expertise' }}
+            />
+            <PricingCard
+              title="Retainer Partnership"
+              price="Vanaf €4.000/maand"
+              period="Geen lock-in"
+              description="Doorlopende optimalisatie"
+              features={[
+                'Doorlopende optimalisatie en uitbreiding',
+                'Maandelijkse rapportage',
+                'Prioriteitssupport',
+              ]}
+              cta={{ text: 'Na Blueprint of Scan', href: '/blueprint' }}
+            />
+          </div>
+          <p className="text-sm mt-8 text-center" style={{ color: 'var(--text-muted)' }}>
+            25% korting op het Blueprint in ruil voor een case study. Interesse? Vermeld het in je Scan.
+          </p>
+        </div>
+      </section>
+
+      {/* After Blueprint */}
+      <section className="px-6 py-20" style={{ backgroundColor: 'var(--bg-card)' }}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+            Na het Blueprint
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+              <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Optie 1: Zelf verder</h3>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                Je hebt een werkend systeem, documentatie, en een getraind team. Support pakket beschikbaar voor €1.000/maand.
+              </p>
+            </div>
+            <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+              <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Optie 2: Doorlopend Partnership</h3>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                Wij blijven betrokken. Doorlopende optimalisatie, uitbreiding naar nieuwe markten of kanalen, en strategische begeleiding. Vanaf €4.000/maand. Geen lock-in.
+              </p>
+            </div>
+          </div>
+          <p className="text-center mb-4" style={{ color: 'var(--text-secondary)' }}>
+            Plus: "Nog niet klaar voor het volledige Blueprint? Je kunt ook starten met een los onderdeel."
+          </p>
+          <div className="text-center">
+            <Link href="/expertise/target" className="text-green-400 hover:text-green-300 font-semibold">
+              → Bekijk alle expertise
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 py-20">
+        <div className="max-w-4xl mx-auto">
+          <FAQAccordion
+            items={[
+              {
+                question: 'Hoe weet ik welk niveau ik nodig heb?',
+                answer: 'Start met de gratis Scan. Op basis van je situatie adviseren we het juiste niveau. De meeste bedrijven met 1-2 personen in sales starten met Starter; teams vanaf 3 personen met Professional.',
+              },
+              {
+                question: 'Wat als ik geen CRM heb?',
+                answer: 'Dan implementeren we er een. HubSpot (gratis of betaald) of Pipedrive, afhankelijk van je behoeften. Dit zit inbegrepen in het Blueprint.',
+              },
+              {
+                question: 'Hoeveel tijd kost het mij?',
+                answer: 'Gemiddeld 2-4 uur per week. We doen het zware werk, maar we hebben jouw input nodig voor ICP-validatie, content goedkeuring, en feedback.',
+              },
+              {
+                question: 'Wat als het niet werkt?',
+                answer: 'De support-periode (30-90 dagen) is er precies voor. We monitoren, optimaliseren, en fixen tot het draait.',
+              },
+              {
+                question: 'Kan ik eerst klein beginnen?',
+                answer: 'Ja. Je kunt starten met een losse engine en later opschalen naar het volledige Blueprint.',
+              },
+              {
+                question: 'Moet ik zelf de tools afnemen?',
+                answer: 'Ja, de tools staan op jouw naam. Dat is het hele punt: het is jouw infrastructuur. Wij adviseren welke tools het beste passen en configureren alles.',
+              },
+              {
+                question: 'Wat is het verschil tussen de Scan en het Blueprint?',
+                answer: 'De Scan is een gratis, geautomatiseerde analyse van je huidige situatie (3 minuten). Het Blueprint is een betaald implementatietraject van 8-12 weken waarin we je hele sales infrastructuur bouwen.',
+              },
+              {
+                question: 'Wat als ik al tools heb die ik nauwelijks gebruik?',
+                answer: 'Dan beginnen we daar. Vaak is 70% van de oplossing al aanwezig maar niet goed geconfigureerd. We bouwen voort op wat je hebt.',
+              },
+              {
+                question: 'Waarom is de Scan gratis?',
+                answer: 'Omdat het ons helpt inschatten of we kunnen helpen. En het geeft jou direct inzicht, zonder risico.',
+              },
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* CTA */}
+      <CTASection
+        title="Start met een Scan"
+        description="Gratis. 3 minuten. Binnen 24 uur een persoonlijk rapport met je grootste kansen."
+        primaryCta={{ text: 'Plan je gratis Scan →', href: '/diagnose' }}
+      />
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t" style={{ borderColor: 'var(--border-color)' }}>
+      <footer className="px-6 py-12 border-t" style={{ borderColor: 'var(--border-color)' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
               <div className="text-xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
                 accelr<span className="text-green-500">.</span>
               </div>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                Sales-infrastructuur voor B2B groei.
+              </p>
             </div>
-            <div className="text-sm text-center md:text-left" style={{ color: 'var(--text-muted)' }}>
-              © 2026 Accelr. Alle rechten voorbehouden.
+            <div>
+              <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Navigatie</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/expertise/target" className="hover:text-green-400 transition-colors" style={{ color: 'var(--text-secondary)' }}>Expertise</Link></li>
+                <li><Link href="/blueprint" className="hover:text-green-400 transition-colors" style={{ color: 'var(--text-secondary)' }}>Blueprint</Link></li>
+                <li><Link href="/over-ons" className="hover:text-green-400 transition-colors" style={{ color: 'var(--text-secondary)' }}>Over Ons</Link></li>
+                <li><Link href="/diagnose" className="hover:text-green-400 transition-colors" style={{ color: 'var(--text-secondary)' }}>Diagnose</Link></li>
+              </ul>
             </div>
+            <div>
+              <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Contact</h4>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                tim@accelr.nl
+              </p>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>Account</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/login" className="hover:text-green-400 transition-colors" style={{ color: 'var(--text-secondary)' }}>Login</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="text-center text-sm pt-8 border-t" style={{ borderColor: 'var(--border-color)', color: 'var(--text-muted)' }}>
+            © 2026 Accelr. Alle rechten voorbehouden.
           </div>
         </div>
       </footer>
