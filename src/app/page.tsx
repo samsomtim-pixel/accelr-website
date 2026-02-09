@@ -28,11 +28,8 @@ export default function HomePage() {
             Wij bouwen de sales machine.<br />
             Jij bent eigenaar.
           </h1>
-          <p className="text-xl md:text-2xl mb-6 leading-relaxed max-w-3xl mx-auto text-center" style={{ color: 'var(--text-secondary)' }}>
-            De meeste bureaus runnen campagnes voor je. Wij bouwen infrastructuur die je zelf kunt runnen. Van ICP tot dashboard. Van eerste contact tot getekende deal.
-          </p>
-          <p className="text-lg mb-8 font-semibold text-center max-w-2xl mx-auto" style={{ color: 'var(--text-primary)' }}>
-            Binnen 8-12 weken een werkend sales systeem. Niet afhankelijk van ons — gebouwd op jouw proces, jouw data, jouw CRM.
+          <p className="text-xl md:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto text-center" style={{ color: 'var(--text-secondary)' }}>
+            Van ICP tot dashboard. Binnen 8-12 weken een werkend systeem — van jou, niet van ons.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <Link
@@ -55,11 +52,11 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-green-400">✓</span>
-              <span>Gratis rapport</span>
+              <span>Gratis</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-green-400">✓</span>
-              <span>Geen verplichtingen</span>
+              <span>Vrijblijvend</span>
             </div>
           </div>
         </div>
@@ -68,36 +65,21 @@ export default function HomePage() {
       {/* Problem Section */}
       <section className="px-6 py-20" style={{ backgroundColor: 'var(--bg-card)' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
             Je hebt het allemaal al geprobeerd
           </h2>
-          <p className="text-lg mb-12 text-center max-w-3xl mx-auto leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            75% van AI-oplossingen levert geen ROI. Niet omdat de technologie slecht is — maar omdat niemand het werkend maakt in jouw bedrijf.
-          </p>
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>Tools gekocht die niemand gebruikt</h3>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Je hebt €10K+ aan sales tools. HubSpot, Apollo, LinkedIn Navigator. Maar je team gebruikt ze als dure adresboekjes. Het probleem is niet de tool — het is dat niemand het systeem heeft ontworpen.
-              </p>
+              <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>Tools gekocht die niemand gebruikt</h3>
             </div>
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>Freelancers ingehuurd die vertrokken</h3>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Een LinkedIn specialist hier, een email expert daar. Elk bouwde iets. Maar niemand heeft het geheel ontworpen. En toen ze vertrokken, ging het systeem met ze mee.
-              </p>
+              <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>Freelancers ingehuurd die vertrokken</h3>
             </div>
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>De founder blijft de beste verkoper</h3>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Jij sluit 80% van de deals. Dat is geen compliment — dat is een plafond. Je bedrijf kan niet groeien voorbij wat jij persoonlijk kunt verkopen.
-              </p>
+              <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>De founder blijft de beste verkoper</h3>
             </div>
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>Outreach die in spam belandt</h3>
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Google en Microsoft hebben de regels veranderd. Zonder de juiste SPF/DKIM/DMARC infrastructuur belandt je outreach in spam. Dit is niet iets dat je er even bij doet.
-              </p>
+              <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>Outreach die in spam belandt</h3>
             </div>
           </div>
           <p className="text-xl font-semibold text-center italic" style={{ color: 'var(--text-primary)' }}>
@@ -292,7 +274,7 @@ export default function HomePage() {
               },
               {
                 question: 'Kan ik ook alleen een specifiek onderdeel afnemen?',
-                answer: 'Ja. Naast het complete Blueprint kun je ook losse engines afnemen, zoals een ICP Engine, Email Engine, of CRM implementatie. Bekijk de expertise pagina\'s voor details en prijzen.',
+                answer: 'Ja. Naast het complete Blueprint kun je ook losse engines afnemen. Bekijk de expertise pagina\'s voor details en prijzen.',
               },
             ]}
           />

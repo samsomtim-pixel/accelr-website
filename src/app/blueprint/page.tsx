@@ -24,7 +24,7 @@ export default function BlueprintPage() {
             in 12 weken
           </h1>
           <p className="text-xl md:text-2xl text-green-400 font-semibold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Het Sales Growth Blueprint™ is geen adviestraject. Het is een implementatietraject. Geen rapport dat in een la verdwijnt — een compleet systeem dat draait aan het einde van het traject. En dat jij bezit.
+            Geen advies. Implementatie. Een compleet systeem dat draait — en dat jij bezit.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <div className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
@@ -51,17 +51,11 @@ export default function BlueprintPage() {
       {/* Problem Section */}
       <section className="px-6 py-20" style={{ backgroundColor: 'var(--bg-card)' }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
             Waarom losse oplossingen niet werken
           </h2>
-          <p className="text-lg mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            Je hebt waarschijnlijk al van alles geprobeerd. Een freelancer voor LinkedIn. Een tool voor email outreach. Een CRM dat half is ingevuld. Een dashboard dat niemand bekijkt.
-          </p>
-          <p className="text-lg mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-            75% van AI-oplossingen levert geen verwachte ROI. Niet omdat de technologie slecht is, maar omdat er een enorme kloof zit tussen een tool kopen en die tool werkend krijgen in jouw bedrijf.
-          </p>
-          <p className="text-lg leading-relaxed font-semibold" style={{ color: 'var(--text-primary)' }}>
-            Het probleem is niet de tools. Het probleem is dat niemand het geheel heeft ontworpen.
+          <p className="text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            Freelancer voor LinkedIn. Tool voor email. CRM half ingevuld. Dashboard dat niemand bekijkt. 75% van AI-oplossingen levert geen ROI — niet omdat de tech slecht is, maar omdat niemand het geheel heeft ontworpen.
           </p>
         </div>
       </section>
