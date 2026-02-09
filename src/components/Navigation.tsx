@@ -1,11 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import ThemeToggle from './ThemeToggle'
+import { ChevronDown } from 'lucide-react'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [expertiseOpen, setExpertiseOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -13,28 +16,73 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const expertiseItems = [
+    { name: 'Target', href: '/expertise/target', description: 'ICP, Lead Intelligence & Koopsignalen' },
+    { name: 'Outreach', href: '/expertise/outreach', description: 'Email & LinkedIn Automation' },
+    { name: 'Convert', href: '/expertise/convert', description: 'Sales Playbooks & CRM' },
+    { name: 'Scale', href: '/expertise/scale', description: 'Dashboards & Analytics' },
+  ]
+
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b transition-all duration-300 ${scrolled ? 'backdrop-blur-md' : ''}`}
       style={{ borderColor: 'var(--border-color)' }}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="text-xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+        <Link href="/" className="text-xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
           accelr<span className="text-green-500">.</span>
-        </a>
+        </Link>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="/expertise" className="nav-link transition-colors text-sm">Expertise</a>
-          <a href="/blueprint" className="nav-link transition-colors text-sm">Blueprint</a>
-          <a href="/login" className="nav-link transition-colors text-sm">Login</a>
+          <div
+            className="relative"
+            onMouseEnter={() => setExpertiseOpen(true)}
+            onMouseLeave={() => setExpertiseOpen(false)}
+          >
+            <button className="nav-link transition-colors text-sm flex items-center gap-1">
+              Expertise
+              <ChevronDown className={`w-4 h-4 transition-transform ${expertiseOpen ? 'rotate-180' : ''}`} />
+            </button>
+            {expertiseOpen && (
+              <div className="absolute top-full left-0 mt-2 w-72 rounded-xl shadow-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+                <div className="p-2">
+                  {expertiseItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-3 rounded-lg transition-colors"
+                      style={{ color: 'var(--text-secondary)' }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'
+                        e.currentTarget.style.color = 'var(--text-primary)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent'
+                        e.currentTarget.style.color = 'var(--text-secondary)'
+                      }}
+                    >
+                      <div className="font-semibold text-sm mb-1" style={{ color: 'var(--text-primary)' }}>
+                        {item.name}
+                      </div>
+                      <div className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                        {item.description}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          <Link href="/blueprint" className="nav-link transition-colors text-sm">Blueprint</Link>
+          <Link href="/over-ons" className="nav-link transition-colors text-sm">Over Ons</Link>
           <ThemeToggle />
-          <a 
+          <Link 
             href="/diagnose" 
             className="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-full font-semibold transition-colors text-sm"
           >
             Start gratis scan
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -58,20 +106,43 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t" style={{ borderColor: 'var(--border-color)', backgroundColor: 'var(--bg-primary)' }}>
           <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
-            <a href="/expertise" className="nav-link text-sm py-2" onClick={() => setMobileMenuOpen(false)}>Expertise</a>
-            <a href="/blueprint" className="nav-link text-sm py-2" onClick={() => setMobileMenuOpen(false)}>Blueprint</a>
-            <a href="/login" className="nav-link text-sm py-2" onClick={() => setMobileMenuOpen(false)}>Login</a>
+            <div>
+              <button
+                className="nav-link text-sm py-2 flex items-center justify-between w-full"
+                onClick={() => setExpertiseOpen(!expertiseOpen)}
+              >
+                Expertise
+                <ChevronDown className={`w-4 h-4 transition-transform ${expertiseOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {expertiseOpen && (
+                <div className="pl-4 mt-2 space-y-2">
+                  {expertiseItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="nav-link text-sm py-2 block"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <div className="font-semibold">{item.name}</div>
+                      <div className="text-xs" style={{ color: 'var(--text-muted)' }}>{item.description}</div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            <Link href="/blueprint" className="nav-link text-sm py-2" onClick={() => setMobileMenuOpen(false)}>Blueprint</Link>
+            <Link href="/over-ons" className="nav-link text-sm py-2" onClick={() => setMobileMenuOpen(false)}>Over Ons</Link>
             <div className="flex items-center justify-between py-2">
               <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Theme</span>
               <ThemeToggle />
             </div>
-            <a 
+            <Link 
               href="/diagnose" 
               className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Start gratis scan
-            </a>
+            </Link>
           </div>
         </div>
       )}
