@@ -76,18 +76,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </Link>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">✓</span>
-              <span>{t('hero.trust').split('✓')[1]?.trim()}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">✓</span>
-              <span>{t('hero.trust').split('✓')[2]?.trim()}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">✓</span>
-              <span>{t('hero.trust').split('✓')[3]?.trim()}</span>
-            </div>
+            {t('hero.trust').split('✓').filter(item => item.trim()).map((item, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <span className="text-green-400">✓</span>
+                <span>{item.trim()}</span>
+              </div>
+            ))}
           </div>
           <p className="text-sm text-center" style={{ color: 'var(--text-muted)' }}>
             {t('hero.social_proof')}

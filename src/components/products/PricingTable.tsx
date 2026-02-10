@@ -52,3 +52,4 @@ export default function PricingTable({ title, columns, rows }: PricingTableProps
 
 
 
+

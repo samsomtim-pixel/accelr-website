@@ -82,3 +82,4 @@ export default async function KennisbankPage({ params }: { params: Promise<{ loc
   );
 }
 
+

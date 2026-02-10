@@ -126,3 +126,4 @@ export default async function AfhankelijkVanFounderPage({ params }: { params: Pr
   );
 }
 
+

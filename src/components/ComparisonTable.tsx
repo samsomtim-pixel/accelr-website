@@ -53,3 +53,4 @@ export default function ComparisonTable({ columns, rows }: ComparisonTableProps)
 
 
 
+
