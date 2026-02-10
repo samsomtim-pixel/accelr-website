@@ -50,7 +50,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       {/* Hero Section */}
       <section className="px-6 py-20 md:py-24" style={{ paddingTop: '100px' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-4">
+          <div className="text-center mb-4" style={{ paddingTop: '32px' }}>
             <p className="text-sm font-semibold text-green-400 uppercase tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {t('hero.subtitle')}
             </p>
@@ -270,7 +270,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </p>
               </div>
               <div className="mb-2">
-                <span className="text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.run.price')}</span>
+                <span className="text-3xl font-bold whitespace-nowrap" style={{ color: 'var(--text-primary)' }}>{t('services.run.price')}</span>
               </div>
               <p className="text-xs mb-6" style={{ color: 'var(--text-muted)', minHeight: '40px' }}>
                 {t('services.run.priceAnchor')}
@@ -321,7 +321,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </p>
               </div>
               <div className="mb-2">
-                <span className="text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.grow.price')}</span>
+                <span className="text-3xl font-bold whitespace-nowrap" style={{ color: 'var(--text-primary)' }}>{t('services.grow.price')}</span>
               </div>
               <p className="text-xs mb-6" style={{ color: 'var(--text-muted)', minHeight: '40px' }}>
                 {t('services.grow.priceAnchor')}

@@ -13,10 +13,11 @@ interface ROIComparisonTableProps {
 export default function ROIComparisonTable({ title, columns, rows, footnote }: ROIComparisonTableProps) {
   return (
     <div className="overflow-x-auto">
-      <h3 className="text-2xl font-bold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+      <h3 className="text-2xl font-bold mb-6 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
         {title}
       </h3>
-      <table className="w-full border-collapse rounded-lg overflow-hidden">
+      <div className="max-w-[900px] mx-auto">
+        <table className="w-full border-collapse rounded-lg overflow-hidden">
         <thead>
           <tr style={{ backgroundColor: 'var(--bg-card)' }}>
             <th className="text-left py-4 px-4 font-semibold" style={{ color: 'var(--text-primary)' }}>
@@ -56,7 +57,8 @@ export default function ROIComparisonTable({ title, columns, rows, footnote }: R
           ))}
         </tbody>
       </table>
-      <p className="text-sm mt-4 italic" style={{ color: 'var(--text-muted)' }}>
+      </div>
+      <p className="text-sm mt-4 italic text-center" style={{ color: 'var(--text-muted)' }}>
         {footnote}
       </p>
     </div>
