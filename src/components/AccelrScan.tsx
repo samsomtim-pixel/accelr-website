@@ -221,7 +221,7 @@ export function AccelrScan() {
   const getCurrentQuestion = () => {
     if (step === 0) return null // Intro
     if (step === 1) return websiteUrlQuestion // Website URL (niet genummerd)
-    return questions[step - 2] // Questions start at step 2
+    return questions[step - 2] ?? null // Questions start at step 2
   }
 
   const currentQuestion = getCurrentQuestion()
@@ -292,21 +292,21 @@ export function AccelrScan() {
   // Calculate weighted score per category
   const calculateScore = (): ScoreBreakdown => {
     // Strategie & ICP (25% gewicht) - V1, V3, V4
-    const v1Score = questions[0].options.find(opt => opt.value === formData.v1_sales_verantwoordelijke)?.score || 0
-    const v3Score = questions[2].options.find(opt => opt.value === formData.v3_icp_helderheid)?.score || 0
-    const v4Score = questions[3].options.find(opt => opt.value === formData.v4_business_generatie)?.score || 0
+    const v1Score = questions[0]?.options?.find(opt => opt.value === formData.v1_sales_verantwoordelijke)?.score ?? 0
+    const v3Score = questions[2]?.options?.find(opt => opt.value === formData.v3_icp_helderheid)?.score ?? 0
+    const v4Score = questions[3]?.options?.find(opt => opt.value === formData.v4_business_generatie)?.score ?? 0
     const strategieRaw = ((v1Score + v3Score + v4Score) / 75) * 100
     const strategieGewogen = strategieRaw * 0.25
 
     // Proces & Pipeline (35% gewicht) - V5, V6
-    const v5Score = questions[4].options.find(opt => opt.value === formData.v5_sales_proces)?.score || 0
-    const v6Score = questions[5].options.find(opt => opt.value === formData.v6_pipeline_voorspelbaarheid)?.score || 0
+    const v5Score = questions[4]?.options?.find(opt => opt.value === formData.v5_sales_proces)?.score ?? 0
+    const v6Score = questions[5]?.options?.find(opt => opt.value === formData.v6_pipeline_voorspelbaarheid)?.score ?? 0
     const procesRaw = ((v5Score + v6Score) / 50) * 100
     const procesGewogen = procesRaw * 0.35
 
     // Technologie & Data (20% gewicht) - V7, V8
-    const v7Score = questions[6].options.find(opt => opt.value === formData.v7_crm_gebruik)?.score || 0
-    const v8Score = questions[7].options.find(opt => opt.value === formData.v8_sales_cyclus)?.score || 0
+    const v7Score = questions[6]?.options?.find(opt => opt.value === formData.v7_crm_gebruik)?.score ?? 0
+    const v8Score = questions[7]?.options?.find(opt => opt.value === formData.v8_sales_cyclus)?.score ?? 0
     const technologieRaw = ((v7Score + v8Score) / 50) * 100
     const technologieGewogen = technologieRaw * 0.20
 
