@@ -3,6 +3,22 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacybeleid - Accelr',
   description: 'Privacybeleid van Accelr. Lees hoe wij omgaan met je persoonlijke gegevens.',
+  alternates: {
+    canonical: 'https://accelr.nl/privacy',
+    languages: {
+      'nl': 'https://accelr.nl/privacy',
+      'en': 'https://accelr.nl/en/privacy',
+      'x-default': 'https://accelr.nl/privacy'
+    }
+  },
+  openGraph: {
+    title: 'Privacybeleid - Accelr',
+    description: 'Privacybeleid van Accelr. Lees hoe wij omgaan met je persoonlijke gegevens.',
+    url: 'https://accelr.nl/privacy',
+    siteName: 'Accelr',
+    locale: 'nl_NL',
+    type: 'website'
+  }
 }
 
 export default function PrivacyPage() {

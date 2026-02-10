@@ -8,11 +8,32 @@ import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/diensten/grow' : 'https://accelr.nl/en/services/grow';
+  const title = locale === 'nl' ? 'GROW — Fractional VP Sales | Accelr' : 'GROW — Fractional VP Sales | Accelr';
+  const description = locale === 'nl'
+    ? 'Strategische salesarchitectuur, closing coaching en kwartaal-reviews. Wij worden je fractional VP Sales.'
+    : 'Strategic sales architecture, closing coaching and quarterly reviews. We become your fractional VP Sales.';
+
   return {
-    title: locale === 'nl' ? 'GROW — Fractional VP Sales | Accelr' : 'GROW — Fractional VP Sales | Accelr',
-    description: locale === 'nl'
-      ? 'Strategische salesarchitectuur, closing coaching en kwartaal-reviews. Wij worden je fractional VP Sales.'
-      : 'Strategic sales architecture, closing coaching and quarterly reviews. We become your fractional VP Sales.',
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/diensten/grow',
+        'en': 'https://accelr.nl/en/services/grow',
+        'x-default': 'https://accelr.nl/diensten/grow'
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

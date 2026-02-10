@@ -8,13 +8,34 @@ import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/problemen/geen-pipeline' : 'https://accelr.nl/en/problems/no-pipeline';
+  const title = locale === 'nl' 
+    ? 'Geen Pipeline? Zo Los Je Het Op | Accelr' 
+    : 'No Pipeline? Here\'s How to Fix It | Accelr';
+  const description = locale === 'nl'
+    ? 'Geen gestructureerde sales pipeline betekent geen voorspelbare omzet. Ontdek hoe je een werkend systeem bouwt.'
+    : 'No structured sales pipeline means no predictable revenue. Discover how to build a working system.';
+
   return {
-    title: locale === 'nl' 
-      ? 'Geen Pipeline? Zo Los Je Het Op | Accelr' 
-      : 'No Pipeline? Here\'s How to Fix It | Accelr',
-    description: locale === 'nl'
-      ? 'Geen gestructureerde sales pipeline betekent geen voorspelbare omzet. Ontdek hoe je een werkend systeem bouwt.'
-      : 'No structured sales pipeline means no predictable revenue. Discover how to build a working system.',
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/problemen/geen-pipeline',
+        'en': 'https://accelr.nl/en/problems/no-pipeline',
+        'x-default': 'https://accelr.nl/problemen/geen-pipeline'
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

@@ -6,11 +6,35 @@ import Footer from '@/components/layout/Footer';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/kennisbank' : 'https://accelr.nl/en/resources';
   return {
     title: locale === 'nl' ? 'Kennisbank — Accelr' : 'Resources — Accelr',
     description: locale === 'nl'
       ? 'Alles over AI-powered B2B sales. Artikelen, guides en best practices.'
       : 'Everything about AI-powered B2B sales. Articles, guides and best practices.',
+    robots: {
+      index: false,
+      follow: true,
+    },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/kennisbank',
+        'en': 'https://accelr.nl/en/resources',
+        'x-default': 'https://accelr.nl/kennisbank'
+      }
+    },
+    openGraph: {
+      title: locale === 'nl' ? 'Kennisbank — Accelr' : 'Resources — Accelr',
+      description: locale === 'nl'
+        ? 'Alles over AI-powered B2B sales. Artikelen, guides en best practices.'
+        : 'Everything about AI-powered B2B sales. Articles, guides and best practices.',
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

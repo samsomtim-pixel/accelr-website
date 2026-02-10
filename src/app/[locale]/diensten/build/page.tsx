@@ -8,11 +8,32 @@ import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/diensten/build' : 'https://accelr.nl/en/services/build';
+  const title = locale === 'nl' ? 'BUILD — AI Sales Machine Setup | Accelr' : 'BUILD — AI Sales Machine Setup | Accelr';
+  const description = locale === 'nl'
+    ? 'In 8-12 weken bouwen we je complete AI-powered sales machine. Van ICP tot dashboard. Eigendom van jou.'
+    : 'In 8-12 weeks we build your complete AI-powered sales machine. From ICP to dashboard. Owned by you.';
+
   return {
-    title: locale === 'nl' ? 'BUILD — AI Sales Machine Setup | Accelr' : 'BUILD — AI Sales Machine Setup | Accelr',
-    description: locale === 'nl'
-      ? 'In 8-12 weken bouwen we je complete AI-powered sales machine. Van ICP tot dashboard. Eigendom van jou.'
-      : 'In 8-12 weeks we build your complete AI-powered sales machine. From ICP to dashboard. Owned by you.',
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/diensten/build',
+        'en': 'https://accelr.nl/en/services/build',
+        'x-default': 'https://accelr.nl/diensten/build'
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

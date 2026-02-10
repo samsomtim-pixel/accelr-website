@@ -9,14 +9,34 @@ import { AccelrScan } from '@/components/AccelrScan';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'hero' });
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/score' : 'https://accelr.nl/en/score';
+  const title = locale === 'nl' 
+    ? 'Sales Readiness Score — Accelr' 
+    : 'Sales Readiness Score — Accelr';
+  const description = locale === 'nl'
+    ? 'Check je sales readiness in 3 minuten. Gratis, vrijblijvend rapport binnen 24 uur.'
+    : 'Check your sales readiness in 3 minutes. Free, no-obligation report within 24 hours.';
 
   return {
-    title: locale === 'nl' 
-      ? 'Sales Readiness Score — Accelr' 
-      : 'Sales Readiness Score — Accelr',
-    description: locale === 'nl'
-      ? 'Check je sales readiness in 3 minuten. Gratis, vrijblijvend rapport binnen 24 uur.'
-      : 'Check your sales readiness in 3 minutes. Free, no-obligation report within 24 hours.',
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/score',
+        'en': 'https://accelr.nl/en/score',
+        'x-default': 'https://accelr.nl/score'
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

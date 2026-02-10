@@ -9,11 +9,32 @@ import Image from 'next/image';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/over-ons' : 'https://accelr.nl/en/about';
+  const title = locale === 'nl' ? 'Over Accelr | AI-Powered Sales Machines' : 'About Accelr | AI-Powered Sales Machines';
+  const description = locale === 'nl'
+    ? 'Accelr bouwt AI-powered sales machines voor B2B bedrijven. 10+ jaar ervaring in adtech en B2B sales. Haarlem, Nederland.'
+    : 'Accelr builds AI-powered sales machines for B2B companies. 10+ years experience in adtech and B2B sales. Haarlem, Netherlands.';
+
   return {
-    title: locale === 'nl' ? 'Over Accelr | AI-Powered Sales Machines' : 'About Accelr | AI-Powered Sales Machines',
-    description: locale === 'nl'
-      ? 'Accelr bouwt AI-powered sales machines voor B2B bedrijven. 10+ jaar ervaring in adtech en B2B sales. Haarlem, Nederland.'
-      : 'Accelr builds AI-powered sales machines for B2B companies. 10+ years experience in adtech and B2B sales. Haarlem, Netherlands.',
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/over-ons',
+        'en': 'https://accelr.nl/en/about',
+        'x-default': 'https://accelr.nl/over-ons'
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

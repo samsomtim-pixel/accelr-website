@@ -7,11 +7,35 @@ import CTASection from '@/components/CTASection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/cases' : 'https://accelr.nl/en/cases';
   return {
     title: locale === 'nl' ? 'Cases — Accelr' : 'Cases — Accelr',
     description: locale === 'nl'
       ? 'We zijn net gestart met onze nieuwe AI-powered aanpak. Onze eerste case studies volgen binnenkort.'
       : 'We just started with our new AI-powered approach. Our first case studies will follow soon.',
+    robots: {
+      index: false,
+      follow: true,
+    },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/cases',
+        'en': 'https://accelr.nl/en/cases',
+        'x-default': 'https://accelr.nl/cases'
+      }
+    },
+    openGraph: {
+      title: locale === 'nl' ? 'Cases — Accelr' : 'Cases — Accelr',
+      description: locale === 'nl'
+        ? 'We zijn net gestart met onze nieuwe AI-powered aanpak. Onze eerste case studies volgen binnenkort.'
+        : 'We just started with our new AI-powered approach. Our first case studies will follow soon.',
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

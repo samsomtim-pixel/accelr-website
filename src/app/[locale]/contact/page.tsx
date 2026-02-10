@@ -8,11 +8,32 @@ import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/contact' : 'https://accelr.nl/en/contact';
+  const title = locale === 'nl' ? 'Contact — Accelr' : 'Contact — Accelr';
+  const description = locale === 'nl'
+    ? 'Neem contact op met Accelr. Of start eerst met de gratis Score.'
+    : 'Get in touch with Accelr. Or start with the free Score first.';
+
   return {
-    title: locale === 'nl' ? 'Contact — Accelr' : 'Contact — Accelr',
-    description: locale === 'nl'
-      ? 'Neem contact op met Accelr. Of start eerst met de gratis Score.'
-      : 'Get in touch with Accelr. Or start with the free Score first.',
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/contact',
+        'en': 'https://accelr.nl/en/contact',
+        'x-default': 'https://accelr.nl/contact'
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

@@ -10,8 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/diensten/run', nlPath: '/diensten/run', enPath: '/en/services/run', priority: 0.8 },
     { path: '/diensten/grow', nlPath: '/diensten/grow', enPath: '/en/services/grow', priority: 0.8 },
     { path: '/score', nlPath: '/score', enPath: '/en/score', priority: 0.9 },
-    { path: '/cases', nlPath: '/cases', enPath: '/en/cases', priority: 0.7 },
-    { path: '/kennisbank', nlPath: '/kennisbank', enPath: '/en/resources', priority: 0.8 },
+    // Cases en kennisbank tijdelijk verwijderd uit sitemap (noindex tot content klaar is)
     { path: '/investering', nlPath: '/investering', enPath: '/en/pricing', priority: 0.7 },
     { path: '/over-ons', nlPath: '/over-ons', enPath: '/en/about', priority: 0.5 },
     { path: '/contact', nlPath: '/contact', enPath: '/en/contact', priority: 0.5 },

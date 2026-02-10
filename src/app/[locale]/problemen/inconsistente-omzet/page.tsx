@@ -8,13 +8,34 @@ import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/problemen/inconsistente-omzet' : 'https://accelr.nl/en/problems/inconsistent-revenue';
+  const title = locale === 'nl' 
+    ? 'Inconsistente Omzet? Zo Los Je Het Op | Accelr' 
+    : 'Inconsistent Revenue? Here\'s How to Fix It | Accelr';
+  const description = locale === 'nl'
+    ? 'Elke maand andere cijfers. Geen voorspelbaarheid, geen rust. Ontdek hoe je een consistent sales systeem bouwt.'
+    : 'Different numbers every month. No predictability, no peace. Discover how to build a consistent sales system.';
+
   return {
-    title: locale === 'nl' 
-      ? 'Inconsistente Omzet? Zo Los Je Het Op | Accelr' 
-      : 'Inconsistent Revenue? Here\'s How to Fix It | Accelr',
-    description: locale === 'nl'
-      ? 'Elke maand andere cijfers. Geen voorspelbaarheid, geen rust. Ontdek hoe je een consistent sales systeem bouwt.'
-      : 'Different numbers every month. No predictability, no peace. Discover how to build a consistent sales system.',
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/problemen/inconsistente-omzet',
+        'en': 'https://accelr.nl/en/problems/inconsistent-revenue',
+        'x-default': 'https://accelr.nl/problemen/inconsistente-omzet'
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

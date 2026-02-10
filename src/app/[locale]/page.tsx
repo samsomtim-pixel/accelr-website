@@ -14,6 +14,9 @@ import { Link } from '@/i18n/routing';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'hero' });
+  
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/' : 'https://accelr.nl/en/';
 
   return {
     title: locale === 'nl' 
@@ -21,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : 'Accelr — AI-Powered Sales Machines for B2B',
     description: t('description'),
     alternates: {
-      canonical: locale === 'nl' ? 'https://accelr.nl/' : 'https://accelr.nl/en/',
+      canonical: canonicalUrl,
       languages: {
         'nl': 'https://accelr.nl/',
         'en': 'https://accelr.nl/en/',
@@ -31,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: locale === 'nl' ? 'https://accelr.nl/' : 'https://accelr.nl/en/',
+      url: canonicalUrl,
       siteName: 'Accelr',
       locale: locale === 'nl' ? 'nl_NL' : 'en_US',
       type: 'website'

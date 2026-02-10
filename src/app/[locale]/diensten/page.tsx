@@ -8,14 +8,32 @@ import { Link } from '@/i18n/routing';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/diensten' : 'https://accelr.nl/en/services';
+  const title = locale === 'nl' ? 'Diensten — Accelr' : 'Services — Accelr';
+  const description = locale === 'nl'
+    ? 'BUILD, RUN of GROW — drie paden naar een werkend AI-powered sales systeem.'
+    : 'BUILD, RUN or GROW — three paths to a working AI-powered sales system.';
 
   return {
-    title: locale === 'nl' 
-      ? 'Diensten — Accelr' 
-      : 'Services — Accelr',
-    description: locale === 'nl'
-      ? 'BUILD, RUN of GROW — drie paden naar een werkend AI-powered sales systeem.'
-      : 'BUILD, RUN or GROW — three paths to a working AI-powered sales system.',
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/diensten',
+        'en': 'https://accelr.nl/en/services',
+        'x-default': 'https://accelr.nl/diensten'
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

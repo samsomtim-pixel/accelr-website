@@ -8,13 +8,34 @@ import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/problemen/afhankelijk-van-founder' : 'https://accelr.nl/en/problems/founder-dependent-sales';
+  const title = locale === 'nl' 
+    ? 'Founder-Afhankelijke Sales? Zo Los Je Het Op | Accelr' 
+    : 'Founder-Dependent Sales? Here\'s How to Fix It | Accelr';
+  const description = locale === 'nl'
+    ? 'Als jij 80% van de deals sluit, groeit je bedrijf niet verder dan wat jij persoonlijk kunt verkopen. Ontdek hoe je schaalt.'
+    : 'If you close 80% of deals, your company won\'t grow beyond what you can personally sell. Discover how to scale.';
+
   return {
-    title: locale === 'nl' 
-      ? 'Founder-Afhankelijke Sales? Zo Los Je Het Op | Accelr' 
-      : 'Founder-Dependent Sales? Here\'s How to Fix It | Accelr',
-    description: locale === 'nl'
-      ? 'Als jij 80% van de deals sluit, groeit je bedrijf niet verder dan wat jij persoonlijk kunt verkopen. Ontdek hoe je schaalt.'
-      : 'If you close 80% of deals, your company won\'t grow beyond what you can personally sell. Discover how to scale.',
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/problemen/afhankelijk-van-founder',
+        'en': 'https://accelr.nl/en/problems/founder-dependent-sales',
+        'x-default': 'https://accelr.nl/problemen/afhankelijk-van-founder'
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 

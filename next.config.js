@@ -10,7 +10,7 @@ const nextConfig = {
       { source: '/diagnose', destination: '/score', permanent: true },
       { source: '/blueprint', destination: '/diensten', permanent: true },
       { source: '/expertise/:path*', destination: '/diensten', permanent: true },
-      { source: '/login', destination: '/', permanent: false },
+      { source: '/login', destination: '/', permanent: true },
     ];
   },
 }

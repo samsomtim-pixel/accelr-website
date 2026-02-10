@@ -76,9 +76,27 @@ export default function Footer() {
             <p className="text-sm mb-2" style={{ color: 'var(--text-secondary)' }}>
               {t('email')}
             </p>
-            <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-sm mb-3" style={{ color: 'var(--text-secondary)' }}>
               {t('location')}
             </p>
+            <div className="space-y-2">
+              <a 
+                href="https://linkedin.com/in/timsamsom" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-green-400 hover:text-green-300 transition-colors block"
+              >
+                LinkedIn →
+              </a>
+              <a 
+                href="https://www.kvk.nl/zoeken/?handelsnaam=Accelr" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-green-400 hover:text-green-300 transition-colors block"
+              >
+                KvK →
+              </a>
+            </div>
           </div>
         </div>
         <div className="text-center text-sm pt-8 border-t" style={{ borderColor: 'var(--border-color)', color: 'var(--text-muted)' }}>

@@ -8,11 +8,32 @@ import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  // Self-referential canonical URLs
+  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/diensten/run' : 'https://accelr.nl/en/services/run';
+  const title = locale === 'nl' ? 'RUN — AI Sales Machine Management | Accelr' : 'RUN — AI Sales Machine Management | Accelr';
+  const description = locale === 'nl'
+    ? 'Wij houden je AI sales machine draaiend. Monitoring, tuning en optimalisatie zodat jij je kunt focussen op deals.'
+    : 'We keep your AI sales machine running. Monitoring, tuning and optimization so you can focus on deals.';
+
   return {
-    title: locale === 'nl' ? 'RUN — AI Sales Machine Management | Accelr' : 'RUN — AI Sales Machine Management | Accelr',
-    description: locale === 'nl'
-      ? 'Wij houden je AI sales machine draaiend. Monitoring, tuning en optimalisatie zodat jij je kunt focussen op deals.'
-      : 'We keep your AI sales machine running. Monitoring, tuning and optimization so you can focus on deals.',
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        'nl': 'https://accelr.nl/diensten/run',
+        'en': 'https://accelr.nl/en/services/run',
+        'x-default': 'https://accelr.nl/diensten/run'
+      }
+    },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'Accelr',
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      type: 'website'
+    }
   };
 }
 
