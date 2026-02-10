@@ -8,6 +8,7 @@ import CTASection from '@/components/CTASection';
 import FAQAccordion from '@/components/FAQAccordion';
 import ComparisonTable from '@/components/ComparisonTable';
 import ROIComparisonTable from '@/components/ROIComparisonTable';
+import PricingCardsMobile from '@/components/PricingCardsMobile';
 import { Link } from '@/i18n/routing';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -208,9 +209,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <p className="text-lg mb-12 text-center" style={{ color: 'var(--text-secondary)' }}>
             {t('services.subtitle')}
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
+          
+          {/* Mobile Swipeable Cards */}
+          <PricingCardsMobile />
+
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
             {/* BUILD - HIGHLIGHTED */}
-            <div className="rounded-2xl p-8 flex flex-col transition-transform hover:scale-[1.02]" style={{ backgroundColor: 'var(--bg-card)', borderColor: '#10b981', borderWidth: '2.5px', borderStyle: 'solid', boxShadow: '0 4px 6px -1px rgba(16, 185, 129, 0.1)' }}>
+            <div className="rounded-2xl p-8 flex flex-col md:transition-transform md:hover:scale-[1.02]" style={{ backgroundColor: 'var(--bg-card)', borderColor: '#10b981', borderWidth: '2.5px', borderStyle: 'solid', boxShadow: '0 4px 6px -1px rgba(16, 185, 129, 0.1)' }}>
               <div className="min-h-[18px] mb-2">
                 <div className="text-xs font-semibold uppercase tracking-wider text-green-400">
                   {t('services.build.badge')}
