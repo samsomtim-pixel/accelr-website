@@ -495,12 +495,12 @@ export function AccelrScan() {
     const offset = circumference - (score / 100) * circumference
 
     return (
-      <div className="min-h-screen bg-neutral-950 text-white p-6 flex items-center justify-center">
+      <div className="min-h-screen p-6 flex items-center justify-center" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
         <div className="max-w-2xl w-full">
           {/* Header */}
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-4">
-              <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
                 accelr<span className="text-green-500">.</span>
               </div>
             </div>
@@ -509,8 +509,8 @@ export function AccelrScan() {
           {/* Score Card */}
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-green-400/10 rounded-3xl blur-3xl"></div>
-            <div className="relative bg-neutral-900 border border-neutral-800 rounded-2xl p-8 mb-6">
-              <h2 className="text-2xl font-bold mb-8 text-white text-center" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <div className="relative rounded-2xl p-8 mb-6" style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
+              <h2 className="text-2xl font-bold mb-8 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
                 Jouw Accelr Score
               </h2>
 
@@ -525,7 +525,7 @@ export function AccelrScan() {
                       stroke="currentColor"
                       strokeWidth="8"
                       fill="none"
-                      className="text-neutral-700"
+                      style={{ color: 'var(--border-color)' }}
                     />
                     <circle
                       cx="96"
@@ -552,8 +552,8 @@ export function AccelrScan() {
               </div>
 
               {/* Niveau Message */}
-              <div className="mb-6 p-4 bg-neutral-800 rounded-lg">
-                <p className="text-gray-300 text-sm text-center">
+              <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+                <p className="text-sm text-center" style={{ color: 'var(--text-secondary)' }}>
                   {niveauMessage}
                 </p>
               </div>
@@ -561,20 +561,20 @@ export function AccelrScan() {
               {/* Score Breakdown */}
               <div className="mb-8 space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-400 text-sm">Strategie & ICP</span>
-                  <span className="text-white font-medium">{scoreBreakdown.strategie_icp}%</span>
+                  <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Strategie & ICP</span>
+                  <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{scoreBreakdown.strategie_icp}%</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-400 text-sm">Proces & Pipeline</span>
-                  <span className="text-white font-medium">{scoreBreakdown.proces_pipeline}%</span>
+                  <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Proces & Pipeline</span>
+                  <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{scoreBreakdown.proces_pipeline}%</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-400 text-sm">Technologie & Data</span>
-                  <span className="text-white font-medium">{scoreBreakdown.technologie_data}%</span>
+                  <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Technologie & Data</span>
+                  <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{scoreBreakdown.technologie_data}%</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-400 text-sm">Groei Readiness</span>
-                  <span className="text-white font-medium">{scoreBreakdown.groei_readiness}%</span>
+                  <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Groei Readiness</span>
+                  <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{scoreBreakdown.groei_readiness}%</span>
                 </div>
               </div>
 
@@ -614,9 +614,9 @@ export function AccelrScan() {
               )}
 
               {/* Email message */}
-              <div className="mb-8 p-4 bg-neutral-800 rounded-lg">
-                <p className="text-gray-400 text-sm text-center">
-                  Je volledige rapport ontvang je binnen 24 uur op <span className="text-white font-medium">{formData.email}</span>
+              <div className="mb-8 p-4 rounded-lg" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+                <p className="text-sm text-center" style={{ color: 'var(--text-secondary)' }}>
+                  Je volledige rapport ontvang je binnen 24 uur op <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{formData.email}</span>
                 </p>
               </div>
 
@@ -626,11 +626,11 @@ export function AccelrScan() {
                   href="https://calendly.com/tim-accelr/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-green-500 hover:bg-green-600 text-neutral-950 font-semibold px-8 py-4 rounded-lg transition-colors"
+                  className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors"
                 >
                   Plan een gesprek →
                 </a>
-                <p className="text-gray-500 text-sm mt-3">30 minuten, vrijblijvend</p>
+                <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>30 minuten, vrijblijvend</p>
               </div>
             </div>
           </div>
@@ -646,10 +646,10 @@ export function AccelrScan() {
 
   if (report) {
     return (
-      <div className="min-h-screen bg-neutral-950 text-white p-6">
+      <div className="min-h-screen p-6" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <div className="text-2xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <div className="text-2xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
               accelr<span className="text-green-500">.</span>
             </div>
           </div>
@@ -662,12 +662,12 @@ export function AccelrScan() {
   // Intro screen (step 0)
   if (step === 0) {
     return (
-      <div className="min-h-screen bg-neutral-950 text-white p-6 flex items-center justify-center">
+      <div className="min-h-screen p-6 flex items-center justify-center" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
         <div className="max-w-[600px] w-full">
           {/* Header */}
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-4">
-              <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
                 accelr<span className="text-green-500">.</span>
               </div>
             </div>
@@ -675,11 +675,11 @@ export function AccelrScan() {
 
           {/* Progress */}
           <div className="mb-6">
-            <div className="flex justify-between text-sm text-gray-400 mb-2">
+            <div className="flex justify-between text-sm mb-2" style={{ color: 'var(--text-secondary)' }}>
               <span>Intro</span>
               <span>{Math.round(progress)}%</span>
             </div>
-            <div className="w-full bg-neutral-800 rounded-full h-2">
+            <div className="w-full rounded-full h-2" style={{ backgroundColor: 'var(--bg-secondary)' }}>
               <div
                 className="bg-green-500 h-2 rounded-full transition-all duration-300"
                 style={{ width: `${progress}%` }}
@@ -690,7 +690,7 @@ export function AccelrScan() {
           {/* Intro Card */}
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-green-400/10 rounded-3xl blur-3xl"></div>
-            <div className="relative bg-neutral-900 border border-neutral-800 rounded-2xl p-8 mb-6">
+            <div className="relative rounded-2xl p-8 mb-6" style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
               {/* Badge */}
               <div className="text-center mb-6">
                 <div className="inline-block bg-green-500/20 border border-green-500/30 text-green-400 px-4 py-1.5 rounded-full text-sm font-medium">
@@ -708,22 +708,22 @@ export function AccelrScan() {
               </div>
 
               {/* Headline */}
-              <h1 className="text-2xl md:text-3xl font-bold mb-6 text-white text-center" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
                 Ontdek hoe sterk jullie sales machine is — en wat het je kost.
               </h1>
 
               {/* Subtext with checkmarks */}
               <div className="flex justify-center mb-8">
                 <div className="space-y-3 text-left">
-                  <div className="flex items-center gap-3 text-gray-300">
+                  <div className="flex items-center gap-3" style={{ color: 'var(--text-secondary)' }}>
                     <span className="text-green-400">✓</span>
                     <span>Score op 4 dimensies: Strategie, Proces, Technologie en Groei</span>
                   </div>
-                  <div className="flex items-center gap-3 text-gray-300">
+                  <div className="flex items-center gap-3" style={{ color: 'var(--text-secondary)' }}>
                     <span className="text-green-400">✓</span>
                     <span>Benchmark tegen vergelijkbare Nederlandse B2B-bedrijven</span>
                   </div>
-                  <div className="flex items-center gap-3 text-gray-300">
+                  <div className="flex items-center gap-3" style={{ color: 'var(--text-secondary)' }}>
                     <span className="text-green-400">✓</span>
                     <span>Inclusief gemiste-omzet berekening</span>
                   </div>
@@ -734,14 +734,14 @@ export function AccelrScan() {
               <div className="text-center mb-6">
                 <button
                   onClick={handleNext}
-                  className="bg-green-500 hover:bg-green-600 text-neutral-950 font-semibold px-8 py-4 rounded-lg transition-colors"
+                  className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors"
                 >
                   Start scan
                 </button>
               </div>
 
               {/* Footer text */}
-              <p className="text-center text-gray-500 text-sm">
+              <p className="text-center text-sm" style={{ color: 'var(--text-muted)' }}>
                 3 min ⏱️
               </p>
             </div>
@@ -760,12 +760,12 @@ export function AccelrScan() {
   const questionNumber = step === 1 ? null : step - 1
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white p-6 flex items-center justify-center">
+    <div className="min-h-screen p-6 flex items-center justify-center" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
       <div className="max-w-2xl w-full">
         {/* Header */}
         <div className="text-center mb-6">
           <div className="flex items-center justify-center mb-4">
-            <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
               accelr<span className="text-green-500">.</span>
             </div>
           </div>
@@ -776,7 +776,7 @@ export function AccelrScan() {
 
         {/* Progress */}
         <div className="mb-6">
-          <div className="flex justify-between text-sm text-gray-400 mb-2">
+          <div className="flex justify-between text-sm mb-2" style={{ color: 'var(--text-secondary)' }}>
             <span>
               {step === 1 
                 ? 'Extra informatie' 
@@ -786,7 +786,7 @@ export function AccelrScan() {
             </span>
             <span>{Math.round(progress)}%</span>
           </div>
-          <div className="w-full bg-neutral-800 rounded-full h-2">
+          <div className="w-full rounded-full h-2" style={{ backgroundColor: 'var(--bg-secondary)' }}>
             <div
               className="bg-green-500 h-2 rounded-full transition-all duration-300"
               style={{ width: `${progress}%` }}
@@ -797,8 +797,8 @@ export function AccelrScan() {
         {/* Question Card */}
         <div className="relative">
           <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-green-400/10 rounded-3xl blur-3xl"></div>
-          <div className="relative bg-neutral-900 border border-neutral-800 rounded-2xl p-8 mb-6">
-            <h2 className="text-2xl font-bold mb-2 text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <div className="relative rounded-2xl p-8 mb-6" style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
+            <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
               {currentQuestion.question}
             </h2>
 
@@ -822,7 +822,12 @@ export function AccelrScan() {
                   value={(formData[currentQuestion.id as keyof FormData] as string) || ''}
                   onChange={(e) => handleChange(e.target.value)}
                   placeholder={currentQuestion.placeholder}
-                  className="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"
+                  className="w-full rounded-lg px-4 py-3 focus:outline-none focus:border-green-500 transition-colors"
+                  style={{ 
+                    backgroundColor: 'var(--bg-secondary)', 
+                    border: '1px solid var(--border-color)',
+                    color: 'var(--text-primary)'
+                  }}
                 />
               ) : currentQuestion.type === 'select' ? (
                 <div className="space-y-3">
@@ -834,15 +839,25 @@ export function AccelrScan() {
                         onClick={() => handleChange(option.value)}
                         className={`w-full text-left p-4 rounded-xl border transition-all flex items-center gap-3 ${
                           isSelected
-                            ? 'bg-green-500/20 border-green-500 text-white'
-                            : 'bg-neutral-800 border-neutral-700 text-gray-300 hover:border-green-500/50'
+                            ? 'bg-green-500/20 border-green-500'
+                            : 'hover:border-green-500/50'
                         }`}
+                        style={isSelected 
+                          ? { color: 'var(--text-primary)' }
+                          : { 
+                              backgroundColor: 'var(--bg-secondary)', 
+                              borderColor: 'var(--border-color)',
+                              color: 'var(--text-secondary)'
+                            }
+                        }
                       >
                         <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
                           isSelected
                             ? 'border-green-500 bg-green-500'
-                            : 'border-neutral-700'
-                        }`}>
+                            : ''
+                        }`}
+                        style={!isSelected ? { borderColor: 'var(--border-color)' } : {}}
+                        >
                           {isSelected && (
                             <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
                           )}
@@ -856,7 +871,7 @@ export function AccelrScan() {
                 <div className="space-y-4">
                   {currentQuestion.fields?.map((field) => (
                     <div key={field.id}>
-                      <label className="block text-sm font-medium text-gray-400 mb-2">
+                      <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-secondary)' }}>
                         {field.label} {field.required && <span className="text-green-400">*</span>}
                       </label>
                       <input
@@ -864,7 +879,12 @@ export function AccelrScan() {
                         value={(formData[field.id as keyof FormData] as string) || ''}
                         onChange={(e) => handleContactChange(field.id, e.target.value)}
                         placeholder={field.placeholder}
-                        className="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-green-500"
+                        className="w-full rounded-lg px-4 py-3 focus:outline-none focus:border-green-500 transition-colors"
+                        style={{ 
+                          backgroundColor: 'var(--bg-secondary)', 
+                          border: '1px solid var(--border-color)',
+                          color: 'var(--text-primary)'
+                        }}
                         required={field.required}
                       />
                     </div>
@@ -877,10 +897,14 @@ export function AccelrScan() {
                         type="checkbox"
                         checked={formData.privacyAccepted === true}
                         onChange={(e) => setFormData({ ...formData, privacyAccepted: e.target.checked })}
-                        className="mt-1 w-4 h-4 text-green-500 bg-neutral-800 border-neutral-700 rounded focus:ring-green-500 focus:ring-2"
+                        className="mt-1 w-4 h-4 text-green-500 rounded focus:ring-green-500 focus:ring-2"
+                        style={{ 
+                          backgroundColor: 'var(--bg-secondary)', 
+                          borderColor: 'var(--border-color)'
+                        }}
                         required
                       />
-                      <span className="text-sm text-gray-300">
+                      <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                         Ik ga akkoord met de{' '}
                         <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 underline">
                           privacyvoorwaarden
@@ -897,9 +921,13 @@ export function AccelrScan() {
                         type="checkbox"
                         checked={formData.marketingOptin === true}
                         onChange={(e) => setFormData({ ...formData, marketingOptin: e.target.checked })}
-                        className="mt-1 w-4 h-4 text-green-500 bg-neutral-800 border-neutral-700 rounded focus:ring-green-500 focus:ring-2"
+                        className="mt-1 w-4 h-4 text-green-500 rounded focus:ring-green-500 focus:ring-2"
+                        style={{ 
+                          backgroundColor: 'var(--bg-secondary)', 
+                          borderColor: 'var(--border-color)'
+                        }}
                       />
-                      <span className="text-sm text-gray-300">
+                      <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                         Ik ontvang graag sales- en marketingtips
                       </span>
                     </label>
@@ -909,11 +937,23 @@ export function AccelrScan() {
             </div>
 
             {/* Navigation */}
-            <div className="flex justify-between items-center pt-4 border-t border-neutral-800">
+            <div className="flex justify-between items-center pt-4" style={{ borderTop: '1px solid var(--border-color)' }}>
               {step > 1 ? (
                 <button
                   onClick={handleBack}
-                  className="text-gray-400 hover:text-white transition-colors px-6 py-3 border border-neutral-700 rounded-lg hover:border-neutral-600"
+                  className="px-6 py-3 border rounded-lg transition-colors"
+                  style={{ 
+                    color: 'var(--text-secondary)',
+                    borderColor: 'var(--border-color)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = 'var(--text-primary)'
+                    e.currentTarget.style.borderColor = 'var(--border-hover)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'var(--text-secondary)'
+                    e.currentTarget.style.borderColor = 'var(--border-color)'
+                  }}
                 >
                   ← Vorige
                 </button>
@@ -924,7 +964,11 @@ export function AccelrScan() {
               <button
                 onClick={handleNext}
                 disabled={!isStepValid()}
-                className="bg-green-500 hover:bg-green-600 disabled:bg-neutral-700 disabled:text-gray-500 disabled:cursor-not-allowed text-neutral-950 font-semibold px-8 py-3 rounded-lg transition-colors"
+                className="bg-green-500 hover:bg-green-600 disabled:cursor-not-allowed text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+                style={!isStepValid() ? {
+                  backgroundColor: 'var(--bg-secondary)',
+                  color: 'var(--text-muted)'
+                } : {}}
               >
                 {step === totalSteps - 1 ? 'Verstuur mijn scan' : 'Volgende →'}
               </button>
