@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { useLocale } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 export default function ServicesDropdown() {
   const [open, setOpen] = useState(false);
@@ -18,8 +18,6 @@ export default function ServicesDropdown() {
     // 150ms delay voordat dropdown sluit — genoeg om de gap te overbruggen
     timeoutRef.current = setTimeout(() => setOpen(false), 150);
   }
-
-  const getLocalizedPath = (path: string) => locale === 'nl' ? path : `/en${path}`;
 
   return (
     <div
@@ -42,7 +40,7 @@ export default function ServicesDropdown() {
               de gap overbrugt zodat mouseleave niet triggert */}
           <div className="rounded-xl shadow-xl py-2 min-w-[240px]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
             <Link
-              href={getLocalizedPath('/diensten/build')}
+              href="/diensten/build"
               className="block px-4 py-2.5 text-sm transition-colors"
               style={{ color: 'var(--text-secondary)' }}
               onMouseEnter={(e) => {
@@ -61,7 +59,7 @@ export default function ServicesDropdown() {
               </span>
             </Link>
             <Link
-              href={getLocalizedPath('/diensten/run')}
+              href="/diensten/run"
               className="block px-4 py-2.5 text-sm transition-colors"
               style={{ color: 'var(--text-secondary)' }}
               onMouseEnter={(e) => {
@@ -80,7 +78,7 @@ export default function ServicesDropdown() {
               </span>
             </Link>
             <Link
-              href={getLocalizedPath('/diensten/grow')}
+              href="/diensten/grow"
               className="block px-4 py-2.5 text-sm transition-colors"
               style={{ color: 'var(--text-secondary)' }}
               onMouseEnter={(e) => {
@@ -100,7 +98,7 @@ export default function ServicesDropdown() {
             </Link>
             <div className="border-t mt-1 pt-1" style={{ borderColor: 'var(--border-color)' }}>
               <Link
-                href={getLocalizedPath('/diensten')}
+                href="/diensten"
                 className="block px-4 py-2 text-sm transition-colors text-green-400 hover:text-green-300"
                 onClick={() => setOpen(false)}
               >

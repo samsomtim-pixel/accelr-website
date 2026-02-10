@@ -1,9 +1,10 @@
 import { defineRouting } from 'next-intl/routing';
+import { createNavigation } from 'next-intl/navigation';
 
 export const routing = defineRouting({
   locales: ['nl', 'en'],
   defaultLocale: 'nl',
-  localePrefix: 'as-needed', // NL = root, EN = /en/
+  localePrefix: 'as-needed',
   pathnames: {
     '/': '/',
     '/diensten': {
@@ -23,22 +24,7 @@ export const routing = defineRouting({
       en: '/services/grow'
     },
     '/score': '/score',
-    '/problemen/geen-pipeline': {
-      nl: '/problemen/geen-pipeline',
-      en: '/problems/no-pipeline'
-    },
-    '/problemen/afhankelijk-van-founder': {
-      nl: '/problemen/afhankelijk-van-founder',
-      en: '/problems/founder-dependent-sales'
-    },
-    '/problemen/inconsistente-omzet': {
-      nl: '/problemen/inconsistente-omzet',
-      en: '/problems/inconsistent-revenue'
-    },
-    '/cases': {
-      nl: '/cases',
-      en: '/cases'
-    },
+    '/cases': '/cases',
     '/kennisbank': {
       nl: '/kennisbank',
       en: '/resources'
@@ -51,10 +37,11 @@ export const routing = defineRouting({
       nl: '/over-ons',
       en: '/about'
     },
-    '/contact': {
-      nl: '/contact',
-      en: '/contact'
-    }
+    '/contact': '/contact'
   }
 });
+
+// CRUCIAAL — dit is wat je LanguageSwitcher nodig heeft
+export const { Link, usePathname, useRouter, redirect } = createNavigation(routing);
+
 
