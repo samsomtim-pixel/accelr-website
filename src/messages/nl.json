@@ -61,7 +61,8 @@
     },
     "run": {
       "title": "RUN",
-      "persona": "Je sales machine draaiend en optimaal houden",
+      "persona": "Na BUILD: je sales machine optimaal houden",
+      "personaNote": "Vereist een werkende sales stack (of BUILD)",
       "price": "Vanaf €1.500 /maand",
       "priceAnchor": "↳ Een fractie van één fulltime SDR",
       "features": [
@@ -79,7 +80,8 @@
     "grow": {
       "title": "GROW",
       "badge": "HOOGSTE ROI",
-      "persona": "Strategisch sales leiderschap en versnelling",
+      "persona": "Na BUILD: strategisch versnellen",
+      "personaNote": "Vereist een werkende sales stack (of BUILD)",
       "price": "Vanaf €3.500 /maand",
       "priceAnchor": "↳ Minder dan een halve sales manager",
       "features": [

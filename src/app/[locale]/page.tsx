@@ -181,9 +181,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)', minHeight: '44px' }}>
                 {t('services.run.title')}
               </h3>
-              <p className="text-sm font-medium mb-6" style={{ color: 'var(--text-muted)', minHeight: '44px' }}>
-                {t('services.run.persona')}
-              </p>
+              <div className="mb-6" style={{ minHeight: '44px' }}>
+                <p className="text-sm font-medium mb-1" style={{ color: 'var(--text-muted)' }}>
+                  {t('services.run.persona')}
+                </p>
+                <p className="text-xs italic" style={{ color: 'var(--text-muted)' }}>
+                  {t('services.run.personaNote')}
+                </p>
+              </div>
               <div className="mb-2">
                 <span className="text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.run.price')}</span>
               </div>
@@ -227,9 +232,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)', minHeight: '44px' }}>
                 {t('services.grow.title')}
               </h3>
-              <p className="text-sm font-medium mb-6" style={{ color: 'var(--text-muted)', minHeight: '44px' }}>
-                {t('services.grow.persona')}
-              </p>
+              <div className="mb-6" style={{ minHeight: '44px' }}>
+                <p className="text-sm font-medium mb-1" style={{ color: 'var(--text-muted)' }}>
+                  {t('services.grow.persona')}
+                </p>
+                <p className="text-xs italic" style={{ color: 'var(--text-muted)' }}>
+                  {t('services.grow.personaNote')}
+                </p>
+              </div>
               <div className="mb-2">
                 <span className="text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.grow.price')}</span>
               </div>

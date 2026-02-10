@@ -61,7 +61,8 @@
     },
     "run": {
       "title": "RUN",
-      "persona": "Keep your sales machine running and optimized",
+      "persona": "After BUILD: keep your sales machine optimized",
+      "personaNote": "Requires a working sales stack (or BUILD)",
       "price": "From €1,500 /month",
       "priceAnchor": "↳ A fraction of one full-time SDR",
       "features": [
@@ -79,7 +80,8 @@
     "grow": {
       "title": "GROW",
       "badge": "HIGHEST ROI",
-      "persona": "Strategic sales leadership and acceleration",
+      "persona": "After BUILD: strategic acceleration",
+      "personaNote": "Requires a working sales stack (or BUILD)",
       "price": "From €3,500 /month",
       "priceAnchor": "↳ Less than half a sales manager",
       "features": [
