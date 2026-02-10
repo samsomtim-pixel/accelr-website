@@ -9,8 +9,12 @@ import { AccelrScan } from '@/components/AccelrScan';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'hero' });
-  // Self-referential canonical URLs
-  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/score' : 'https://accelr.nl/en/score';
+  // Self-referential canonical URLs using './' - Next.js will auto-resolve to current path
+  const canonicalPath = './';
+  
+  // Debug logging (will appear in server logs)
+  console.log(`[Score] Locale: ${locale}, Canonical path: ${canonicalPath}`);
+  
   const title = locale === 'nl' 
     ? 'Sales Readiness Score — Accelr' 
     : 'Sales Readiness Score — Accelr';
@@ -22,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     alternates: {
-      canonical: canonicalUrl,
+      canonical: canonicalPath,
       languages: {
         'nl': 'https://accelr.nl/score',
         'en': 'https://accelr.nl/en/score',
@@ -32,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title,
       description,
-      url: canonicalUrl,
+      url: locale === 'nl' ? 'https://accelr.nl/score' : 'https://accelr.nl/en/score',
       siteName: 'Accelr',
       locale: locale === 'nl' ? 'nl_NL' : 'en_US',
       type: 'website'

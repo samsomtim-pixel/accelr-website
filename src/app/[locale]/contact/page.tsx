@@ -8,8 +8,12 @@ import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  // Self-referential canonical URLs
-  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/contact' : 'https://accelr.nl/en/contact';
+  // Self-referential canonical URLs using './' - Next.js will auto-resolve to current path
+  const canonicalPath = './';
+  
+  // Debug logging (will appear in server logs)
+  console.log(`[Contact] Locale: ${locale}, Canonical path: ${canonicalPath}`);
+  
   const title = locale === 'nl' ? 'Contact — Accelr' : 'Contact — Accelr';
   const description = locale === 'nl'
     ? 'Neem contact op met Accelr. Of start eerst met de gratis Score.'
@@ -19,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     alternates: {
-      canonical: canonicalUrl,
+      canonical: canonicalPath,
       languages: {
         'nl': 'https://accelr.nl/contact',
         'en': 'https://accelr.nl/en/contact',
@@ -29,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title,
       description,
-      url: canonicalUrl,
+      url: locale === 'nl' ? 'https://accelr.nl/contact' : 'https://accelr.nl/en/contact',
       siteName: 'Accelr',
       locale: locale === 'nl' ? 'nl_NL' : 'en_US',
       type: 'website'

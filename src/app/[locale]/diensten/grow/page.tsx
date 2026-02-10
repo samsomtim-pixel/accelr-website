@@ -8,8 +8,8 @@ import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  // Self-referential canonical URLs
-  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/diensten/grow' : 'https://accelr.nl/en/services/grow';
+  // Self-referential canonical URLs using './' - Next.js will auto-resolve to current path
+  const canonicalPath = './';
   const title = locale === 'nl' ? 'GROW — Fractional VP Sales | Accelr' : 'GROW — Fractional VP Sales | Accelr';
   const description = locale === 'nl'
     ? 'Strategische salesarchitectuur, closing coaching en kwartaal-reviews. Wij worden je fractional VP Sales.'
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     alternates: {
-      canonical: canonicalUrl,
+      canonical: canonicalPath,
       languages: {
         'nl': 'https://accelr.nl/diensten/grow',
         'en': 'https://accelr.nl/en/services/grow',
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title,
       description,
-      url: canonicalUrl,
+      url: locale === 'nl' ? 'https://accelr.nl/diensten/grow' : 'https://accelr.nl/en/services/grow',
       siteName: 'Accelr',
       locale: locale === 'nl' ? 'nl_NL' : 'en_US',
       type: 'website'

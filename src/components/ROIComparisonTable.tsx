@@ -13,9 +13,9 @@ interface ROIComparisonTableProps {
 export default function ROIComparisonTable({ title, columns, rows, footnote }: ROIComparisonTableProps) {
   return (
     <div className="overflow-x-auto">
-      <h3 className="text-2xl font-bold mb-6 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
         {title}
-      </h3>
+      </h2>
       
       {/* Desktop Table */}
       <div className="hidden md:block max-w-[900px] mx-auto">
@@ -74,9 +74,9 @@ export default function ROIComparisonTable({ title, columns, rows, footnote }: R
               borderStyle: 'solid',
             }}
           >
-            <h4 className="text-lg font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+            <p className="text-lg font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               {row.scenario}
-            </h4>
+            </p>
             <div className="space-y-3">
               <div>
                 <p className="text-xs mb-1" style={{ color: 'var(--text-muted)' }}>{columns[1]}</p>

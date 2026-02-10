@@ -4,7 +4,13 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import Script from 'next/script';
 import CookieBanner from '@/components/CookieBanner';
+import type { Metadata } from 'next';
 import '@/styles/globals.css';
+
+// Set metadataBase for all pages - required for self-referential canonical URLs
+export const metadata: Metadata = {
+  metadataBase: new URL('https://accelr.nl'),
+};
 
 // Organization schema
 const organizationSchema = {

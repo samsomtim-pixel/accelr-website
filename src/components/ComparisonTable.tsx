@@ -73,9 +73,9 @@ export default function ComparisonTable({ columns, rows }: ComparisonTableProps)
               borderStyle: 'solid',
             }}
           >
-            <h4 className="text-lg font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+            <p className="text-lg font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
               {row.label}
-            </h4>
+            </p>
             <div className="space-y-4">
               {/* Accelr */}
               <div className="rounded-lg p-4" style={{ backgroundColor: 'rgba(16, 185, 129, 0.1)' }}>

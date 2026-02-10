@@ -6,8 +6,8 @@ import Footer from '@/components/layout/Footer';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  // Self-referential canonical URLs
-  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/kennisbank' : 'https://accelr.nl/en/resources';
+  // Self-referential canonical URLs using './' - Next.js will auto-resolve to current path
+  const canonicalPath = './';
   return {
     title: locale === 'nl' ? 'Kennisbank — Accelr' : 'Resources — Accelr',
     description: locale === 'nl'
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       follow: true,
     },
     alternates: {
-      canonical: canonicalUrl,
+      canonical: canonicalPath,
       languages: {
         'nl': 'https://accelr.nl/kennisbank',
         'en': 'https://accelr.nl/en/resources',
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: locale === 'nl'
         ? 'Alles over AI-powered B2B sales. Artikelen, guides en best practices.'
         : 'Everything about AI-powered B2B sales. Articles, guides and best practices.',
-      url: canonicalUrl,
+      url: locale === 'nl' ? 'https://accelr.nl/kennisbank' : 'https://accelr.nl/en/resources',
       siteName: 'Accelr',
       locale: locale === 'nl' ? 'nl_NL' : 'en_US',
       type: 'website'

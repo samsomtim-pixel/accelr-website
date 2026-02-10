@@ -7,8 +7,8 @@ import CTASection from '@/components/CTASection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  // Self-referential canonical URLs
-  const canonicalUrl = locale === 'nl' ? 'https://accelr.nl/cases' : 'https://accelr.nl/en/cases';
+  // Self-referential canonical URLs using './' - Next.js will auto-resolve to current path
+  const canonicalPath = './';
   return {
     title: locale === 'nl' ? 'Cases — Accelr' : 'Cases — Accelr',
     description: locale === 'nl'
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       follow: true,
     },
     alternates: {
-      canonical: canonicalUrl,
+      canonical: canonicalPath,
       languages: {
         'nl': 'https://accelr.nl/cases',
         'en': 'https://accelr.nl/en/cases',
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: locale === 'nl'
         ? 'We zijn net gestart met onze nieuwe AI-powered aanpak. Onze eerste case studies volgen binnenkort.'
         : 'We just started with our new AI-powered approach. Our first case studies will follow soon.',
-      url: canonicalUrl,
+      url: locale === 'nl' ? 'https://accelr.nl/cases' : 'https://accelr.nl/en/cases',
       siteName: 'Accelr',
       locale: locale === 'nl' ? 'nl_NL' : 'en_US',
       type: 'website'
