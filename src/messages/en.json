@@ -39,28 +39,86 @@
     "conclusion": "The problem isn't the technology. The problem is that nobody made it work in your company. That's exactly what we do — with AI as accelerator, not replacement."
   },
   "services": {
-    "title": "Three paths to a working system",
+    "title": "Your investment in predictable growth",
+    "subtitle": "Everything you need to build, run and scale a sales machine.",
     "build": {
       "title": "BUILD",
-      "subtitle": "From zero to working system",
-      "description": "In 8-12 weeks we build your complete AI-powered sales machine: ICP definition, AI SDR deployment, CRM integration, outreach automation, playbooks and GDPR compliance. Then it's yours.",
-      "price": "€5,000 – €15,000",
-      "cta": "More about BUILD →"
+      "badge": "MOST POPULAR",
+      "persona": "From zero to a working sales system",
+      "price": "From €7,500",
+      "priceAnchor": "↳ One-time · less than 2 months salary",
+      "features": [
+        "ICP definition and market analysis",
+        "AI SDR deployment and configuration",
+        "CRM integration and outreach automation",
+        "Sales playbooks and templates",
+        "GDPR-compliant setup",
+        "Then it's fully yours"
+      ],
+      "cta": "Book a strategy session →",
+      "trust": "Not satisfied? We keep going until it works.",
+      "detailLink": "View all details →"
     },
     "run": {
       "title": "RUN",
-      "subtitle": "Keeping your AI sales machine running",
-      "description": "AI SDRs require 15-20 hours of human oversight per week. You don't have those hours. We monitor, tune and optimize your system continuously — so you can focus on closing deals.",
-      "price": "€1,500 – €3,500 /month",
-      "cta": "More about RUN →"
+      "persona": "Keep your sales machine running and optimized",
+      "price": "From €1,500 /month",
+      "priceAnchor": "↳ A fraction of one full-time SDR",
+      "features": [
+        "Monitoring and optimization of AI SDRs",
+        "Weekly performance reports",
+        "A/B testing messaging and targeting",
+        "Technical maintenance and deliverability",
+        "Dedicated account manager",
+        "Monthly optimization sprints"
+      ],
+      "cta": "Book a strategy session →",
+      "trust": "Cancel monthly · No lock-in",
+      "detailLink": "View all details →"
     },
     "grow": {
       "title": "GROW",
-      "subtitle": "Scaling with data and strategy",
-      "description": "For companies that have the basics in place and want to accelerate. Strategic sales architecture, advanced analytics, closing coaching and quarterly reviews. We become your fractional VP Sales.",
-      "price": "€3,500 – €7,000 /month",
-      "cta": "More about GROW →"
+      "badge": "HIGHEST ROI",
+      "persona": "Strategic sales leadership and acceleration",
+      "price": "From €3,500 /month",
+      "priceAnchor": "↳ Less than half a sales manager",
+      "features": [
+        "Everything in RUN, plus:",
+        "Strategic sales architecture + roadmap",
+        "Advanced analytics and forecasting",
+        "Closing coaching and deal reviews",
+        "Quarterly reviews with growth targets",
+        "We become your fractional VP Sales"
+      ],
+      "cta": "Book a strategy session →",
+      "trust": "Cancel monthly · No lock-in",
+      "detailLink": "View all details →"
     }
+  },
+  "roiComparison": {
+    "title": "Compare your investment",
+    "columns": ["Scenario", "In-house", "With Accelr", "You save"],
+    "rows": [
+      {
+        "scenario": "Hire a junior SDR",
+        "inhouse": "€65,000 /year",
+        "accelr": "RUN: from €18,000 /year",
+        "savings": "Up to 72%"
+      },
+      {
+        "scenario": "Hire a Sales Manager",
+        "inhouse": "€120,000 /year",
+        "accelr": "GROW: from €42,000 /year",
+        "savings": "Up to 65%"
+      },
+      {
+        "scenario": "Sales infra build-out",
+        "inhouse": "€25,000 – €50,000",
+        "accelr": "BUILD: from €7,500",
+        "savings": "Up to 85%"
+      }
+    ],
+    "footnote": "Including recruitment (€10K-€15K), 5-month ramp time, and the risk it doesn't work out."
   },
   "expertise": {
     "title": "Expertise across the entire sales funnel",
@@ -109,10 +167,10 @@
       "result": "Result"
     },
     "accelr": {
-      "approach": "Build AI-powered system + handover",
+      "approach": "Build AI system + hand over",
       "after": "System keeps running — it's yours",
       "ai": "Native in every component, continuously optimized",
-      "costs": "€5K-€15K one-time + optional retainer",
+      "costs": "From €7.5K one-time + optional retainer",
       "ownership": "Your CRM, your data, your processes",
       "result": "Working system in 8-12 weeks"
     },

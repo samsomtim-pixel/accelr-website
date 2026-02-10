@@ -39,28 +39,86 @@
     "conclusion": "Het probleem is niet de technologie. Het probleem is dat niemand het werkend heeft gemaakt in jouw bedrijf. Dat is precies wat wij doen — met AI als versneller, niet als vervanging."
   },
   "services": {
-    "title": "Drie paden naar een werkend systeem",
+    "title": "Jouw investering in voorspelbare groei",
+    "subtitle": "Alles wat je nodig hebt om een sales machine te bouwen, draaien en schalen.",
     "build": {
       "title": "BUILD",
-      "subtitle": "Van nul naar werkend systeem",
-      "description": "In 8-12 weken bouwen we je complete AI-powered sales machine: ICP definitie, AI SDR deployment, CRM integratie, outreach-automatie, playbooks en AVG-compliance. Daarna is het van jou.",
-      "price": "€5.000 – €15.000",
-      "cta": "Meer over BUILD →"
+      "badge": "MEEST GEKOZEN",
+      "persona": "Van nul naar een werkend sales systeem",
+      "price": "Vanaf €7.500",
+      "priceAnchor": "↳ Eenmalig · minder dan 2 maanden salaris",
+      "features": [
+        "ICP definitie en marktanalyse",
+        "AI SDR deployment en configuratie",
+        "CRM integratie en outreach-automatie",
+        "Sales playbooks en templates",
+        "AVG-compliant opgezet",
+        "Daarna volledig eigendom van jou"
+      ],
+      "cta": "Plan een strategiegesprek →",
+      "trust": "Niet tevreden? Wij werken door tot het staat.",
+      "detailLink": "Bekijk alle details →"
     },
     "run": {
       "title": "RUN",
-      "subtitle": "Jouw AI sales machine draaiend houden",
-      "description": "AI SDR's vereisen 15-20 uur menselijk toezicht per week. Die uren heb je niet. Wij monitoren, tunen en optimaliseren je systeem continu — zodat jij je kunt focussen op deals sluiten.",
-      "price": "€1.500 – €3.500 /maand",
-      "cta": "Meer over RUN →"
+      "persona": "Je sales machine draaiend en optimaal houden",
+      "price": "Vanaf €1.500 /maand",
+      "priceAnchor": "↳ Een fractie van één fulltime SDR",
+      "features": [
+        "Monitoring en optimalisatie AI SDR's",
+        "Wekelijkse performance rapportages",
+        "A/B testing messaging en targeting",
+        "Technisch onderhoud en deliverability",
+        "Dedicated account manager",
+        "Maandelijkse optimalisatie-sprints"
+      ],
+      "cta": "Plan een strategiegesprek →",
+      "trust": "Maandelijks opzegbaar · Geen lock-in",
+      "detailLink": "Bekijk alle details →"
     },
     "grow": {
       "title": "GROW",
-      "subtitle": "Schalen met data en strategie",
-      "description": "Voor bedrijven die de basis hebben staan en willen versnellen. Strategische salesarchitectuur, geavanceerde analytics, closing coaching en kwartaal-reviews. Wij worden je fractional VP Sales.",
-      "price": "€3.500 – €7.000 /maand",
-      "cta": "Meer over GROW →"
+      "badge": "HOOGSTE ROI",
+      "persona": "Strategisch sales leiderschap en versnelling",
+      "price": "Vanaf €3.500 /maand",
+      "priceAnchor": "↳ Minder dan een halve sales manager",
+      "features": [
+        "Alles uit RUN, plus:",
+        "Strategische salesarchitectuur + roadmap",
+        "Advanced analytics en forecasting",
+        "Closing coaching en deal reviews",
+        "Kwartaal-reviews met groeidoelen",
+        "Wij worden je fractional VP Sales"
+      ],
+      "cta": "Plan een strategiegesprek →",
+      "trust": "Maandelijks opzegbaar · Geen lock-in",
+      "detailLink": "Bekijk alle details →"
     }
+  },
+  "roiComparison": {
+    "title": "Vergelijk je investering",
+    "columns": ["Scenario", "Zelf doen", "Met Accelr", "Besparing"],
+    "rows": [
+      {
+        "scenario": "Junior SDR inhuren",
+        "inhouse": "€65.000 /jaar",
+        "accelr": "RUN: vanaf €18.000 /jaar",
+        "savings": "Tot 72%"
+      },
+      {
+        "scenario": "Sales Manager inhuren",
+        "inhouse": "€120.000 /jaar",
+        "accelr": "GROW: vanaf €42.000 /jaar",
+        "savings": "Tot 65%"
+      },
+      {
+        "scenario": "Sales infra laten bouwen",
+        "inhouse": "€25.000 – €50.000",
+        "accelr": "BUILD: vanaf €7.500",
+        "savings": "Tot 85%"
+      }
+    ],
+    "footnote": "Inclusief werving (€10K-€15K), inwerktijd (5 maanden), en het risico dat het niet werkt."
   },
   "expertise": {
     "title": "Expertise over de hele sales funnel",
@@ -109,10 +167,10 @@
       "result": "Resultaat"
     },
     "accelr": {
-      "approach": "AI-powered systeem bouwen + overdragen",
+      "approach": "AI-systeem bouwen + overdragen",
       "after": "Systeem blijft draaien — het is van jou",
       "ai": "Native in elk onderdeel, continu geoptimaliseerd",
-      "costs": "€5K-€15K eenmalig + optioneel retainer",
+      "costs": "Vanaf €7,5K eenmalig + optioneel retainer",
       "ownership": "Jouw CRM, jouw data, jouw processen",
       "result": "Werkend systeem in 8-12 weken"
     },

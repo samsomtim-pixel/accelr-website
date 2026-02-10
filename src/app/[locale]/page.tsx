@@ -7,7 +7,8 @@ import Footer from '@/components/layout/Footer';
 import CTASection from '@/components/CTASection';
 import FAQAccordion from '@/components/FAQAccordion';
 import ComparisonTable from '@/components/ComparisonTable';
-import Link from 'next/link';
+import ROIComparisonTable from '@/components/ROIComparisonTable';
+import { Link } from '@/i18n/routing';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -41,7 +42,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
-  const getLocalizedPath = (path: string) => locale === 'nl' ? path : `/en${path}`;
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
@@ -63,13 +63,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <Link
-              href={getLocalizedPath('/score')}
+              href="/score"
               className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full transition-colors"
             >
               {t('hero.cta_primary')}
             </Link>
             <Link
-              href={getLocalizedPath('/diensten')}
+              href="/diensten"
               className="border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-8 py-4 rounded-full transition-colors"
             >
               {t('hero.cta_secondary')}
@@ -119,87 +119,167 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* Services Section - BUILD/RUN/GROW */}
+      {/* Pricing Section - BUILD/RUN/GROW */}
       <section className="px-6 py-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
             {t('services.title')}
           </h2>
+          <p className="text-lg mb-12 text-center" style={{ color: 'var(--text-secondary)' }}>
+            {t('services.subtitle')}
+          </p>
           <div className="grid md:grid-cols-3 gap-6">
-            {/* BUILD */}
-            <div className="rounded-2xl p-8" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+            {/* BUILD - HIGHLIGHTED */}
+            <div className="rounded-2xl p-8 flex flex-col transition-transform hover:scale-[1.02]" style={{ backgroundColor: 'var(--bg-card)', borderColor: '#10b981', borderWidth: '2.5px', borderStyle: 'solid', boxShadow: '0 4px 6px -1px rgba(16, 185, 129, 0.1)' }}>
+              <div className="min-h-[18px] mb-2">
+                <div className="text-xs font-semibold uppercase tracking-wider text-green-400">
+                  {t('services.build.badge')}
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)', minHeight: '44px' }}>
                 {t('services.build.title')}
               </h3>
-              <p className="text-sm font-medium mb-4" style={{ color: 'var(--text-muted)' }}>
-                {t('services.build.subtitle')}
+              <p className="text-sm font-medium mb-6" style={{ color: 'var(--text-muted)', minHeight: '44px' }}>
+                {t('services.build.persona')}
               </p>
-              <p className="text-sm mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                {t('services.build.description')}
-              </p>
-              <div className="mb-6">
-                <span className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.build.price')}</span>
+              <div className="mb-2">
+                <span className="text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.build.price')}</span>
               </div>
-              <Link
-                href={getLocalizedPath('/diensten/build')}
-                className="block text-center border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-6 py-3 rounded-full transition-colors"
-              >
-                {t('services.build.cta')}
-              </Link>
+              <p className="text-xs mb-6" style={{ color: 'var(--text-muted)', minHeight: '40px' }}>
+                {t('services.build.priceAnchor')}
+              </p>
+              <ul className="space-y-2 mb-auto flex-grow">
+                {(t.raw('services.build.features') as string[]).map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                    <span className="text-green-400 mt-1">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 space-y-3">
+                <Link
+                  href="/diensten/build"
+                  className="block text-center bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full transition-colors"
+                >
+                  {t('services.build.cta')}
+                </Link>
+                <p className="text-xs text-center" style={{ color: 'var(--text-muted)' }}>
+                  {t('services.build.trust')}
+                </p>
+                <Link
+                  href="/diensten/build"
+                  className="block text-center text-sm text-green-400 hover:text-green-300 transition-colors"
+                >
+                  {t('services.build.detailLink')}
+                </Link>
+              </div>
             </div>
 
             {/* RUN */}
-            <div className="rounded-2xl p-8 ring-2 ring-green-500" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <div className="text-xs font-semibold uppercase tracking-wider mb-2 text-green-400">
-                {locale === 'nl' ? 'MEEST GEKOZEN' : 'MOST CHOSEN'}
-              </div>
-              <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+            <div className="rounded-2xl p-8 flex flex-col" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+              <div className="min-h-[18px] mb-2"></div>
+              <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)', minHeight: '44px' }}>
                 {t('services.run.title')}
               </h3>
-              <p className="text-sm font-medium mb-4" style={{ color: 'var(--text-muted)' }}>
-                {t('services.run.subtitle')}
+              <p className="text-sm font-medium mb-6" style={{ color: 'var(--text-muted)', minHeight: '44px' }}>
+                {t('services.run.persona')}
               </p>
-              <p className="text-sm mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                {t('services.run.description')}
-              </p>
-              <div className="mb-6">
-                <span className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.run.price')}</span>
+              <div className="mb-2">
+                <span className="text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.run.price')}</span>
               </div>
-              <Link
-                href={getLocalizedPath('/diensten/run')}
-                className="block text-center bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full transition-colors"
-              >
-                {t('services.run.cta')}
-              </Link>
+              <p className="text-xs mb-6" style={{ color: 'var(--text-muted)', minHeight: '40px' }}>
+                {t('services.run.priceAnchor')}
+              </p>
+              <ul className="space-y-2 mb-auto flex-grow">
+                {(t.raw('services.run.features') as string[]).map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                    <span className="text-green-400 mt-1">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 space-y-3">
+                <Link
+                  href="/diensten/run"
+                  className="block text-center border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-6 py-3 rounded-full transition-colors"
+                >
+                  {t('services.run.cta')}
+                </Link>
+                <p className="text-xs text-center" style={{ color: 'var(--text-muted)' }}>
+                  {t('services.run.trust')}
+                </p>
+                <Link
+                  href="/diensten/run"
+                  className="block text-center text-sm text-green-400 hover:text-green-300 transition-colors"
+                >
+                  {t('services.run.detailLink')}
+                </Link>
+              </div>
             </div>
 
             {/* GROW */}
-            <div className="rounded-2xl p-8" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+            <div className="rounded-2xl p-8 flex flex-col" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
+              <div className="min-h-[18px] mb-2">
+                <div className="text-xs font-semibold uppercase tracking-wider text-green-400">
+                  {t('services.grow.badge')}
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)', minHeight: '44px' }}>
                 {t('services.grow.title')}
               </h3>
-              <p className="text-sm font-medium mb-4" style={{ color: 'var(--text-muted)' }}>
-                {t('services.grow.subtitle')}
+              <p className="text-sm font-medium mb-6" style={{ color: 'var(--text-muted)', minHeight: '44px' }}>
+                {t('services.grow.persona')}
               </p>
-              <p className="text-sm mb-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                {t('services.grow.description')}
-              </p>
-              <div className="mb-6">
-                <span className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.grow.price')}</span>
+              <div className="mb-2">
+                <span className="text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.grow.price')}</span>
               </div>
-              <Link
-                href={getLocalizedPath('/diensten/grow')}
-                className="block text-center border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-6 py-3 rounded-full transition-colors"
-              >
-                {t('services.grow.cta')}
-              </Link>
+              <p className="text-xs mb-6" style={{ color: 'var(--text-muted)', minHeight: '40px' }}>
+                {t('services.grow.priceAnchor')}
+              </p>
+              <ul className="space-y-2 mb-auto flex-grow">
+                {(t.raw('services.grow.features') as string[]).map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                    <span className="text-green-400 mt-1">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 space-y-3">
+                <Link
+                  href="/diensten/grow"
+                  className="block text-center border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-6 py-3 rounded-full transition-colors"
+                >
+                  {t('services.grow.cta')}
+                </Link>
+                <p className="text-xs text-center" style={{ color: 'var(--text-muted)' }}>
+                  {t('services.grow.trust')}
+                </p>
+                <Link
+                  href="/diensten/grow"
+                  className="block text-center text-sm text-green-400 hover:text-green-300 transition-colors"
+                >
+                  {t('services.grow.detailLink')}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* ROI Comparison Table */}
+      <section className="px-6 py-20" style={{ backgroundColor: 'var(--bg-card)' }}>
+        <div className="max-w-6xl mx-auto">
+          <ROIComparisonTable
+            title={t('roiComparison.title')}
+            columns={t.raw('roiComparison.columns') as string[]}
+            rows={t.raw('roiComparison.rows') as Array<{ scenario: string; inhouse: string; accelr: string; savings: string }>}
+            footnote={t('roiComparison.footnote')}
+          />
+        </div>
+      </section>
+
       {/* Expertise Bar */}
-      <section className="px-6 py-12" style={{ backgroundColor: 'var(--bg-card)' }}>
+      <section className="px-6 py-12 border-t" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)' }}>
         <div className="max-w-6xl mx-auto">
           <h3 className="text-xl font-bold mb-2 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
             {t('expertise.title')}
@@ -220,7 +300,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Comparison Table */}
-      <section className="px-6 py-20">
+      <section className="px-6 py-20 border-t" style={{ borderColor: 'var(--border-color)' }}>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
             {t('comparison.title')}
@@ -310,8 +390,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <CTASection
         title={t('finalCta.title')}
         description={t('finalCta.description')}
-        primaryCta={{ text: t('finalCta.cta_primary'), href: getLocalizedPath('/score') }}
-        secondaryCta={{ text: t('finalCta.cta_secondary'), href: getLocalizedPath('/diensten') }}
+        primaryCta={{ text: t('finalCta.cta_primary'), href: '/score' }}
+        secondaryCta={{ text: t('finalCta.cta_secondary'), href: '/diensten' }}
       />
 
       <Footer />
