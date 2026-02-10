@@ -278,27 +278,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* Expertise Bar */}
-      <section className="px-6 py-12 border-t" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)' }}>
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-xl font-bold mb-2 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            {t('expertise.title')}
-          </h3>
-          <p className="text-sm mb-8 text-center" style={{ color: 'var(--text-secondary)' }}>
-            {t('expertise.subtitle')}
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-lg font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            <span>{t('expertise.target')}</span>
-            <span className="text-green-400">→</span>
-            <span>{t('expertise.outreach')}</span>
-            <span className="text-green-400">→</span>
-            <span>{t('expertise.convert')}</span>
-            <span className="text-green-400">→</span>
-            <span>{t('expertise.scale')}</span>
-          </div>
-        </div>
-      </section>
-
       {/* Comparison Table */}
       <section className="px-6 py-20 border-t" style={{ borderColor: 'var(--border-color)' }}>
         <div className="max-w-6xl mx-auto">

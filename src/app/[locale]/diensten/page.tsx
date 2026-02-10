@@ -4,7 +4,7 @@ import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -23,7 +23,6 @@ export default async function DienstenPage({ params }: { params: Promise<{ local
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
-  const getLocalizedPath = (path: string) => locale === 'nl' ? path : `/en${path}`;
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
@@ -40,6 +39,27 @@ export default async function DienstenPage({ params }: { params: Promise<{ local
               ? 'Elk pad combineert onze expertise over de hele sales funnel op maat van jouw situatie.'
               : 'Each path combines our expertise across the entire sales funnel tailored to your situation.'}
           </p>
+        </div>
+      </section>
+
+      {/* Expertise Bar */}
+      <section className="px-6 py-12" style={{ backgroundColor: 'var(--bg-card)' }}>
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-xl font-bold mb-2 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+            {t('expertise.title')}
+          </h3>
+          <p className="text-sm mb-8 text-center" style={{ color: 'var(--text-secondary)' }}>
+            {t('expertise.subtitle')}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-lg font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+            <span>{t('expertise.target')}</span>
+            <span className="text-green-400">→</span>
+            <span>{t('expertise.outreach')}</span>
+            <span className="text-green-400">→</span>
+            <span>{t('expertise.convert')}</span>
+            <span className="text-green-400">→</span>
+            <span>{t('expertise.scale')}</span>
+          </div>
         </div>
       </section>
 
@@ -62,7 +82,7 @@ export default async function DienstenPage({ params }: { params: Promise<{ local
                 <span className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.build.price')}</span>
               </div>
               <Link
-                href={getLocalizedPath('/diensten/build')}
+                href="/diensten/build"
                 className="block text-center border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-6 py-3 rounded-full transition-colors"
               >
                 {t('services.build.cta')}
@@ -87,7 +107,7 @@ export default async function DienstenPage({ params }: { params: Promise<{ local
                 <span className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.run.price')}</span>
               </div>
               <Link
-                href={getLocalizedPath('/diensten/run')}
+                href="/diensten/run"
                 className="block text-center bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full transition-colors"
               >
                 {t('services.run.cta')}
@@ -109,33 +129,12 @@ export default async function DienstenPage({ params }: { params: Promise<{ local
                 <span className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>{t('services.grow.price')}</span>
               </div>
               <Link
-                href={getLocalizedPath('/diensten/grow')}
+                href="/diensten/grow"
                 className="block text-center border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-6 py-3 rounded-full transition-colors"
               >
                 {t('services.grow.cta')}
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Expertise Bar */}
-      <section className="px-6 py-12" style={{ backgroundColor: 'var(--bg-card)' }}>
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-xl font-bold mb-2 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            {t('expertise.title')}
-          </h3>
-          <p className="text-sm mb-8 text-center" style={{ color: 'var(--text-secondary)' }}>
-            {t('expertise.subtitle')}
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-lg font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            <span>{t('expertise.target')}</span>
-            <span className="text-green-400">→</span>
-            <span>{t('expertise.outreach')}</span>
-            <span className="text-green-400">→</span>
-            <span>{t('expertise.convert')}</span>
-            <span className="text-green-400">→</span>
-            <span>{t('expertise.scale')}</span>
           </div>
         </div>
       </section>
