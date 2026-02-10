@@ -97,16 +97,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </h2>
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>{t('problems.cards.tools')}</h3>
+              <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>{t('problems.cards.hiring.title')}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{t('problems.cards.hiring.body')}</p>
             </div>
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>{t('problems.cards.founder')}</h3>
+              <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>{t('problems.cards.founder.title')}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{t('problems.cards.founder.body')}</p>
             </div>
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>{t('problems.cards.spam')}</h3>
+              <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>{t('problems.cards.pipeline.title')}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{t('problems.cards.pipeline.body')}</p>
             </div>
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>{t('problems.cards.ai')}</h3>
+              <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--text-primary)' }}>{t('problems.cards.ai.title')}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{t('problems.cards.ai.body')}</p>
             </div>
           </div>
           <p className="text-xl font-semibold text-center italic" style={{ color: 'var(--text-primary)' }}>

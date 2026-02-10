@@ -19,10 +19,22 @@
   "problems": {
     "title": "Je hebt het allemaal al geprobeerd",
     "cards": {
-      "tools": "Tools gekocht die niemand gebruikt",
-      "founder": "De founder blijft de beste verkoper",
-      "spam": "Outreach die in spam belandt",
-      "ai": "AI geprobeerd, nul resultaat"
+      "hiring": {
+        "title": "Geen sales mensen te vinden",
+        "body": "67% van Nederlandse ondernemers heeft open vacatures. Een goede verkoper kost €80K+ per jaar, heeft 5 maanden nodig om op te starten, en vertrekt gemiddeld na 18 maanden. En dan begin je weer van voren af aan."
+      },
+      "founder": {
+        "title": "De founder blijft de beste verkoper",
+        "body": "Jij sluit 80% van de deals. Dat is geen compliment — dat is een plafond. Je bedrijf kan niet groeien voorbij wat jij persoonlijk kunt verkopen. En ondertussen lopen operations, product en strategie achter."
+      },
+      "pipeline": {
+        "title": "Pipeline die je niet kunt voorspellen",
+        "body": "De ene maand vier deals, de volgende maand nul. 67% van sales reps haalt zijn target niet. Zonder systeem is je omzet afhankelijk van toeval, timing en hoeveel de founder belt."
+      },
+      "ai": {
+        "title": "AI geprobeerd, nul resultaat",
+        "body": "Je hebt ChatGPT voor emails geprobeerd. Misschien zelfs een AI SDR tool getest. Maar 95% van AI-implementaties faalt — niet door de technologie, maar omdat niemand het werkend maakt in jouw bedrijf."
+      }
     },
     "conclusion": "Het probleem is niet de technologie. Het probleem is dat niemand het werkend heeft gemaakt in jouw bedrijf. Dat is precies wat wij doen — met AI als versneller, niet als vervanging."
   },

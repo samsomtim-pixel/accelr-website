@@ -19,12 +19,24 @@
   "problems": {
     "title": "You've tried everything",
     "cards": {
-      "tools": "Tools bought that nobody uses",
-      "founder": "The founder remains the best seller",
-      "spam": "Outreach that ends up in spam",
-      "ai": "Tried AI, zero results"
+      "hiring": {
+        "title": "Can't find good salespeople",
+        "body": "67% of Dutch companies have unfilled vacancies. A good rep costs €80K+/year, takes 5 months to ramp, and leaves after 18 months on average. Then you start all over."
+      },
+      "founder": {
+        "title": "The founder is still the best salesperson",
+        "body": "You close 80% of the deals. That's not a compliment — it's a ceiling. Your company can't grow beyond what you can personally sell. Meanwhile, operations, product and strategy fall behind."
+      },
+      "pipeline": {
+        "title": "Pipeline you can't predict",
+        "body": "Four deals one month, zero the next. 67% of sales reps miss their targets. Without a system, your revenue depends on luck, timing, and how many calls the founder makes."
+      },
+      "ai": {
+        "title": "Tried AI, zero results",
+        "body": "You tried ChatGPT for emails. Maybe even tested an AI SDR tool. But 95% of AI implementations fail — not because of the technology, but because nobody makes it work in your company."
+      }
     },
-    "conclusion": "The problem isn't the technology. The problem is that nobody made it work in your company. That's exactly what we do — with AI as an accelerator, not a replacement."
+    "conclusion": "The problem isn't the technology. The problem is that nobody made it work in your company. That's exactly what we do — with AI as accelerator, not replacement."
   },
   "services": {
     "title": "Three paths to a working system",
