@@ -170,24 +170,24 @@ export default async function BuildPage({ params }: { params: Promise<{ locale: 
           </h2>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-2xl font-bold mb-2 text-green-400">{t('howItWorks.step1.number')}</div>
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>{t('howItWorks.step1.title')}</h3>
-              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{t('howItWorks.step1.description')}</p>
+              <div className="text-2xl font-bold mb-2 text-green-400">{t('howItWorksOld.step1.number')}</div>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>{t('howItWorksOld.step1.title')}</h3>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{t('howItWorksOld.step1.description')}</p>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold mb-2 text-green-400">{t('howItWorks.step2.number')}</div>
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>{t('howItWorks.step2.title')}</h3>
-              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{t('howItWorks.step2.description')}</p>
+              <div className="text-2xl font-bold mb-2 text-green-400">{t('howItWorksOld.step2.number')}</div>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>{t('howItWorksOld.step2.title')}</h3>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{t('howItWorksOld.step2.description')}</p>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold mb-2 text-green-400">{t('howItWorks.step3.number')}</div>
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>{t('howItWorks.step3.title')}</h3>
-              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{t('howItWorks.step3.description')}</p>
+              <div className="text-2xl font-bold mb-2 text-green-400">{t('howItWorksOld.step3.number')}</div>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>{t('howItWorksOld.step3.title')}</h3>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{t('howItWorksOld.step3.description')}</p>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold mb-2 text-green-400">{t('howItWorks.step4.number')}</div>
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>{t('howItWorks.step4.title')}</h3>
-              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{t('howItWorks.step4.description')}</p>
+              <div className="text-2xl font-bold mb-2 text-green-400">{t('howItWorksOld.step4.number')}</div>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>{t('howItWorksOld.step4.title')}</h3>
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{t('howItWorksOld.step4.description')}</p>
             </div>
           </div>
         </div>

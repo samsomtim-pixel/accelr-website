@@ -17,7 +17,7 @@
     "social_proof": "Average 3x more qualified meetings within 90 days"
   },
   "problems": {
-    "title": "You've tried everything",
+    "title": "Sound familiar?",
     "cards": {
       "hiring": {
         "title": "Can't find good salespeople",
@@ -36,7 +36,30 @@
         "body": "You tried ChatGPT for emails. Maybe even tested an AI SDR tool. But 95% of AI implementations fail — not because of the technology, but because nobody makes it work in your company."
       }
     },
-    "conclusion": "The problem isn't the technology. The problem is that nobody made it work in your company. That's exactly what we do — with AI as accelerator, not replacement."
+    "conclusion": "The problem isn't the technology. The problem is that nobody makes it work. We do."
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "subtitle": "From first conversation to a running system in 12 weeks.",
+    "step1": {
+      "number": "1",
+      "title": "Diagnose",
+      "time": "Week 1-2",
+      "description": "We analyze your market, ICP and current sales process. You get a concrete plan with expected results."
+    },
+    "step2": {
+      "number": "2",
+      "title": "Build",
+      "time": "Week 3-10",
+      "description": "We build your complete sales machine: AI SDRs, CRM, automation, playbooks. Everything configured for your market."
+    },
+    "step3": {
+      "number": "3",
+      "title": "Running",
+      "time": "Week 10-12",
+      "description": "Your system goes live. First leads come in. We optimize until it works — then it's yours."
+    },
+    "result": "On average 3x more qualified meetings within 90 days"
   },
   "services": {
     "title": "Your investment in predictable growth",
@@ -130,8 +153,7 @@
     "convert": "CONVERT → Playbooks, CRM, deal flow",
     "scale": "SCALE → Dashboards, analytics, benchmarks"
   },
-  "howItWorks": {
-    "title": "How it works",
+  "howItWorksOld": {
     "step1": {
       "number": "/01",
       "title": "SCORE",

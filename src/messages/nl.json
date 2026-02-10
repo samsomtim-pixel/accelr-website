@@ -17,7 +17,7 @@
     "social_proof": "Gemiddeld 3x meer gekwalificeerde afspraken binnen 90 dagen"
   },
   "problems": {
-    "title": "Je hebt het allemaal al geprobeerd",
+    "title": "Herkenbaar?",
     "cards": {
       "hiring": {
         "title": "Geen sales mensen te vinden",
@@ -36,7 +36,30 @@
         "body": "Je hebt ChatGPT voor emails geprobeerd. Misschien zelfs een AI SDR tool getest. Maar 95% van AI-implementaties faalt — niet door de technologie, maar omdat niemand het werkend maakt in jouw bedrijf."
       }
     },
-    "conclusion": "Het probleem is niet de technologie. Het probleem is dat niemand het werkend heeft gemaakt in jouw bedrijf. Dat is precies wat wij doen — met AI als versneller, niet als vervanging."
+    "conclusion": "Het probleem is niet de technologie. Het probleem is dat niemand het werkend maakt. Wij wel."
+  },
+  "howItWorks": {
+    "title": "Zo werkt het",
+    "subtitle": "Van eerste gesprek tot draaiend systeem in 12 weken.",
+    "step1": {
+      "number": "1",
+      "title": "Diagnose",
+      "time": "Week 1-2",
+      "description": "We analyseren je markt, ICP en huidige sales proces. Je krijgt een concreet plan met verwachte resultaten."
+    },
+    "step2": {
+      "number": "2",
+      "title": "Bouw",
+      "time": "Week 3-10",
+      "description": "We bouwen je complete sales machine: AI SDR's, CRM, automatie, playbooks. Alles geconfigureerd voor jouw markt."
+    },
+    "step3": {
+      "number": "3",
+      "title": "Draait",
+      "time": "Week 10-12",
+      "description": "Je systeem gaat live. Eerste leads komen binnen. Wij optimaliseren tot het staat — daarna is het van jou."
+    },
+    "result": "Gemiddeld 3x meer gekwalificeerde afspraken binnen 90 dagen"
   },
   "services": {
     "title": "Jouw investering in voorspelbare groei",
@@ -130,8 +153,7 @@
     "convert": "CONVERT → Playbooks, CRM, deal flow",
     "scale": "SCALE → Dashboards, analytics, benchmarks"
   },
-  "howItWorks": {
-    "title": "Hoe het werkt",
+  "howItWorksOld": {
     "step1": {
       "number": "/01",
       "title": "SCORE",

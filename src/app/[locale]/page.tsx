@@ -83,9 +83,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </div>
             ))}
           </div>
-          <p className="text-sm text-center" style={{ color: 'var(--text-muted)' }}>
-            {t('hero.social_proof')}
-          </p>
         </div>
       </section>
 
@@ -116,6 +113,89 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <p className="text-xl font-semibold text-center italic" style={{ color: 'var(--text-primary)' }}>
             {t('problems.conclusion')}
           </p>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="px-6 py-20" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+            {t('howItWorks.title')}
+          </h2>
+          <p className="text-lg mb-12 text-center" style={{ color: 'var(--text-secondary)' }}>
+            {t('howItWorks.subtitle')}
+          </p>
+          
+          {/* Steps */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-12">
+            {/* Step 1 */}
+            <div className="text-center flex-1 max-w-xs">
+              <div className="w-12 h-12 rounded-full bg-green-500 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">
+                {t('howItWorks.step1.number')}
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+                {t('howItWorks.step1.title')}
+              </h3>
+              <p className="text-xs uppercase tracking-wider mb-3 text-green-400 font-semibold">
+                {t('howItWorks.step1.time')}
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                {t('howItWorks.step1.description')}
+              </p>
+            </div>
+
+            {/* Arrow 1 */}
+            <div className="hidden md:flex items-center">
+              <span className="text-green-400 text-2xl">→</span>
+            </div>
+
+            {/* Step 2 */}
+            <div className="text-center flex-1 max-w-xs">
+              <div className="w-12 h-12 rounded-full bg-green-500 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">
+                {t('howItWorks.step2.number')}
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+                {t('howItWorks.step2.title')}
+              </h3>
+              <p className="text-xs uppercase tracking-wider mb-3 text-green-400 font-semibold">
+                {t('howItWorks.step2.time')}
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                {t('howItWorks.step2.description')}
+              </p>
+            </div>
+
+            {/* Arrow 2 */}
+            <div className="hidden md:flex items-center">
+              <span className="text-green-400 text-2xl">→</span>
+            </div>
+
+            {/* Step 3 */}
+            <div className="text-center flex-1 max-w-xs">
+              <div className="w-12 h-12 rounded-full bg-green-500 text-white font-bold text-xl flex items-center justify-center mx-auto mb-4">
+                {t('howItWorks.step3.number')}
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
+                {t('howItWorks.step3.title')}
+              </h3>
+              <p className="text-xs uppercase tracking-wider mb-3 text-green-400 font-semibold">
+                {t('howItWorks.step3.time')}
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                {t('howItWorks.step3.description')}
+              </p>
+            </div>
+          </div>
+
+          {/* Result Badge */}
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-lg" style={{ backgroundColor: 'rgba(16, 185, 129, 0.1)' }}>
+              <span className="text-xl">⚡</span>
+              <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
+                {t('howItWorks.result')}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
