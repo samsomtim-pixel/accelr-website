@@ -21,19 +21,39 @@
     "cards": {
       "hiring": {
         "title": "Can't find good salespeople",
-        "body": "67% of Dutch companies have unfilled vacancies. A good rep costs €80K+/year, takes 5 months to ramp, and leaves after 18 months on average. Then you start all over."
+        "bullets": [
+          "67% of companies have open sales vacancies",
+          "A good rep costs €80K+ per year",
+          "5 months to ramp, leaves after 18 months",
+          "Then you start all over"
+        ]
       },
       "founder": {
         "title": "The founder is still the best salesperson",
-        "body": "You close 80% of the deals. That's not a compliment — it's a ceiling. Your company can't grow beyond what you can personally sell. Meanwhile, operations, product and strategy fall behind."
+        "bullets": [
+          "You close 80% of the deals",
+          "That's not a compliment — it's a ceiling",
+          "Your company can't grow beyond what you personally sell",
+          "Operations, product and strategy fall behind"
+        ]
       },
       "pipeline": {
         "title": "Pipeline you can't predict",
-        "body": "Four deals one month, zero the next. 67% of sales reps miss their targets. Without a system, your revenue depends on luck, timing, and how many calls the founder makes."
+        "bullets": [
+          "Four deals one month, zero the next",
+          "67% of sales reps miss their targets",
+          "Revenue depends on luck and timing",
+          "No system = no predictability"
+        ]
       },
       "ai": {
         "title": "Tried AI, zero results",
-        "body": "You tried ChatGPT for emails. Maybe even tested an AI SDR tool. But 95% of AI implementations fail — not because of the technology, but because nobody makes it work in your company."
+        "bullets": [
+          "Tried ChatGPT for emails — meh",
+          "Maybe even tested an AI SDR tool",
+          "95% of AI implementations fail",
+          "Not the technology — nobody makes it work"
+        ]
       }
     },
     "conclusion": "The problem isn't the technology. The problem is that nobody makes it work. We do."
@@ -67,6 +87,8 @@
     "build": {
       "title": "BUILD",
       "badge": "MOST POPULAR",
+      "subtitle": "From zero to a working sales system",
+      "description": "For companies without a structured sales approach. We build your complete AI-powered sales machine: ICP, outreach, CRM, playbooks — everything.",
       "persona": "From zero to a working sales system",
       "price": "From €7,500",
       "priceAnchor": "↳ One-time · less than 2 months salary",
@@ -84,6 +106,8 @@
     },
     "run": {
       "title": "RUN",
+      "subtitle": "Keep your AI sales machine running",
+      "description": "AI SDRs require 15-20 hours of human oversight per week. You don't have those hours. We monitor, tune and optimize your system continuously.",
       "persona": "After BUILD: keep your sales machine optimized",
       "personaNote": "Requires a working sales stack (or BUILD)",
       "price": "From €1,500 /month",
@@ -103,6 +127,8 @@
     "grow": {
       "title": "GROW",
       "badge": "HIGHEST ROI",
+      "subtitle": "Scale with data and strategy",
+      "description": "For companies that have the foundation and want to accelerate. Strategic sales architecture, advanced analytics, closing coaching.",
       "persona": "After BUILD: strategic acceleration",
       "personaNote": "Requires a working sales stack (or BUILD)",
       "price": "From €3,500 /month",

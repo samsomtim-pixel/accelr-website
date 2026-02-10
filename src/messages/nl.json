@@ -21,19 +21,39 @@
     "cards": {
       "hiring": {
         "title": "Geen sales mensen te vinden",
-        "body": "67% van Nederlandse ondernemers heeft open vacatures. Een goede verkoper kost €80K+ per jaar, heeft 5 maanden nodig om op te starten, en vertrekt gemiddeld na 18 maanden. En dan begin je weer van voren af aan."
+        "bullets": [
+          "67% van ondernemers heeft open sales vacatures",
+          "Een goede verkoper kost €80K+ per jaar",
+          "5 maanden inwerktijd, vertrekt na 18 maanden",
+          "En dan begin je weer van voren af aan"
+        ]
       },
       "founder": {
         "title": "De founder blijft de beste verkoper",
-        "body": "Jij sluit 80% van de deals. Dat is geen compliment — dat is een plafond. Je bedrijf kan niet groeien voorbij wat jij persoonlijk kunt verkopen. En ondertussen lopen operations, product en strategie achter."
+        "bullets": [
+          "Jij sluit 80% van de deals",
+          "Dat is geen compliment — dat is een plafond",
+          "Je bedrijf groeit niet voorbij wat jij persoonlijk verkoopt",
+          "Operations, product en strategie lopen achter"
+        ]
       },
       "pipeline": {
         "title": "Pipeline die je niet kunt voorspellen",
-        "body": "De ene maand vier deals, de volgende maand nul. 67% van sales reps haalt zijn target niet. Zonder systeem is je omzet afhankelijk van toeval, timing en hoeveel de founder belt."
+        "bullets": [
+          "De ene maand vier deals, de volgende nul",
+          "67% van sales reps haalt zijn target niet",
+          "Omzet afhankelijk van toeval en timing",
+          "Geen systeem = geen voorspelbaarheid"
+        ]
       },
       "ai": {
         "title": "AI geprobeerd, nul resultaat",
-        "body": "Je hebt ChatGPT voor emails geprobeerd. Misschien zelfs een AI SDR tool getest. Maar 95% van AI-implementaties faalt — niet door de technologie, maar omdat niemand het werkend maakt in jouw bedrijf."
+        "bullets": [
+          "ChatGPT voor emails geprobeerd — meh",
+          "Misschien zelfs een AI SDR tool getest",
+          "95% van AI-implementaties faalt",
+          "Niet de technologie — niemand maakt het werkend"
+        ]
       }
     },
     "conclusion": "Het probleem is niet de technologie. Het probleem is dat niemand het werkend maakt. Wij wel."
@@ -67,6 +87,8 @@
     "build": {
       "title": "BUILD",
       "badge": "MEEST GEKOZEN",
+      "subtitle": "Van nul naar een werkend sales systeem",
+      "description": "Voor bedrijven die nog geen gestructureerde sales aanpak hebben. Wij bouwen jullie complete AI-powered sales machine: ICP, outreach, CRM, playbooks — alles.",
       "persona": "Van nul naar een werkend sales systeem",
       "price": "Vanaf €7.500",
       "priceAnchor": "↳ Eenmalig · minder dan 2 maanden salaris",
@@ -84,6 +106,8 @@
     },
     "run": {
       "title": "RUN",
+      "subtitle": "Jouw AI sales machine draaiend houden",
+      "description": "AI SDR's vereisen 15-20 uur menselijk toezicht per week. Die uren heb je niet. Wij monitoren, tunen en optimaliseren je systeem continu.",
       "persona": "Na BUILD: je sales machine optimaal houden",
       "personaNote": "Vereist een werkende sales stack (of BUILD)",
       "price": "Vanaf €1.500 /maand",
@@ -103,6 +127,8 @@
     "grow": {
       "title": "GROW",
       "badge": "HOOGSTE ROI",
+      "subtitle": "Schalen met data en strategie",
+      "description": "Voor bedrijven die de basis hebben staan en willen versnellen. Strategische salesarchitectuur, geavanceerde analytics, closing coaching.",
       "persona": "Na BUILD: strategisch versnellen",
       "personaNote": "Vereist een werkende sales stack (of BUILD)",
       "price": "Vanaf €3.500 /maand",
