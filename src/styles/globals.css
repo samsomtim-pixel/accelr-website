@@ -5,28 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Variables for Theming */
+/* CSS Variables for Theming - default = light */
 :root {
-  --bg-primary: #0A0A0A;
-  --bg-secondary: rgba(255, 255, 255, 0.05);
-  --bg-secondary-hover: rgba(255, 255, 255, 0.10);
-  --bg-surface: rgba(255, 255, 255, 0.02);
-  --bg-card: #171717;
-  --bg-section-dark: #1a1a1a;
-  --border-color: rgba(255, 255, 255, 0.10);
-  --border-hover: rgba(255, 255, 255, 0.20);
-  --text-primary: #FFFFFF;
-  --text-secondary: #9CA3AF;
-  --text-muted: #6B7280;
-  --accent-blue: #0052CC;
-  --scrollbar-track: #1A1A1A;
-  --scrollbar-thumb: #333333;
-  --scrollbar-thumb-hover: #444444;
-  --selection-bg: #0052CC;
-  --selection-color: white;
-}
-
-[data-theme='light'] {
   --bg-primary: #FFFFFF;
   --bg-secondary: rgba(0, 0, 0, 0.05);
   --bg-secondary-hover: rgba(0, 0, 0, 0.10);
@@ -42,6 +22,26 @@
   --scrollbar-track: #F3F4F6;
   --scrollbar-thumb: #D1D5DB;
   --scrollbar-thumb-hover: #9CA3AF;
+  --selection-bg: #0052CC;
+  --selection-color: white;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0A0A0A;
+  --bg-secondary: rgba(255, 255, 255, 0.05);
+  --bg-secondary-hover: rgba(255, 255, 255, 0.10);
+  --bg-surface: rgba(255, 255, 255, 0.02);
+  --bg-card: #171717;
+  --bg-section-dark: #1a1a1a;
+  --border-color: rgba(255, 255, 255, 0.10);
+  --border-hover: rgba(255, 255, 255, 0.20);
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+  --accent-blue: #0052CC;
+  --scrollbar-track: #1A1A1A;
+  --scrollbar-thumb: #333333;
+  --scrollbar-thumb-hover: #444444;
   --selection-bg: #0052CC;
   --selection-color: white;
 }
@@ -91,12 +91,12 @@ body {
 
 /* Navbar theme-aware styles */
 nav {
-  background-color: rgba(10, 10, 10, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   border-color: var(--border-color);
 }
 
-[data-theme='light'] nav {
-  background-color: rgba(255, 255, 255, 0.8);
+[data-theme='dark'] nav {
+  background-color: rgba(10, 10, 10, 0.8);
 }
 
 /* Theme-aware link hover */
