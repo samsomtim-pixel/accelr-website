@@ -34,8 +34,35 @@ interface ScoreBreakdown {
   groei_readiness: number
 }
 
+interface QuestionOption {
+  value: string
+  label: string
+  score?: number // Optioneel voor gescoorde vragen
+  routeTo?: string // Optioneel voor dienst-routing (V10)
+}
+
+interface QuestionField {
+  id: string
+  label: string
+  type: string
+  placeholder: string
+  required: boolean
+}
+
+interface Question {
+  id: string
+  question: string
+  type: 'text' | 'select' | 'contact'
+  required?: boolean // Optioneel voor websiteUrlQuestion
+  category?: string
+  placeholder?: string
+  tip?: string
+  options?: QuestionOption[]
+  fields?: QuestionField[]
+}
+
 // Website URL vraag (niet genummerd, extra datapunt)
-const websiteUrlQuestion = {
+const websiteUrlQuestion: Question = {
   id: 'websiteUrl',
   question: 'Wat is je website URL?',
   type: 'text',
@@ -45,7 +72,7 @@ const websiteUrlQuestion = {
 }
 
 // De 11 nieuwe vragen
-const questions = [
+const questions: Question[] = [
   {
     id: 'v1_sales_verantwoordelijke',
     question: 'Wie is primair verantwoordelijk voor sales?',
