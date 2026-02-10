@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import ThemeToggle from '../ThemeToggle'
 import LanguageSwitcher from './LanguageSwitcher'
+import ServicesDropdown from './ServicesDropdown'
 import { ChevronDown } from 'lucide-react'
 
 export default function Navbar() {
@@ -13,7 +14,7 @@ export default function Navbar() {
   const locale = useLocale()
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -43,55 +44,7 @@ export default function Navbar() {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <div
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
-            <button className="nav-link transition-colors text-sm flex items-center gap-1" style={{ color: 'var(--text-secondary)' }}>
-              {t('services')}
-              <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
-            </button>
-            {servicesOpen && (
-              <div className="absolute top-full left-0 mt-2 w-64 rounded-xl shadow-xl overflow-hidden" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-                <div className="p-2">
-                  {servicesItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-3 rounded-lg transition-colors"
-                      style={{ color: 'var(--text-secondary)' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'
-                        e.currentTarget.style.color = 'var(--text-primary)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent'
-                        e.currentTarget.style.color = 'var(--text-secondary)'
-                      }}
-                    >
-                      <div className="font-semibold text-sm">{item.name}</div>
-                    </Link>
-                  ))}
-                  <Link
-                    href={getLocalizedPath('/diensten')}
-                    className="block px-4 py-3 rounded-lg transition-colors border-t mt-2"
-                    style={{ color: 'var(--text-secondary)', borderColor: 'var(--border-color)' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'
-                      e.currentTarget.style.color = 'var(--text-primary)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent'
-                      e.currentTarget.style.color = 'var(--text-secondary)'
-                    }}
-                  >
-                    <div className="font-semibold text-sm">{locale === 'nl' ? 'Alle diensten' : 'All services'}</div>
-                  </Link>
-                </div>
-              </div>
-            )}
-          </div>
+          <ServicesDropdown />
           <Link href={getLocalizedPath('/score')} className="nav-link transition-colors text-sm" style={{ color: 'var(--text-secondary)' }}>{t('score')}</Link>
           <Link href={getLocalizedPath('/cases')} className="nav-link transition-colors text-sm" style={{ color: 'var(--text-secondary)' }}>{t('cases')}</Link>
           <Link href={getLocalizedPath('/kennisbank')} className="nav-link transition-colors text-sm" style={{ color: 'var(--text-secondary)' }}>{t('resources')}</Link>
@@ -131,12 +84,12 @@ export default function Navbar() {
               <button
                 className="nav-link text-sm py-2 flex items-center justify-between w-full"
                 style={{ color: 'var(--text-secondary)' }}
-                onClick={() => setServicesOpen(!servicesOpen)}
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
               >
                 {t('services')}
-                <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
               </button>
-              {servicesOpen && (
+              {mobileServicesOpen && (
                 <div className="pl-4 mt-2 space-y-2">
                   {servicesItems.map((item) => (
                     <Link
@@ -181,4 +134,5 @@ export default function Navbar() {
     </nav>
   )
 }
+
 
