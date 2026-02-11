@@ -82,7 +82,7 @@ export function AppSidebar() {
         </div>
         <div className="px-2 pb-4">
           <div className="text-sm font-semibold text-foreground">{clientInfo.name}</div>
-          <Badge variant="secondary" className="mt-1 text-xs">
+          <Badge variant="secondary" className="mt-1 text-xs border border-[#2ECC71]" style={{ backgroundColor: 'transparent', color: '#2ECC71' }}>
             {clientInfo.plan}
           </Badge>
         </div>
@@ -116,7 +116,11 @@ export function AppSidebar() {
                 const isActive = pathname?.startsWith(item.href)
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={isActive}>
+                    <SidebarMenuButton 
+                      asChild 
+                      isActive={isActive}
+                      className={isActive ? "border-l-2 border-l-[#2ECC71] bg-[#2ECC71]/10" : ""}
+                    >
                       <Link href={item.href}>
                         <item.icon className="h-4 w-4" />
                         <span>{item.title}</span>

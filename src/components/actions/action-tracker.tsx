@@ -58,7 +58,12 @@ export function ActionTracker() {
               </span>
               <span className="font-semibold">{Math.round(progressPercentage)}%</span>
             </div>
-            <Progress value={progressPercentage} className="h-2" />
+            <div className="relative h-2 w-full overflow-hidden rounded-full bg-muted">
+              <div
+                className="h-full bg-[#2ECC71] transition-all"
+                style={{ width: `${progressPercentage}%` }}
+              />
+            </div>
           </div>
         </CardContent>
       </Card>

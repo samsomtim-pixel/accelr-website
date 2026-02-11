@@ -48,7 +48,7 @@ export function DeliverablesGrid({ items }: DeliverablesGridProps) {
                   item.status === "final" && "border border-[#2ECC71]"
                 )}
                 style={item.status === "final" 
-                  ? { backgroundColor: 'transparent', color: 'var(--text-secondary)' }
+                  ? { backgroundColor: 'transparent', color: '#2ECC71' }
                   : {}
                 }
               >

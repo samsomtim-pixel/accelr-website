@@ -45,10 +45,10 @@ export function BenchmarkBars() {
                     className="h-full flex items-center justify-end pr-2"
                     style={{ 
                       width: `${(item.client / maxValue) * 100}%`,
-                      backgroundColor: 'var(--text-primary)'
+                      backgroundColor: '#2ECC71'
                     }}
                   >
-                    <span className="text-xs font-medium" style={{ color: 'var(--bg-primary)' }}>
+                    <span className="text-xs font-medium text-white">
                       {item.unit === "%"
                         ? formatPercent(item.client)
                         : formatCurrency(item.client)}

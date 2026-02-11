@@ -40,7 +40,7 @@ export function PipelineFunnel() {
                   className="h-full flex items-center justify-end pr-2"
                   style={{
                     width: `${percentage}%`,
-                    backgroundColor: stage.color,
+                    backgroundColor: stage.name === "Contract" ? "#2ECC71" : stage.color,
                   }}
                 >
                   <span className="text-xs font-medium text-white">
