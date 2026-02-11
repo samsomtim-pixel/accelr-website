@@ -103,11 +103,11 @@ export default async function BuildPage({ params }: { params: Promise<{ locale: 
               </ul>
             </div>
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
-              <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>AI SDR DEPLOYMENT</h3>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>OUTBOUND ENGINE</h3>
               <ul className="space-y-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
                 <li className="flex items-start gap-2">
                   <span className="text-green-400">•</span>
-                  <span>{locale === 'nl' ? 'AI SDR tool selectie en setup' : 'AI SDR tool selection and setup'}</span>
+                  <span>{locale === 'nl' ? 'Outbound engine opzetten (email + LinkedIn)' : 'Outbound engine setup (email + LinkedIn)'}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-400">•</span>

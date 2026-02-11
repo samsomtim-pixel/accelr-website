@@ -54,8 +54,8 @@ export default async function RunPage({ params }: { params: Promise<{ locale: st
           </h1>
           <p className="text-xl md:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             {locale === 'nl'
-              ? 'AI SDR\'s vereisen 15-20 uur menselijk toezicht per week. Die uren heb je niet. Wij monitoren, tunen en optimaliseren je systeem continu.'
-              : 'AI SDRs require 15-20 hours of human oversight per week. You don\'t have those hours. We monitor, tune and optimize your system continuously.'}
+              ? 'Outbound systemen vereisen continue monitoring en optimalisatie. Die tijd heb je niet. Wij monitoren, tunen en optimaliseren je systeem continu.'
+              : 'Outbound systems require continuous monitoring and optimization. You don\'t have that time. We monitor, tune and optimize your system continuously.'}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <div className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>
@@ -85,7 +85,7 @@ export default async function RunPage({ params }: { params: Promise<{ locale: st
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>
               <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>AI-AGENT TUNING</h3>
               <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                {locale === 'nl' ? 'Continue monitoring en optimalisatie van je AI SDR\'s. Response rates, kwaliteit, en conversie.' : 'Continuous monitoring and optimization of your AI SDRs. Response rates, quality, and conversion.'}
+                {locale === 'nl' ? 'Continue monitoring en optimalisatie van je outbound campaigns. Response rates, kwaliteit, en conversie.' : 'Continuous monitoring and optimization of your outbound campaigns. Response rates, quality, and conversion.'}
               </p>
             </div>
             <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)', borderWidth: '1px', borderStyle: 'solid' }}>

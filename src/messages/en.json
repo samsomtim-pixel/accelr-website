@@ -47,12 +47,12 @@
         ]
       },
       "ai": {
-        "title": "Tried AI, zero results",
+        "title": "Bought tools, little results",
         "bullets": [
-          "Tried ChatGPT for emails — meh",
-          "Maybe even tested an AI SDR tool",
-          "95% of AI implementations fail",
-          "Not the technology — nobody makes it work"
+          "Bought HubSpot, Apollo, or Lemlist — now what?",
+          "Nobody configures, connects and optimizes them",
+          "95% of sales tool implementations fail",
+          "Not the tools — nobody makes them work"
         ]
       }
     },
@@ -71,7 +71,7 @@
       "number": "2",
       "title": "Build",
       "time": "Week 3-10",
-      "description": "We build your complete sales machine: AI SDRs, CRM, automation, playbooks. Everything configured for your market."
+      "description": "We build your complete sales machine: outbound engine, CRM, automation, playbooks. Everything configured for your market."
     },
     "step3": {
       "number": "3",
@@ -94,8 +94,8 @@
       "priceAnchor": "↳ One-time · less than 2 months salary",
       "features": [
         "ICP definition and market analysis",
-        "AI SDR deployment and configuration",
-        "CRM integration and outreach automation",
+        "Outbound engine setup (email + LinkedIn)",
+        "CRM integration and automation",
         "Sales playbooks and templates",
         "GDPR-compliant setup",
         "Then it's fully yours"
@@ -107,17 +107,17 @@
     "run": {
       "title": "RUN",
       "subtitle": "Keep your AI sales machine running",
-      "description": "AI SDRs require 15-20 hours of human oversight per week. You don't have those hours. We monitor, tune and optimize your system continuously.",
+      "description": "Outbound systems require continuous monitoring and optimization. You don't have that time. We monitor, tune and optimize your system continuously.",
       "persona": "After BUILD: keep your sales machine optimized",
       "personaNote": "Requires a working sales stack (or BUILD)",
       "price": "From €1,500 /month",
       "priceAnchor": "↳ A fraction of one full-time SDR",
       "features": [
-        "Monitoring and optimization of AI SDRs",
-        "Weekly performance reports",
+        "Real-time dashboard with live results",
+        "Campaign monitoring and optimization",
         "A/B testing messaging and targeting",
         "Technical maintenance and deliverability",
-        "Dedicated account manager",
+        "Weekly performance reports",
         "Monthly optimization sprints"
       ],
       "cta": "Book a strategy session →",
@@ -136,7 +136,7 @@
       "features": [
         "Everything in RUN, plus:",
         "Strategic sales architecture + roadmap",
-        "Advanced analytics and forecasting",
+        "Benchmark comparison with NL market data",
         "Closing coaching and deal reviews",
         "Quarterly reviews with growth targets",
         "We become your fractional VP Sales"
@@ -175,7 +175,7 @@
     "title": "Expertise across the entire sales funnel",
     "subtitle": "Every BUILD, RUN or GROW service combines these four areas of expertise, tailored to your situation.",
     "target": "TARGET → ICP, lead intelligence, buying signals",
-    "outreach": "OUTREACH → AI SDR, email automation, LinkedIn, multi-channel",
+    "outreach": "OUTREACH → Outbound engine, email automation, LinkedIn, multi-channel",
     "convert": "CONVERT → Playbooks, CRM, deal flow",
     "scale": "SCALE → Dashboards, analytics, benchmarks"
   },
@@ -193,7 +193,7 @@
     "step3": {
       "number": "/03",
       "title": "BUILD",
-      "description": "Implementation of your AI-powered sales machine. Configuring systems, deploying AI SDR, setting up integrations, testing."
+      "description": "Implementation of your AI-powered sales machine. Configuring systems, deploying outbound engine, setting up integrations, testing."
     },
     "step4": {
       "number": "/04",
@@ -278,7 +278,7 @@
       },
       "tools": {
         "question": "Which AI tools do you use?",
-        "answer": "We work with an optimized stack: Clay for data enrichment, AI SDR tools for outbound, Instantly for email infrastructure, and n8n for custom automations. The exact combination depends on your situation — we determine that in the Score."
+        "answer": "We work with an optimized stack: Clay for data enrichment, outbound tools for email and LinkedIn, Instantly for email infrastructure, and n8n for custom automations. The exact combination depends on your situation — we determine that in the Score."
       },
       "difference": {
         "question": "What's the difference between BUILD, RUN and GROW?",

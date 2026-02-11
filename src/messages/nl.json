@@ -47,12 +47,12 @@
         ]
       },
       "ai": {
-        "title": "AI geprobeerd, nul resultaat",
+        "title": "Tools gekocht, weinig resultaat",
         "bullets": [
-          "ChatGPT voor emails geprobeerd — meh",
-          "Misschien zelfs een AI SDR tool getest",
-          "95% van AI-implementaties faalt",
-          "Niet de technologie — niemand maakt het werkend"
+          "HubSpot, Apollo, of Lemlist aangeschaft — en dan?",
+          "Niemand die het configureert, koppelt en optimaliseert",
+          "95% van sales tool-implementaties faalt",
+          "Niet de tools — niemand maakt het werkend"
         ]
       }
     },
@@ -71,7 +71,7 @@
       "number": "2",
       "title": "Bouw",
       "time": "Week 3-10",
-      "description": "We bouwen je complete sales machine: AI SDR's, CRM, automatie, playbooks. Alles geconfigureerd voor jouw markt."
+      "description": "We bouwen je complete sales machine: outbound engine, CRM, automatie, playbooks. Alles geconfigureerd voor jouw markt."
     },
     "step3": {
       "number": "3",
@@ -94,8 +94,8 @@
       "priceAnchor": "↳ Eenmalig · minder dan 2 maanden salaris",
       "features": [
         "ICP definitie en marktanalyse",
-        "AI SDR deployment en configuratie",
-        "CRM integratie en outreach-automatie",
+        "Outbound engine opzetten (email + LinkedIn)",
+        "CRM integratie en automatie",
         "Sales playbooks en templates",
         "AVG-compliant opgezet",
         "Daarna volledig eigendom van jou"
@@ -107,17 +107,17 @@
     "run": {
       "title": "RUN",
       "subtitle": "Jouw AI sales machine draaiend houden",
-      "description": "AI SDR's vereisen 15-20 uur menselijk toezicht per week. Die uren heb je niet. Wij monitoren, tunen en optimaliseren je systeem continu.",
+      "description": "Outbound systemen vereisen continue monitoring en optimalisatie. Die tijd heb je niet. Wij monitoren, tunen en optimaliseren je systeem continu.",
       "persona": "Na BUILD: je sales machine optimaal houden",
       "personaNote": "Vereist een werkende sales stack (of BUILD)",
       "price": "Vanaf €1.500 /maand",
       "priceAnchor": "↳ Een fractie van één fulltime SDR",
       "features": [
-        "Monitoring en optimalisatie AI SDR's",
-        "Wekelijkse performance rapportages",
+        "Real-time dashboard met live resultaten",
+        "Campaign monitoring en optimalisatie",
         "A/B testing messaging en targeting",
         "Technisch onderhoud en deliverability",
-        "Dedicated account manager",
+        "Wekelijkse performance rapportages",
         "Maandelijkse optimalisatie-sprints"
       ],
       "cta": "Plan een strategiegesprek →",
@@ -136,7 +136,7 @@
       "features": [
         "Alles uit RUN, plus:",
         "Strategische salesarchitectuur + roadmap",
-        "Advanced analytics en forecasting",
+        "Benchmark vergelijking met NL marktdata",
         "Closing coaching en deal reviews",
         "Kwartaal-reviews met groeidoelen",
         "Wij worden je fractional VP Sales"
@@ -175,7 +175,7 @@
     "title": "Expertise over de hele sales funnel",
     "subtitle": "Elke BUILD, RUN of GROW dienst combineert deze vier expertisegebieden op maat van jouw situatie.",
     "target": "TARGET → ICP, lead intelligence, koopsignalen",
-    "outreach": "OUTREACH → AI SDR, email automatie, LinkedIn, multi-channel",
+    "outreach": "OUTREACH → Outbound engine, email automatie, LinkedIn, multi-channel",
     "convert": "CONVERT → Playbooks, CRM, deal flow",
     "scale": "SCALE → Dashboards, analytics, benchmarks"
   },
@@ -193,7 +193,7 @@
     "step3": {
       "number": "/03",
       "title": "BUILD",
-      "description": "Implementatie van je AI-powered sales machine. Systemen configureren, AI SDR deployen, integraties leggen, testen."
+      "description": "Implementatie van je AI-powered sales machine. Systemen configureren, outbound engine deployen, integraties leggen, testen."
     },
     "step4": {
       "number": "/04",
@@ -278,7 +278,7 @@
       },
       "tools": {
         "question": "Welke AI tools gebruiken jullie?",
-        "answer": "We werken met een geoptimaliseerde stack: Clay voor data-verrijking, AI SDR tools voor outbound, Instantly voor email-infrastructuur, en n8n voor custom automaties. De exacte combinatie hangt af van jouw situatie — dat bepalen we in de Score."
+        "answer": "We werken met een geoptimaliseerde stack: Clay voor data-verrijking, outbound tools voor email en LinkedIn, Instantly voor email-infrastructuur, en n8n voor custom automaties. De exacte combinatie hangt af van jouw situatie — dat bepalen we in de Score."
       },
       "difference": {
         "question": "Wat is het verschil tussen BUILD, RUN en GROW?",

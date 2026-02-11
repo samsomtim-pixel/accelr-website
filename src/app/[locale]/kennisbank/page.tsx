@@ -44,7 +44,7 @@ export default async function KennisbankPage({ params }: { params: Promise<{ loc
 
   const articles = [
     {
-      title: locale === 'nl' ? 'Wat is een AI SDR? (En heb je er eentje nodig?)' : 'What is an AI SDR? (And do you need one?)',
+      title: locale === 'nl' ? 'Wat is een outbound engine? (En heb je er eentje nodig?)' : 'What is an outbound engine? (And do you need one?)',
       status: locale === 'nl' ? 'Binnenkort' : 'Coming soon'
     },
     {

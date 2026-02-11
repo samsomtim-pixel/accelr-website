@@ -126,8 +126,8 @@ export default async function OverOnsPage({ params }: { params: Promise<{ locale
             </p>
             <p>
               {locale === 'nl'
-                ? 'Wij bestaan omdat de deployment gap bestaat. De kloof tussen een tool kopen en die tool werkend krijgen. Tussen een AI SDR tool testen en een AI SDR systeem dat 24/7 meetings boekt.'
-                : 'We exist because the deployment gap exists. The gap between buying a tool and making that tool work. Between testing an AI SDR tool and an AI SDR system that books meetings 24/7.'}
+                ? 'Wij bestaan omdat de deployment gap bestaat. De kloof tussen een tool kopen en die tool werkend krijgen. Tussen een outbound tool testen en een outbound systeem dat 24/7 meetings boekt.'
+                : 'We exist because the deployment gap exists. The gap between buying a tool and making that tool work. Between testing an outbound tool and an outbound system that books meetings 24/7.'}
             </p>
             <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>
               {locale === 'nl'

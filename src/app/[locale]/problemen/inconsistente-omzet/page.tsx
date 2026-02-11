@@ -114,8 +114,8 @@ export default async function InconsistenteOmzetPage({ params }: { params: Promi
           <div className="space-y-4 text-lg leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
             <p>
               {locale === 'nl'
-                ? 'Wij bouwen een consistent sales systeem met automatie, follow-ups en structuur. AI SDR\'s die 24/7 leads genereren, CRM automations die deals door de pipeline duwen, en dashboards die je laten zien waar je staat.'
-                : 'We build a consistent sales system with automation, follow-ups and structure. AI SDRs that generate leads 24/7, CRM automations that push deals through the pipeline, and dashboards that show you where you stand.'}
+                ? 'Wij bouwen een consistent sales systeem met automatie, follow-ups en structuur. Outbound systemen die 24/7 leads genereren, CRM automations die deals door de pipeline duwen, en dashboards die je laten zien waar je staat.'
+                : 'We build a consistent sales system with automation, follow-ups and structure. Outbound systems that generate leads 24/7, CRM automations that push deals through the pipeline, and dashboards that show you where you stand.'}
             </p>
             <p>
               {locale === 'nl'
