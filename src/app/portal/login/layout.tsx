@@ -10,7 +10,7 @@ export default function LoginLayout({
 }) {
   return (
     <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem={false}>
-      <div style={{ minHeight: '100vh', backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
+      <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF', color: '#111827' }}>
         {children}
       </div>
     </ThemeProvider>
