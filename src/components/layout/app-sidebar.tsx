@@ -96,7 +96,11 @@ export function AppSidebar() {
                 const isActive = pathname === item.href || pathname?.startsWith(item.href + "/")
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={isActive}>
+                    <SidebarMenuButton 
+                      asChild 
+                      isActive={isActive}
+                      className={isActive ? "border-l-2 border-l-[#2ECC71] bg-[#2ECC71]/10" : ""}
+                    >
                       <Link href={item.href}>
                         <item.icon className="h-4 w-4" />
                         <span>{item.title}</span>
