@@ -9,9 +9,10 @@ import {
   Shield,
   Moon,
   Sun,
+  LogOut,
 } from "lucide-react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { useTheme } from "next-themes"
 import {
   Sidebar,
@@ -32,12 +33,18 @@ import { clientInfo } from "@/lib/mock-data"
 
 export function AppSidebar() {
   const pathname = usePathname()
+  const router = useRouter()
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 
   React.useEffect(() => {
     setMounted(true)
   }, [])
+
+  const handleLogout = () => {
+    localStorage.removeItem("accelr_logged_in")
+    router.push("/portal/login")
+  }
 
   const menuItems = [
     {
@@ -123,7 +130,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="border-t border-border">
-        <div className="flex items-center justify-between px-2 py-4">
+        <div className="space-y-2 px-2 py-4">
           <Button
             variant="ghost"
             size="sm"
@@ -141,6 +148,15 @@ export function AppSidebar() {
                 Donker
               </>
             )}
+          </Button>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleLogout}
+            className="w-full justify-start text-muted-foreground hover:text-foreground"
+          >
+            <LogOut className="h-4 w-4 mr-2" />
+            Uitloggen
           </Button>
         </div>
         <div className="px-2 pb-2">

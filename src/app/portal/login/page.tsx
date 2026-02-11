@@ -18,6 +18,8 @@ export default function LoginPage() {
     setLoading(true)
     // Simuleer login - geen echte auth
     setTimeout(() => {
+      // Zet localStorage item voor "ingelogd" status
+      localStorage.setItem("accelr_logged_in", "true")
       setLoading(false)
       router.push("/portal")
     }, 500)

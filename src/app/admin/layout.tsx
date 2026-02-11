@@ -4,7 +4,8 @@ import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/layout/app-sidebar"
 import { PortalHeader } from "@/components/layout/portal-header"
 import { ThemeProvider } from "@/components/providers/theme-provider"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
 import Script from "next/script"
 import "@/styles/globals.css"
 
@@ -14,6 +15,28 @@ export default function AdminLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
+  const router = useRouter()
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    // Check of gebruiker ingelogd is
+    const loggedIn = localStorage.getItem("accelr_logged_in") === "true"
+    setIsAuthenticated(loggedIn)
+    
+    if (!loggedIn) {
+      router.push("/portal/login")
+    }
+  }, [router])
+
+  // Toon niets totdat auth check compleet is
+  if (isAuthenticated === null) {
+    return null
+  }
+
+  // Als niet ingelogd, redirect gebeurt al in useEffect
+  if (!isAuthenticated) {
+    return null
+  }
   
   const getBreadcrumbs = () => {
     if (pathname === "/admin") {
