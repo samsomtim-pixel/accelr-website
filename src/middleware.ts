@@ -10,6 +10,11 @@ export default function middleware(request: NextRequest) {
     return NextResponse.next();
   }
   
+  // Redirect root to portal login
+  if (request.nextUrl.pathname === '/') {
+    return NextResponse.redirect(new URL('/portal/login', request.url));
+  }
+  
   return intlMiddleware(request);
 }
 

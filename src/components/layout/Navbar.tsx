@@ -51,7 +51,7 @@ export default function Navbar() {
           <LanguageSwitcher />
           <ThemeToggle />
           <a 
-            href="/portal" 
+            href="/portal/login" 
             className="border border-[#2ECC71] text-inherit px-5 py-2 rounded-full text-sm font-medium hover:bg-[#2ECC71]/10 transition-colors"
             style={{ color: 'var(--text-secondary)' }}
           >
@@ -121,7 +121,7 @@ export default function Navbar() {
               <ThemeToggle />
             </div>
             <a 
-              href="/portal" 
+              href="/portal/login" 
               className="border border-[#2ECC71] text-inherit px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2ECC71]/10 transition-colors text-center block"
               style={{ color: 'var(--text-secondary)' }}
               onClick={() => setMobileMenuOpen(false)}
