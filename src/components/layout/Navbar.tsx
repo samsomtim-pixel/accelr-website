@@ -51,6 +51,12 @@ export default function Navbar() {
           <Link href={getLocalizedPath('/over-ons')} className="nav-link transition-colors text-sm" style={{ color: 'var(--text-secondary)' }}>{t('about')}</Link>
           <LanguageSwitcher />
           <ThemeToggle />
+          <a 
+            href="/portal" 
+            className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-6 py-2.5 rounded-lg font-medium transition-colors text-sm"
+          >
+            Accelr Portal →
+          </a>
           <Link 
             href={getLocalizedPath('/score')} 
             className="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-full font-semibold transition-colors text-sm"
@@ -121,6 +127,13 @@ export default function Navbar() {
               <LanguageSwitcher />
               <ThemeToggle />
             </div>
+            <a 
+              href="/portal" 
+              className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-6 py-3 rounded-lg font-medium transition-colors text-center block"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Accelr Portal →
+            </a>
             <Link 
               href={getLocalizedPath('/score')} 
               className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors text-center"
