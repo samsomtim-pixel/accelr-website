@@ -39,7 +39,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href={getLocalizedPath('/')} className="text-xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-          accelr<span className="text-green-500">.</span>
+          accelr<span style={{ color: 'var(--text-primary)' }}>.</span>
         </Link>
         
         {/* Desktop Navigation */}
@@ -47,22 +47,16 @@ export default function Navbar() {
           <ServicesDropdown />
           <Link href={getLocalizedPath('/score')} className="nav-link transition-colors text-sm" style={{ color: 'var(--text-secondary)' }}>{t('score')}</Link>
           <Link href={getLocalizedPath('/cases')} className="nav-link transition-colors text-sm" style={{ color: 'var(--text-secondary)' }}>{t('cases')}</Link>
-          <Link href={getLocalizedPath('/kennisbank')} className="nav-link transition-colors text-sm" style={{ color: 'var(--text-secondary)' }}>{t('resources')}</Link>
           <Link href={getLocalizedPath('/over-ons')} className="nav-link transition-colors text-sm" style={{ color: 'var(--text-secondary)' }}>{t('about')}</Link>
           <LanguageSwitcher />
           <ThemeToggle />
           <a 
             href="/portal" 
-            className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-6 py-2.5 rounded-lg font-medium transition-colors text-sm"
+            className="border border-[#2ECC71] text-inherit px-5 py-2 rounded-full text-sm font-medium hover:bg-[#2ECC71]/10 transition-colors"
+            style={{ color: 'var(--text-secondary)' }}
           >
             Accelr Portal →
           </a>
-          <Link 
-            href={getLocalizedPath('/score')} 
-            className="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-full font-semibold transition-colors text-sm"
-          >
-            {t('cta')}
-          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -121,7 +115,6 @@ export default function Navbar() {
             </div>
             <Link href={getLocalizedPath('/score')} className="nav-link text-sm py-2" style={{ color: 'var(--text-secondary)' }} onClick={() => setMobileMenuOpen(false)}>{t('score')}</Link>
             <Link href={getLocalizedPath('/cases')} className="nav-link text-sm py-2" style={{ color: 'var(--text-secondary)' }} onClick={() => setMobileMenuOpen(false)}>{t('cases')}</Link>
-            <Link href={getLocalizedPath('/kennisbank')} className="nav-link text-sm py-2" style={{ color: 'var(--text-secondary)' }} onClick={() => setMobileMenuOpen(false)}>{t('resources')}</Link>
             <Link href={getLocalizedPath('/over-ons')} className="nav-link text-sm py-2" style={{ color: 'var(--text-secondary)' }} onClick={() => setMobileMenuOpen(false)}>{t('about')}</Link>
             <div className="flex items-center justify-between py-2">
               <LanguageSwitcher />
@@ -129,18 +122,12 @@ export default function Navbar() {
             </div>
             <a 
               href="/portal" 
-              className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-6 py-3 rounded-lg font-medium transition-colors text-center block"
+              className="border border-[#2ECC71] text-inherit px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2ECC71]/10 transition-colors text-center block"
+              style={{ color: 'var(--text-secondary)' }}
               onClick={() => setMobileMenuOpen(false)}
             >
               Accelr Portal →
             </a>
-            <Link 
-              href={getLocalizedPath('/score')} 
-              className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-colors text-center"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t('cta')}
-            </Link>
           </div>
         </div>
       )}

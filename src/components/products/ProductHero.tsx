@@ -27,7 +27,7 @@ export default function ProductHero({
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
           {title}
         </h1>
-        <p className="text-xl md:text-2xl text-green-400 font-semibold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <p className="text-xl md:text-2xl font-semibold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-muted)' }}>
           {subtitle}
         </p>
         <p className="text-lg mb-8 leading-relaxed max-w-3xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
@@ -37,14 +37,15 @@ export default function ProductHero({
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
           <Link
             href={primaryCta.href}
-            className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-center"
+            className="bg-[#0A0A0A] dark:bg-white text-white dark:text-[#0A0A0A] hover:opacity-80 font-semibold px-8 py-4 rounded-lg transition-opacity text-center"
           >
             {primaryCta.text}
           </Link>
           {secondaryCta && (
             <Link
               href={secondaryCta.href}
-              className="border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-8 py-4 rounded-lg transition-colors text-center"
+              className="border border-[#E5E7EB] dark:border-[#262626] hover:opacity-70 font-semibold px-8 py-4 rounded-lg transition-opacity text-center"
+              style={{ color: 'var(--text-secondary)' }}
             >
               {secondaryCta.text}
             </Link>

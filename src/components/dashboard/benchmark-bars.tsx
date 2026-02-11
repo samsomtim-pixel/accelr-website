@@ -42,10 +42,13 @@ export function BenchmarkBars() {
               <div className="space-y-1.5">
                 <div className="relative h-6 rounded-md overflow-hidden bg-muted">
                   <div
-                    className="h-full bg-[#2ECC71] flex items-center justify-end pr-2"
-                    style={{ width: `${(item.client / maxValue) * 100}%` }}
+                    className="h-full flex items-center justify-end pr-2"
+                    style={{ 
+                      width: `${(item.client / maxValue) * 100}%`,
+                      backgroundColor: 'var(--text-primary)'
+                    }}
                   >
-                    <span className="text-xs font-medium text-white">
+                    <span className="text-xs font-medium" style={{ color: 'var(--bg-primary)' }}>
                       {item.unit === "%"
                         ? formatPercent(item.client)
                         : formatCurrency(item.client)}

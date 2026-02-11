@@ -27,14 +27,15 @@ export default function ProductCTA({
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href={primaryCta.href}
-            className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-center"
+            className="bg-[#0A0A0A] dark:bg-white text-white dark:text-[#0A0A0A] hover:opacity-80 font-semibold px-8 py-4 rounded-lg transition-opacity text-center"
           >
             {primaryCta.text}
           </Link>
           {secondaryCta && (
             <Link
               href={secondaryCta.href}
-              className="border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-8 py-4 rounded-lg transition-colors text-center"
+              className="border border-[#E5E7EB] dark:border-[#262626] hover:opacity-70 font-semibold px-8 py-4 rounded-lg transition-opacity text-center"
+              style={{ color: 'var(--text-secondary)' }}
             >
               {secondaryCta.text}
             </Link>

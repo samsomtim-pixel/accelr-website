@@ -45,8 +45,12 @@ export function DeliverablesGrid({ items }: DeliverablesGridProps) {
               <Badge
                 variant={item.status === "final" ? "default" : "secondary"}
                 className={cn(
-                  item.status === "final" && "bg-[#2ECC71] hover:bg-[#2ECC71]"
+                  item.status === "final" && "border border-[#2ECC71]"
                 )}
+                style={item.status === "final" 
+                  ? { backgroundColor: 'transparent', color: 'var(--text-secondary)' }
+                  : {}
+                }
               >
                 {item.status === "final" ? "Final" : "Concept"}
               </Badge>
