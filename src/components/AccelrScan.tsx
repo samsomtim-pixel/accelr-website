@@ -501,7 +501,7 @@ export function AccelrScan() {
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-4">
               <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-                accelr<span style={{ color: 'var(--text-primary)' }}>.</span>
+                accelr<span className="text-green-500">.</span>
               </div>
             </div>
           </div>
@@ -580,9 +580,9 @@ export function AccelrScan() {
 
               {/* Recommended Service */}
               {aanbevolenDienst && (
-                <div className="mb-8 p-4 rounded-lg" style={{ backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)' }}>
-                  <p className="text-sm text-center font-medium" style={{ color: 'var(--text-secondary)' }}>
-                    Aanbevolen dienst: <span className="font-bold" style={{ color: 'var(--text-primary)' }}>{aanbevolenDienst}</span>
+                <div className="mb-8 p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
+                  <p className="text-green-400 text-sm text-center font-medium">
+                    Aanbevolen dienst: <span className="font-bold">{aanbevolenDienst}</span>
                   </p>
                 </div>
               )}
@@ -606,8 +606,8 @@ export function AccelrScan() {
                 </div>
               )}
               {submitted && !submitError && (
-                <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)' }}>
-                  <p className="text-sm text-center font-medium" style={{ color: 'var(--text-secondary)' }}>
+                <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
+                  <p className="text-green-400 text-sm text-center font-medium">
                     ✓ Je scan is succesvol verzonden!
                   </p>
                 </div>
@@ -668,7 +668,7 @@ export function AccelrScan() {
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-4">
               <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-                accelr<span style={{ color: 'var(--text-primary)' }}>.</span>
+                accelr<span className="text-green-500">.</span>
               </div>
             </div>
           </div>
@@ -681,8 +681,8 @@ export function AccelrScan() {
             </div>
             <div className="w-full rounded-full h-2" style={{ backgroundColor: 'var(--bg-secondary)' }}>
               <div
-                className="h-2 rounded-full transition-all duration-300"
-                style={{ backgroundColor: 'var(--text-primary)', width: `${progress}%` }}
+                className="bg-green-500 h-2 rounded-full transition-all duration-300"
+                style={{ width: `${progress}%` }}
               />
             </div>
           </div>
@@ -693,7 +693,7 @@ export function AccelrScan() {
             <div className="relative rounded-2xl p-8 mb-6" style={{ backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
               {/* Badge */}
               <div className="text-center mb-6">
-                <div className="inline-block px-4 py-1.5 rounded-full text-sm font-medium" style={{ backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', color: 'var(--text-secondary)' }}>
+                <div className="inline-block bg-green-500/20 border border-green-500/30 text-green-400 px-4 py-1.5 rounded-full text-sm font-medium">
                   100% Gratis Sales Scan
                 </div>
               </div>
@@ -716,15 +716,15 @@ export function AccelrScan() {
               <div className="flex justify-center mb-8">
                 <div className="space-y-3 text-left">
                   <div className="flex items-center gap-3" style={{ color: 'var(--text-secondary)' }}>
-                    <span style={{ color: 'var(--text-muted)' }}>✓</span>
+                    <span className="text-green-400">✓</span>
                     <span>Score op 4 dimensies: Strategie, Proces, Technologie en Groei</span>
                   </div>
                   <div className="flex items-center gap-3" style={{ color: 'var(--text-secondary)' }}>
-                    <span style={{ color: 'var(--text-muted)' }}>✓</span>
+                    <span className="text-green-400">✓</span>
                     <span>Benchmark tegen vergelijkbare Nederlandse B2B-bedrijven</span>
                   </div>
                   <div className="flex items-center gap-3" style={{ color: 'var(--text-secondary)' }}>
-                    <span style={{ color: 'var(--text-muted)' }}>✓</span>
+                    <span className="text-green-400">✓</span>
                     <span>Inclusief gemiste-omzet berekening</span>
                   </div>
                 </div>
@@ -734,7 +734,7 @@ export function AccelrScan() {
               <div className="text-center mb-6">
                 <button
                   onClick={handleNext}
-                  className="bg-[#0A0A0A] dark:bg-white text-white dark:text-[#0A0A0A] hover:opacity-80 font-semibold px-8 py-4 rounded-lg transition-opacity"
+                  className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors"
                 >
                   Start scan
                 </button>
@@ -769,7 +769,7 @@ export function AccelrScan() {
               accelr<span className="text-green-500">.</span>
             </div>
           </div>
-                <div className="inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-2" style={{ backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', color: 'var(--text-secondary)' }}>
+          <div className="inline-block bg-green-500/20 border border-green-500/50 text-green-400 px-4 py-1.5 rounded-full text-sm font-medium mb-2">
             100% Gratis Sales Scan
           </div>
         </div>
@@ -822,7 +822,7 @@ export function AccelrScan() {
                   value={(formData[currentQuestion.id as keyof FormData] as string) || ''}
                   onChange={(e) => handleChange(e.target.value)}
                   placeholder={currentQuestion.placeholder}
-                  className="w-full rounded-lg px-4 py-3 focus:outline-none transition-colors"
+                  className="w-full rounded-lg px-4 py-3 focus:outline-none focus:border-green-500 transition-colors"
                   style={{ 
                     backgroundColor: 'var(--bg-secondary)', 
                     border: '1px solid var(--border-color)',
@@ -839,8 +839,8 @@ export function AccelrScan() {
                         onClick={() => handleChange(option.value)}
                         className={`w-full text-left p-4 rounded-xl border transition-all flex items-center gap-3 ${
                           isSelected
-                            ? 'opacity-100'
-                            : 'hover:opacity-70'
+                            ? 'bg-green-500/20 border-green-500'
+                            : 'hover:border-green-500/50'
                         }`}
                         style={isSelected 
                           ? { color: 'var(--text-primary)' }
@@ -853,7 +853,7 @@ export function AccelrScan() {
                       >
                         <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
                           isSelected
-                            ? 'opacity-100'
+                            ? 'border-green-500 bg-green-500'
                             : ''
                         }`}
                         style={!isSelected ? { borderColor: 'var(--border-color)' } : {}}
@@ -879,7 +879,7 @@ export function AccelrScan() {
                         value={(formData[field.id as keyof FormData] as string) || ''}
                         onChange={(e) => handleContactChange(field.id, e.target.value)}
                         placeholder={field.placeholder}
-                        className="w-full rounded-lg px-4 py-3 focus:outline-none transition-colors"
+                        className="w-full rounded-lg px-4 py-3 focus:outline-none focus:border-green-500 transition-colors"
                         style={{ 
                           backgroundColor: 'var(--bg-secondary)', 
                           border: '1px solid var(--border-color)',

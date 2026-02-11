@@ -59,7 +59,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="px-6 py-20 md:py-24" style={{ paddingTop: '100px' }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-4" style={{ paddingTop: '32px' }}>
-            <p className="text-sm font-semibold uppercase tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-muted)' }}>
+            <p className="text-sm font-semibold text-green-400 uppercase tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {t('hero.subtitle')}
             </p>
           </div>
@@ -72,14 +72,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <Link
               href="/score"
-              className="bg-[#0A0A0A] dark:bg-white text-white dark:text-[#0A0A0A] hover:opacity-80 font-semibold px-8 py-4 rounded-full transition-opacity"
+              className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full transition-colors"
             >
               {t('hero.cta_primary')}
             </Link>
             <Link
               href="/diensten"
-              className="border border-[#E5E7EB] dark:border-[#262626] hover:opacity-70 font-semibold px-8 py-4 rounded-full transition-opacity"
-              style={{ color: 'var(--text-secondary)' }}
+              className="border border-green-500 text-green-500 hover:bg-green-500/10 font-semibold px-8 py-4 rounded-full transition-colors"
             >
               {t('hero.cta_secondary')}
             </Link>
@@ -87,7 +86,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
             {t('hero.trust').split('✓').filter(item => item.trim()).map((item, i) => (
               <div key={i} className="flex items-center gap-2">
-                <span style={{ color: 'var(--text-muted)' }}>✓</span>
+                <span className="text-green-400">✓</span>
                 <span>{item.trim()}</span>
               </div>
             ))}
