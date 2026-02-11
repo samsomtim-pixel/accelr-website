@@ -823,7 +823,6 @@ export function AccelrScan() {
                   onChange={(e) => handleChange(e.target.value)}
                   placeholder={currentQuestion.placeholder}
                   className="w-full rounded-lg px-4 py-3 focus:outline-none transition-colors"
-                  style={{ borderColor: 'var(--border-color)' }}
                   style={{ 
                     backgroundColor: 'var(--bg-secondary)', 
                     border: '1px solid var(--border-color)',
@@ -881,7 +880,6 @@ export function AccelrScan() {
                         onChange={(e) => handleContactChange(field.id, e.target.value)}
                         placeholder={field.placeholder}
                         className="w-full rounded-lg px-4 py-3 focus:outline-none transition-colors"
-                  style={{ borderColor: 'var(--border-color)' }}
                         style={{ 
                           backgroundColor: 'var(--bg-secondary)', 
                           border: '1px solid var(--border-color)',
