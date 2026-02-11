@@ -501,7 +501,7 @@ export function AccelrScan() {
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-4">
               <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-                accelr<span className="text-green-500">.</span>
+                accelr<span className="text-[#2ECC71]">.</span>
               </div>
             </div>
           </div>
@@ -668,7 +668,7 @@ export function AccelrScan() {
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-4">
               <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-                accelr<span className="text-green-500">.</span>
+                accelr<span className="text-[#2ECC71]">.</span>
               </div>
             </div>
           </div>

@@ -77,7 +77,7 @@ export function AppSidebar() {
       <SidebarHeader className="border-b border-border">
         <div className="flex items-center gap-2 px-2 py-4">
           <div className="text-xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            accelr<span style={{ color: 'var(--text-primary)' }}>.</span>
+            accelr<span className="text-[#2ECC71]">.</span>
           </div>
         </div>
         <div className="px-2 pb-4">

@@ -31,7 +31,7 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="text-3xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-            accelr<span style={{ color: 'var(--text-primary)' }}>.</span>
+            accelr<span className="text-[#2ECC71]">.</span>
           </div>
           <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
             Client Portal

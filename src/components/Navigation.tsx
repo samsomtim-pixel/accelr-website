@@ -30,7 +30,7 @@ export default function Navigation() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-          accelr<span className="text-green-500">.</span>
+          accelr<span className="text-[#2ECC71]">.</span>
         </Link>
         
         {/* Desktop Navigation */}

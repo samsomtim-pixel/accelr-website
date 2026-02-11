@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="text-xl font-bold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: 'var(--text-primary)' }}>
-              accelr<span style={{ color: 'var(--text-primary)' }}>.</span>
+              accelr<span className="text-[#2ECC71]">.</span>
             </div>
             <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
               {t('tagline')}
