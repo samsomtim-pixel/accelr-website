@@ -682,8 +682,7 @@ export function AccelrScan() {
             <div className="w-full rounded-full h-2" style={{ backgroundColor: 'var(--bg-secondary)' }}>
               <div
                 className="h-2 rounded-full transition-all duration-300"
-                style={{ backgroundColor: 'var(--text-primary)' }}
-                style={{ width: `${progress}%` }}
+                style={{ backgroundColor: 'var(--text-primary)', width: `${progress}%` }}
               />
             </div>
           </div>
