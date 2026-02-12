@@ -6,7 +6,6 @@ import { PortalHeader } from "@/components/layout/portal-header"
 import { ThemeProvider } from "@/components/providers/theme-provider"
 import { usePathname, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import "@/styles/globals.css"
 
 export default function PortalLayout({
   children,
@@ -17,31 +16,21 @@ export default function PortalLayout({
   const router = useRouter()
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
 
-  // Login pagina: geen auth check, geen layout chrome
+  // Login pagina: geen auth, geen layout
   if (pathname === "/portal/login") {
     return <>{children}</>
   }
 
+  // Auth check voor alle andere portal routes
   useEffect(() => {
-    // Check of gebruiker ingelogd is
     const loggedIn = localStorage.getItem("accelr_logged_in") === "true"
     setIsAuthenticated(loggedIn)
-    
-    if (!loggedIn) {
-      router.push("/portal/login")
-    }
+    if (!loggedIn) router.push("/portal/login")
   }, [router])
 
-  // Toon niets totdat auth check compleet is
-  if (isAuthenticated === null) {
-    return null
-  }
+  if (isAuthenticated === null) return null
+  if (!isAuthenticated) return null
 
-  // Als niet ingelogd, redirect gebeurt al in useEffect
-  if (!isAuthenticated) {
-    return null
-  }
-  
   const getBreadcrumbs = () => {
     if (pathname === "/portal") {
       return []
