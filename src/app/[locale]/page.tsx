@@ -9,6 +9,7 @@ import FAQAccordion from '@/components/FAQAccordion';
 import ComparisonTable from '@/components/ComparisonTable';
 import ROIComparisonTable from '@/components/ROIComparisonTable';
 import PricingCardsMobile from '@/components/PricingCardsMobile';
+import TechPartners from '@/components/TechPartners';
 import { Link } from '@/i18n/routing';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -93,6 +94,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
+
+      {/* Tech Partners */}
+      <TechPartners />
 
       {/* Problem Section */}
       <section className="px-6 py-20" style={{ backgroundColor: 'var(--bg-card)' }}>
