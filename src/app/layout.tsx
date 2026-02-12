@@ -14,7 +14,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', margin: 0, padding: 0 }}>
+      <body style={{ backgroundColor: '#FFFFFF', color: '#111827', margin: 0, padding: 0 }}>
         <Script
           id="theme-init"
           strategy="beforeInteractive"
