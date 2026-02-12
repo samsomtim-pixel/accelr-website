@@ -49,7 +49,7 @@ export default async function ScorePage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#FFFFFF', color: '#111827' }}>
       <Navbar />
       <AccelrScan />
       <Footer />
