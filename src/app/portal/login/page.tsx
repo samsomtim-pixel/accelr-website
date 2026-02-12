@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -9,12 +9,7 @@ import Link from "next/link"
 export default function LoginPage() {
   const [email, setEmail] = useState("")
   const [loading, setLoading] = useState(false)
-  const [mounted, setMounted] = useState(false)
   const router = useRouter()
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -24,20 +19,12 @@ export default function LoginPage() {
     // Simuleer login - geen echte auth
     setTimeout(() => {
       // Zet localStorage item voor "ingelogd" status
-      localStorage.setItem("accelr_logged_in", "true")
+      if (typeof window !== 'undefined') {
+        localStorage.setItem("accelr_logged_in", "true")
+      }
       setLoading(false)
       router.push("/portal")
     }, 500)
-  }
-
-  if (!mounted) {
-    return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="text-center">
-          <h1 className="text-2xl font-bold" style={{ color: '#111827' }}>Loading...</h1>
-        </div>
-      </div>
-    )
   }
 
   return (
