@@ -6,7 +6,6 @@ import { PortalHeader } from "@/components/layout/portal-header"
 import { ThemeProvider } from "@/components/providers/theme-provider"
 import { usePathname, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import Script from "next/script"
 import "@/styles/globals.css"
 
 export default function PortalLayout({
@@ -17,6 +16,11 @@ export default function PortalLayout({
   const pathname = usePathname()
   const router = useRouter()
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null)
+
+  // Login pagina: geen auth check, geen layout chrome
+  if (pathname === "/portal/login") {
+    return <>{children}</>
+  }
 
   useEffect(() => {
     // Check of gebruiker ingelogd is
@@ -59,45 +63,16 @@ export default function PortalLayout({
   }
 
   return (
-    <html lang="nl" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
-        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
-      <body>
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const stored = localStorage.getItem('theme');
-                  const theme = stored || 'light';
-                  if (document.documentElement) {
-                    document.documentElement.setAttribute('data-theme', theme);
-                  }
-                } catch (e) {
-                  console.error('Theme init error:', e);
-                }
-              })();
-            `,
-          }}
-        />
-        <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem={false}>
-          <SidebarProvider>
-            <AppSidebar />
-            <SidebarInset>
-              <PortalHeader title={getTitle()} breadcrumbs={getBreadcrumbs()} />
-              <main className="flex-1 overflow-auto p-6">
-                {children}
-              </main>
-            </SidebarInset>
-          </SidebarProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ThemeProvider attribute="data-theme" defaultTheme="light" enableSystem={false}>
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarInset>
+          <PortalHeader title={getTitle()} breadcrumbs={getBreadcrumbs()} />
+          <main className="flex-1 overflow-auto p-6">
+            {children}
+          </main>
+        </SidebarInset>
+      </SidebarProvider>
+    </ThemeProvider>
   )
 }
