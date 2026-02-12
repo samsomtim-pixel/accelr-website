@@ -7,6 +7,7 @@ const logos = [
   { name: "Pipedrive", src: "/logos/pipedrive.svg" },
   { name: "Apollo", src: "/logos/apollo.svg" },
   { name: "n8n", src: "/logos/n8n.svg" },
+  { name: "CompanyData", src: "/logos/companydata.svg" },
 ]
 
 export default function TechPartners() {
@@ -16,7 +17,7 @@ export default function TechPartners() {
         <p className="text-xs font-semibold uppercase tracking-wider text-center mb-8" style={{ color: 'var(--text-muted)' }}>
           Gebouwd met de beste tools
         </p>
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center">
+        <div className="grid grid-cols-3 md:grid-cols-7 gap-8 md:gap-12 items-center justify-items-center">
           {logos.map((logo) => (
             <div
               key={logo.name}
