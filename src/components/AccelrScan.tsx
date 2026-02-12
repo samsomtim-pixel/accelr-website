@@ -948,7 +948,7 @@ export function AccelrScan() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = '#111827'
-                    e.currentTarget.style.borderColor = 'var(--border-hover)'
+                    e.currentTarget.style.borderColor = '#D1D5DB'
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = '#6B7280'
