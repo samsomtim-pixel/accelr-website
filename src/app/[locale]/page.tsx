@@ -95,9 +95,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         </div>
       </section>
 
-      {/* Tech Partners */}
-      <TechPartners />
-
       {/* Problem Section */}
       <section className="px-6 py-20" style={{ backgroundColor: 'var(--bg-card)' }}>
         <div className="max-w-6xl mx-auto">
@@ -226,6 +223,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
+
+      {/* Tech Partners */}
+      <TechPartners />
 
       {/* Pricing Section - BUILD/RUN/GROW */}
       <section className="px-6 py-20">
