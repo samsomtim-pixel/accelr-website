@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calendar, MessageSquare, TrendingUp, FileText, CheckCircle } from "lucide-react"
+import { Calendar, MessageSquare, TrendingUp, FileText, CheckCircle, Phone, Zap } from "lucide-react"
 import { recentActivity } from "@/lib/mock-data"
 
 const iconMap = {
@@ -10,6 +10,8 @@ const iconMap = {
   campaign: TrendingUp,
   deal: TrendingUp,
   deliverable: FileText,
+  call: Phone,
+  signal: Zap,
 }
 
 const iconColors = {
@@ -18,6 +20,8 @@ const iconColors = {
   campaign: "#6B7280",
   deal: "#2ECC71",
   deliverable: "#F59E0B",
+  call: "#8B5CF6",
+  signal: "#F59E0B",
 }
 
 export function RecentActivity() {

@@ -6,52 +6,62 @@ import { TrendingUp, DollarSign, Calendar, Target } from "lucide-react"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid } from "recharts"
 import { formatCurrency, formatNumber, formatPercent } from "@/lib/utils"
-import { pipelineStages } from "@/lib/mock-data"
+import { pipelineStages, mockPipelineDeals, timeSeriesData } from "@/lib/mock-data"
+import type { PipelineStageName } from "@/lib/types"
 
-const deals = [
-  { id: "1", name: "Bright Media BV", contact: "Jan de Vries", value: 18000, stage: "Onderhandeling", updatedAt: "14 feb 2026" },
-  { id: "2", name: "Digital Squad", contact: "Lisa Bakker", value: 12500, stage: "Voorstel", updatedAt: "13 feb 2026" },
-  { id: "3", name: "WebForce NL", contact: "Mark Jansen", value: 15000, stage: "Kwalificatie", updatedAt: "12 feb 2026" },
-  { id: "4", name: "CloudServe NL", contact: "Anna Smit", value: 22000, stage: "Voorstel", updatedAt: "11 feb 2026" },
-  { id: "5", name: "DataFlow BV", contact: "Peter van Dijk", value: 9500, stage: "Meeting Gepland", updatedAt: "10 feb 2026" },
-  { id: "6", name: "MediaHuis Pro", contact: "Sophie Groot", value: 14000, stage: "Kwalificatie", updatedAt: "9 feb 2026" },
-  { id: "7", name: "TechBridge", contact: "Tom Visser", value: 43500, stage: "Contract", updatedAt: "7 feb 2026" },
-]
+// Stage display name mapping
+const stageDisplayNames: Record<PipelineStageName, string> = {
+  lead: "Lead",
+  meeting_scheduled: "Meeting Gepland",
+  proposal_sent: "Voorstel Verstuurd",
+  negotiation: "Onderhandeling",
+  closed_won: "Gewonnen",
+  closed_lost: "Verloren",
+}
 
-const pipelineOverTime = [
-  { week: "W1 Dec", value: 45000 },
-  { week: "W2 Dec", value: 82000 },
-  { week: "W3 Dec", value: 115000 },
-  { week: "W4 Dec", value: 158000 },
-  { week: "W1 Jan", value: 212000 },
-  { week: "W2 Jan", value: 265000 },
-  { week: "W3 Jan", value: 325000 },
-  { week: "W4 Jan", value: 387500 },
-]
-
-const stageColors: Record<string, string> = {
-  "Meeting Gepland": "bg-blue-500/10 text-blue-500 border-blue-500/20",
-  "Kwalificatie": "bg-gray-500/10 text-gray-500 border-gray-500/20",
-  "Voorstel": "bg-blue-500/10 text-blue-500 border-blue-500/20",
-  "Onderhandeling": "bg-amber-500/10 text-amber-500 border-amber-500/20",
-  "Contract": "bg-emerald-500/10 text-emerald-500 border-emerald-500/20",
+// Stage badge color mapping
+const stageBadgeColors: Record<PipelineStageName, string> = {
+  lead: "bg-gray-500/10 text-gray-500 border-gray-500/20",
+  meeting_scheduled: "bg-blue-500/10 text-blue-500 border-blue-500/20",
+  proposal_sent: "bg-blue-500/10 text-blue-500 border-blue-500/20",
+  negotiation: "bg-amber-500/10 text-amber-500 border-amber-500/20",
+  closed_won: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20",
+  closed_lost: "bg-red-500/10 text-red-500 border-red-500/20",
 }
 
 const chartConfig = {
-  value: { label: "Pipeline Waarde", color: "#2ECC71" },
+  pipeline: { label: "Pipeline Waarde", color: "#2ECC71" },
+}
+
+// Format a date string (ISO) to Dutch format, e.g. "14 feb 2026"
+function formatDateDutch(dateStr: string): string {
+  const date = new Date(dateStr)
+  const months = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
+  return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
 }
 
 export default function PipelinePage() {
   const totalPipeline = pipelineStages.reduce((s, p) => s + p.value, 0)
   const totalDeals = pipelineStages.reduce((s, p) => s + p.count, 0)
-  const wonDeals = pipelineStages.find(p => p.name === "Contract")
-  const winRate = wonDeals ? (wonDeals.count / totalDeals) * 100 : 0
+  const wonStage = pipelineStages.find(p => p.name === "Gewonnen")
+  const winRate = wonStage && totalDeals > 0 ? (wonStage.count / totalDeals) * 100 : 0
+
+  // Count meetings this month from mockPipelineDeals
+  const now = new Date()
+  const currentMonth = now.getMonth()
+  const currentYear = now.getFullYear()
+  const meetingsThisMonth = mockPipelineDeals.filter((deal) => {
+    if (deal.stage !== "meeting_scheduled") return false
+    if (!deal.created_at) return false
+    const d = new Date(deal.created_at)
+    return d.getMonth() === currentMonth && d.getFullYear() === currentYear
+  }).length
 
   return (
     <div className="space-y-6">
       {/* Summary KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card>
+        <Card className="border border-border">
           <CardContent className="pt-6">
             <div className="flex items-center gap-2 mb-1">
               <DollarSign className="h-4 w-4 text-muted-foreground" />
@@ -60,7 +70,7 @@ export default function PipelinePage() {
             <div className="text-2xl font-bold tabular-nums">{formatCurrency(totalPipeline)}</div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border border-border">
           <CardContent className="pt-6">
             <div className="flex items-center gap-2 mb-1">
               <TrendingUp className="h-4 w-4 text-muted-foreground" />
@@ -69,7 +79,7 @@ export default function PipelinePage() {
             <div className="text-2xl font-bold tabular-nums">{formatNumber(totalDeals)}</div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border border-border">
           <CardContent className="pt-6">
             <div className="flex items-center gap-2 mb-1">
               <Target className="h-4 w-4 text-muted-foreground" />
@@ -78,19 +88,19 @@ export default function PipelinePage() {
             <div className="text-2xl font-bold tabular-nums">{formatPercent(winRate)}</div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border border-border">
           <CardContent className="pt-6">
             <div className="flex items-center gap-2 mb-1">
               <Calendar className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">Meetings deze mnd</span>
             </div>
-            <div className="text-2xl font-bold tabular-nums">7</div>
+            <div className="text-2xl font-bold tabular-nums">{formatNumber(meetingsThisMonth)}</div>
           </CardContent>
         </Card>
       </div>
 
       {/* Pipeline Funnel */}
-      <Card>
+      <Card className="border border-border">
         <CardHeader>
           <CardTitle className="text-base">Pipeline Funnel</CardTitle>
         </CardHeader>
@@ -120,13 +130,13 @@ export default function PipelinePage() {
       </Card>
 
       {/* Pipeline Over Time */}
-      <Card>
+      <Card className="border border-border">
         <CardHeader>
           <CardTitle className="text-base">Pipeline Waarde Over Tijd</CardTitle>
         </CardHeader>
         <CardContent>
           <ChartContainer config={chartConfig} className="h-[250px] w-full">
-            <AreaChart data={pipelineOverTime}>
+            <AreaChart data={timeSeriesData}>
               <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
               <XAxis dataKey="week" className="text-xs" />
               <YAxis className="text-xs" tickFormatter={(v) => `€${(v / 1000).toFixed(0)}k`} />
@@ -137,14 +147,14 @@ export default function PipelinePage() {
                   <stop offset="95%" stopColor="#2ECC71" stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <Area type="monotone" dataKey="value" stroke="#2ECC71" fill="url(#pipelineGradient)" />
+              <Area type="monotone" dataKey="pipeline" stroke="#2ECC71" fill="url(#pipelineGradient)" />
             </AreaChart>
           </ChartContainer>
         </CardContent>
       </Card>
 
       {/* Deals Table */}
-      <Card>
+      <Card className="border border-border">
         <CardHeader>
           <CardTitle className="text-base">Actieve Deals</CardTitle>
         </CardHeader>
@@ -157,21 +167,23 @@ export default function PipelinePage() {
                   <th className="text-left py-3 px-2 font-medium text-muted-foreground">Contact</th>
                   <th className="text-right py-3 px-2 font-medium text-muted-foreground">Waarde</th>
                   <th className="text-left py-3 px-2 font-medium text-muted-foreground">Fase</th>
-                  <th className="text-right py-3 px-2 font-medium text-muted-foreground">Bijgewerkt</th>
+                  <th className="text-right py-3 px-2 font-medium text-muted-foreground">Aangemaakt</th>
                 </tr>
               </thead>
               <tbody>
-                {deals.map((deal) => (
+                {mockPipelineDeals.map((deal) => (
                   <tr key={deal.id} className="border-b border-border/50 hover:bg-muted/50 transition-colors">
-                    <td className="py-3 px-2 font-medium">{deal.name}</td>
-                    <td className="py-3 px-2 text-muted-foreground">{deal.contact}</td>
+                    <td className="py-3 px-2 font-medium">{deal.company}</td>
+                    <td className="py-3 px-2 text-muted-foreground">{deal.contact_name}</td>
                     <td className="py-3 px-2 text-right tabular-nums">{formatCurrency(deal.value)}</td>
                     <td className="py-3 px-2">
-                      <Badge variant="outline" className={stageColors[deal.stage] || ""}>
-                        {deal.stage}
+                      <Badge variant="outline" className={stageBadgeColors[deal.stage] || ""}>
+                        {stageDisplayNames[deal.stage] || deal.stage}
                       </Badge>
                     </td>
-                    <td className="py-3 px-2 text-right text-muted-foreground">{deal.updatedAt}</td>
+                    <td className="py-3 px-2 text-right text-muted-foreground tabular-nums">
+                      {deal.created_at ? formatDateDutch(deal.created_at) : "—"}
+                    </td>
                   </tr>
                 ))}
               </tbody>

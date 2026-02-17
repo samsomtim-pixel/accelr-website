@@ -34,19 +34,24 @@ export default function AdminLayout({
 
   const getBreadcrumbs = () => {
     if (pathname === "/admin") return []
+    if (pathname === "/admin/clients") return [{ label: "Admin", href: "/admin" }, { label: "Klanten" }]
     if (pathname?.startsWith("/admin/clients/")) {
       const clientId = pathname.split("/").pop()
       return [
         { label: "Admin", href: "/admin" },
+        { label: "Klanten", href: "/admin/clients" },
         { label: `Klant ${clientId}` },
       ]
     }
+    if (pathname === "/admin/calls") return [{ label: "Admin", href: "/admin" }, { label: "Call Queue" }]
     return []
   }
 
   const getTitle = () => {
     if (pathname === "/admin") return "Admin"
+    if (pathname === "/admin/clients") return "Klanten"
     if (pathname?.startsWith("/admin/clients/")) return "Klant Dashboard"
+    if (pathname === "/admin/calls") return "Call Queue"
     return "Admin"
   }
 
