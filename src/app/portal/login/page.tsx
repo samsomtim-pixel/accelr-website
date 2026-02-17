@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { Suspense, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -10,6 +10,18 @@ import { createClient } from "@/lib/supabase/client"
 const useMock = process.env.NEXT_PUBLIC_USE_MOCK === "true"
 
 export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FFFFFF' }}>
+        <div className="text-sm" style={{ color: '#9CA3AF' }}>Laden...</div>
+      </div>
+    }>
+      <LoginForm />
+    </Suspense>
+  )
+}
+
+function LoginForm() {
   const [email, setEmail] = useState("")
   const [loading, setLoading] = useState(false)
   const [sent, setSent] = useState(false)
