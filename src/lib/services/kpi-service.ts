@@ -8,6 +8,11 @@ import type {
   Deliverable,
   ActionItem,
   DateRange,
+  Prospect,
+  Touch,
+  Call,
+  PipelineDeal,
+  Sequence,
 } from '@/lib/types';
 import {
   kpiData,
@@ -18,6 +23,12 @@ import {
   deliverables as mockDeliverables,
   actionItems as mockActionItems,
   allClients as mockAllClients,
+  mockProspects,
+  mockTouches,
+  mockCalls,
+  mockPipelineDeals,
+  mockSequences,
+  mockCampaigns,
 } from '@/lib/mock-data';
 
 // ─── Service Interface ───────────────────────────────────
@@ -32,6 +43,12 @@ export interface KpiService {
   getActionItems(orgId: string): Promise<ActionItem[]>;
   getCampaigns(orgId: string, channel?: 'email' | 'linkedin'): Promise<Campaign[]>;
   getAllClients(): Promise<typeof mockAllClients>;
+  getProspects(orgId: string): Promise<Prospect[]>;
+  getTouches(orgId: string, prospectId?: string): Promise<Touch[]>;
+  getCalls(orgId: string, prospectId?: string): Promise<Call[]>;
+  getPipelineDeals(orgId: string): Promise<PipelineDeal[]>;
+  getSequences(orgId: string): Promise<Sequence[]>;
+  getCallQueue(orgId?: string): Promise<Prospect[]>;
 }
 
 // ─── Mock Implementation ─────────────────────────────────
@@ -87,26 +104,54 @@ class MockKpiService implements KpiService {
     }));
   }
 
-  async getCampaigns(_orgId: string, _channel?: 'email' | 'linkedin'): Promise<Campaign[]> {
-    return [
-      { id: '1', organization_id: 'mock', name: 'SaaS Decision Makers Q1', channel: 'email', status: 'active', started_at: '2026-01-12' },
-      { id: '2', organization_id: 'mock', name: 'Tech Founders NL', channel: 'email', status: 'active', started_at: '2026-01-20' },
-      { id: '3', organization_id: 'mock', name: 'Marketing Directors', channel: 'email', status: 'paused', started_at: '2025-12-15' },
-      { id: '4', organization_id: 'mock', name: 'SaaS Founders - Connectie', channel: 'linkedin', status: 'active', started_at: '2026-01-15' },
-      { id: '5', organization_id: 'mock', name: 'Tech CTOs - InMail', channel: 'linkedin', status: 'active', started_at: '2026-02-01' },
-    ];
+  async getCampaigns(_orgId: string, channel?: 'email' | 'linkedin'): Promise<Campaign[]> {
+    if (channel) {
+      return mockCampaigns.filter(c => c.channel === channel);
+    }
+    return mockCampaigns;
   }
 
   async getAllClients() {
     return mockAllClients;
+  }
+
+  async getProspects(_orgId: string): Promise<Prospect[]> {
+    return mockProspects;
+  }
+
+  async getTouches(_orgId: string, prospectId?: string): Promise<Touch[]> {
+    if (prospectId) {
+      return mockTouches.filter(t => t.prospect_id === prospectId);
+    }
+    return mockTouches;
+  }
+
+  async getCalls(_orgId: string, prospectId?: string): Promise<Call[]> {
+    if (prospectId) {
+      return mockCalls.filter(c => c.prospect_id === prospectId);
+    }
+    return mockCalls;
+  }
+
+  async getPipelineDeals(_orgId: string): Promise<PipelineDeal[]> {
+    return mockPipelineDeals;
+  }
+
+  async getSequences(_orgId: string): Promise<Sequence[]> {
+    return mockSequences;
+  }
+
+  async getCallQueue(_orgId?: string): Promise<Prospect[]> {
+    // Prospects that have next_action containing 'call' and next_action_at is today or past
+    return mockProspects.filter(p =>
+      p.next_action && p.next_action.includes('call') && p.status !== 'lost'
+    );
   }
 }
 
 // ─── Live Implementation (Supabase) ─────────────────────
 
 class LiveKpiService implements KpiService {
-  // TODO: Implement when Supabase is connected
-  // For now, falls back to mock
   private mock = new MockKpiService();
 
   async getKpiCards(orgId: string, dateRange: DateRange) {
@@ -135,6 +180,24 @@ class LiveKpiService implements KpiService {
   }
   async getAllClients() {
     return this.mock.getAllClients();
+  }
+  async getProspects(orgId: string) {
+    return this.mock.getProspects(orgId);
+  }
+  async getTouches(orgId: string, prospectId?: string) {
+    return this.mock.getTouches(orgId, prospectId);
+  }
+  async getCalls(orgId: string, prospectId?: string) {
+    return this.mock.getCalls(orgId, prospectId);
+  }
+  async getPipelineDeals(orgId: string) {
+    return this.mock.getPipelineDeals(orgId);
+  }
+  async getSequences(orgId: string) {
+    return this.mock.getSequences(orgId);
+  }
+  async getCallQueue(orgId?: string) {
+    return this.mock.getCallQueue(orgId);
   }
 }
 
