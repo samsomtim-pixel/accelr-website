@@ -2,64 +2,16 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Send, Eye, MessageSquare, AlertTriangle } from "lucide-react"
+import { Mail, Send, Eye, MessageSquare, AlertTriangle, Reply, Clock } from "lucide-react"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts"
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid } from "recharts"
 import { formatNumber, formatPercent } from "@/lib/utils"
-
-const campaigns = [
-  {
-    id: "1",
-    name: "SaaS Decision Makers Q1",
-    status: "active",
-    sent: 2140,
-    opened: 963,
-    replied: 128,
-    bounced: 32,
-    startedAt: "12 jan 2026",
-  },
-  {
-    id: "2",
-    name: "Tech Founders NL",
-    status: "active",
-    sent: 1680,
-    opened: 739,
-    replied: 97,
-    bounced: 18,
-    startedAt: "20 jan 2026",
-  },
-  {
-    id: "3",
-    name: "Marketing Directors",
-    status: "paused",
-    sent: 1027,
-    opened: 380,
-    replied: 41,
-    bounced: 52,
-    startedAt: "15 dec 2025",
-  },
-]
-
-const dailyVolume = [
-  { day: "Ma", sent: 142, opened: 63, replied: 8 },
-  { day: "Di", sent: 156, opened: 71, replied: 11 },
-  { day: "Wo", sent: 138, opened: 59, replied: 7 },
-  { day: "Do", sent: 161, opened: 74, replied: 12 },
-  { day: "Vr", sent: 130, opened: 55, replied: 9 },
-  { day: "Za", sent: 0, opened: 12, replied: 2 },
-  { day: "Zo", sent: 0, opened: 8, replied: 1 },
-]
-
-const sequenceSteps = [
-  { step: "Email 1", sent: 4847, opened: 2183, replied: 218, rate: "4.5%" },
-  { step: "Email 2", sent: 3420, opened: 1368, replied: 171, rate: "5.0%" },
-  { step: "Email 3", sent: 2100, opened: 756, replied: 84, rate: "4.0%" },
-  { step: "Email 4", sent: 980, opened: 314, replied: 29, rate: "3.0%" },
-]
+import { mockCampaigns, mockSequences, mockTouches, mockProspects, timeSeriesData } from "@/lib/mock-data"
+import { useMemo } from "react"
 
 const statusColors: Record<string, string> = {
-  active: "bg-emerald-500/10 text-emerald-500 border-emerald-500/20",
-  paused: "bg-amber-500/10 text-amber-500 border-amber-500/20",
+  active: "bg-[#2ECC71]/10 text-[#2ECC71] border-[#2ECC71]/20",
+  paused: "bg-[#F59E0B]/10 text-[#F59E0B] border-[#F59E0B]/20",
   completed: "bg-gray-500/10 text-gray-500 border-gray-500/20",
 }
 
@@ -69,24 +21,85 @@ const statusLabels: Record<string, string> = {
   completed: "Afgerond",
 }
 
+const channelLabels: Record<string, string> = {
+  linkedin: "LinkedIn",
+  email: "Email",
+  call: "Bellen",
+  meeting: "Meeting",
+}
+
+const actionLabels: Record<string, string> = {
+  profile_visit: "Profielbezoek",
+  connect: "Connectieverzoek",
+  send: "Verstuur",
+  call: "Bellen",
+}
+
 const chartConfig = {
-  sent: { label: "Verstuurd", color: "#6B7280" },
-  opened: { label: "Geopend", color: "#3B82F6" },
-  replied: { label: "Beantwoord", color: "#2ECC71" },
+  emailsSent: { label: "Verstuurd", color: "#6B7280" },
+  opens: { label: "Geopend", color: "#3B82F6" },
+  replies: { label: "Beantwoord", color: "#2ECC71" },
 }
 
 export default function EmailPage() {
-  // Totals
-  const totalSent = campaigns.reduce((s, c) => s + c.sent, 0)
-  const totalOpened = campaigns.reduce((s, c) => s + c.opened, 0)
-  const totalReplied = campaigns.reduce((s, c) => s + c.replied, 0)
-  const totalBounced = campaigns.reduce((s, c) => s + c.bounced, 0)
+  // Filter email touches from mock data
+  const emailTouches = useMemo(() => mockTouches.filter((t) => t.channel === "email"), [])
+
+  // Compute KPIs from email touches
+  const totalSent = useMemo(() => emailTouches.filter((t) => t.touch_type === "sent").length, [emailTouches])
+  const totalOpened = useMemo(() => emailTouches.filter((t) => t.touch_type === "opened").length, [emailTouches])
+  const totalReplied = useMemo(() => emailTouches.filter((t) => t.touch_type === "replied").length, [emailTouches])
+  const bounceRate = 1.8 // Hardcoded from benchmark data
+
+  // Filter campaigns to email channel only
+  const emailCampaigns = useMemo(() => mockCampaigns.filter((c) => c.channel === "email"), [])
+
+  // Compute per-campaign touch stats
+  const campaignStats = useMemo(() => {
+    return emailCampaigns.map((campaign) => {
+      // Find sequences linked to this campaign
+      const campaignSequences = mockSequences.filter((s) => s.campaign_id === campaign.id)
+      const sequenceNames = campaignSequences.map((s) => s.name)
+
+      // Find prospects in these sequences
+      const campaignProspects = mockProspects.filter(
+        (p) => p.sequence_name && sequenceNames.includes(p.sequence_name)
+      )
+      const prospectIds = new Set(campaignProspects.map((p) => p.id))
+
+      // Count email touches for these prospects
+      const campaignEmailTouches = emailTouches.filter((t) => prospectIds.has(t.prospect_id))
+      const sent = campaignEmailTouches.filter((t) => t.touch_type === "sent").length
+      const opened = campaignEmailTouches.filter((t) => t.touch_type === "opened").length
+      const replied = campaignEmailTouches.filter((t) => t.touch_type === "replied").length
+
+      return { ...campaign, sent, opened, replied }
+    })
+  }, [emailCampaigns, emailTouches])
+
+  // Get recent replies with prospect info
+  const recentReplies = useMemo(() => {
+    return mockTouches
+      .filter((t) => t.channel === "email" && t.touch_type === "replied")
+      .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+      .map((touch) => {
+        const prospect = mockProspects.find((p) => p.id === touch.prospect_id)
+        return { ...touch, prospect }
+      })
+  }, [])
+
+  // Format date for display
+  const formatDate = (dateStr: string | undefined) => {
+    if (!dateStr) return ""
+    const date = new Date(dateStr)
+    return date.toLocaleDateString("nl-NL", { day: "numeric", month: "short", year: "numeric" })
+  }
 
   return (
     <div className="space-y-6">
       {/* Summary KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card>
+        <Card className="border border-border">
           <CardContent className="pt-6">
             <div className="flex items-center gap-2 mb-1">
               <Send className="h-4 w-4 text-muted-foreground" />
@@ -95,63 +108,67 @@ export default function EmailPage() {
             <div className="text-2xl font-bold tabular-nums">{formatNumber(totalSent)}</div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border border-border">
           <CardContent className="pt-6">
             <div className="flex items-center gap-2 mb-1">
               <Eye className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">Open Rate</span>
             </div>
-            <div className="text-2xl font-bold tabular-nums">{formatPercent((totalOpened / totalSent) * 100)}</div>
+            <div className="text-2xl font-bold tabular-nums">
+              {totalSent > 0 ? formatPercent((totalOpened / totalSent) * 100) : "0,0%"}
+            </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border border-border">
           <CardContent className="pt-6">
             <div className="flex items-center gap-2 mb-1">
               <MessageSquare className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">Reply Rate</span>
             </div>
-            <div className="text-2xl font-bold tabular-nums">{formatPercent((totalReplied / totalSent) * 100)}</div>
+            <div className="text-2xl font-bold tabular-nums">
+              {totalSent > 0 ? formatPercent((totalReplied / totalSent) * 100) : "0,0%"}
+            </div>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="border border-border">
           <CardContent className="pt-6">
             <div className="flex items-center gap-2 mb-1">
               <AlertTriangle className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm text-muted-foreground">Bounce Rate</span>
             </div>
-            <div className="text-2xl font-bold tabular-nums">{formatPercent((totalBounced / totalSent) * 100)}</div>
+            <div className="text-2xl font-bold tabular-nums">{formatPercent(bounceRate)}</div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Daily Volume Chart */}
-      <Card>
+      {/* Weekly Volume Chart */}
+      <Card className="border border-border">
         <CardHeader>
-          <CardTitle className="text-base">Dagelijks Verzendvolume</CardTitle>
+          <CardTitle className="text-base">Wekelijks Verzendvolume</CardTitle>
         </CardHeader>
         <CardContent>
           <ChartContainer config={chartConfig} className="h-[250px] w-full">
-            <AreaChart data={dailyVolume}>
+            <AreaChart data={timeSeriesData}>
               <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
-              <XAxis dataKey="day" className="text-xs" />
+              <XAxis dataKey="week" className="text-xs" />
               <YAxis className="text-xs" />
               <ChartTooltip content={<ChartTooltipContent />} />
-              <Area type="monotone" dataKey="sent" stroke="#6B7280" fill="#6B7280" fillOpacity={0.1} />
-              <Area type="monotone" dataKey="opened" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.1} />
-              <Area type="monotone" dataKey="replied" stroke="#2ECC71" fill="#2ECC71" fillOpacity={0.1} />
+              <Area type="monotone" dataKey="emailsSent" stroke="#6B7280" fill="#6B7280" fillOpacity={0.1} />
+              <Area type="monotone" dataKey="opens" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.1} />
+              <Area type="monotone" dataKey="replies" stroke="#2ECC71" fill="#2ECC71" fillOpacity={0.1} />
             </AreaChart>
           </ChartContainer>
         </CardContent>
       </Card>
 
       {/* Campaigns List */}
-      <Card>
+      <Card className="border border-border">
         <CardHeader>
-          <CardTitle className="text-base">Campagnes</CardTitle>
+          <CardTitle className="text-base">Email Campagnes</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            {campaigns.map((campaign) => (
+            {campaignStats.map((campaign) => (
               <div
                 key={campaign.id}
                 className="flex items-center justify-between p-4 rounded-lg border border-border hover:border-[#2ECC71]/30 transition-colors"
@@ -164,7 +181,9 @@ export default function EmailPage() {
                       {statusLabels[campaign.status]}
                     </Badge>
                   </div>
-                  <p className="text-xs text-muted-foreground">Gestart: {campaign.startedAt}</p>
+                  <p className="text-xs text-muted-foreground">
+                    Gestart: {formatDate(campaign.started_at)}
+                  </p>
                 </div>
                 <div className="flex gap-6 text-sm tabular-nums">
                   <div className="text-center">
@@ -172,17 +191,78 @@ export default function EmailPage() {
                     <div className="text-xs text-muted-foreground">Verstuurd</div>
                   </div>
                   <div className="text-center">
-                    <div className="font-medium">{formatPercent((campaign.opened / campaign.sent) * 100)}</div>
+                    <div className="font-medium">
+                      {campaign.sent > 0 ? formatPercent((campaign.opened / campaign.sent) * 100) : "0,0%"}
+                    </div>
                     <div className="text-xs text-muted-foreground">Opens</div>
                   </div>
                   <div className="text-center">
-                    <div className="font-medium">{formatPercent((campaign.replied / campaign.sent) * 100)}</div>
+                    <div className="font-medium">
+                      {campaign.sent > 0 ? formatPercent((campaign.replied / campaign.sent) * 100) : "0,0%"}
+                    </div>
                     <div className="text-xs text-muted-foreground">Replies</div>
                   </div>
-                  <div className="text-center">
-                    <div className="font-medium">{formatPercent((campaign.bounced / campaign.sent) * 100)}</div>
-                    <div className="text-xs text-muted-foreground">Bounces</div>
+                </div>
+              </div>
+            ))}
+            {emailCampaigns.length === 0 && (
+              <p className="text-sm text-muted-foreground text-center py-4">
+                Geen email campagnes gevonden.
+              </p>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Sequence Step Performance */}
+      <Card className="border border-border">
+        <CardHeader>
+          <CardTitle className="text-base">Sequence Performance</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            {mockSequences.map((sequence) => (
+              <div key={sequence.id} className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-medium">{sequence.name}</span>
+                    <Badge variant="outline" className={sequence.active ? statusColors.active : statusColors.paused}>
+                      {sequence.active ? "Actief" : "Gepauzeerd"}
+                    </Badge>
                   </div>
+                  <span className="text-xs text-muted-foreground tabular-nums">
+                    {formatNumber(sequence.total_prospects)} prospects
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  {sequence.steps.map((step, idx) => (
+                    <div
+                      key={`${sequence.id}-step-${idx}`}
+                      className="flex items-center gap-3 p-3 rounded-lg border border-border"
+                    >
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-muted text-xs font-medium tabular-nums">
+                        D{step.day}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <Badge variant="secondary" className="text-xs">
+                            {channelLabels[step.channel] || step.channel}
+                          </Badge>
+                          <span className="text-sm text-muted-foreground">
+                            {actionLabels[step.action] || step.action}
+                          </span>
+                        </div>
+                        {step.subject && (
+                          <p className="text-xs text-muted-foreground mt-0.5 truncate">
+                            &quot;{step.subject}&quot;
+                          </p>
+                        )}
+                      </div>
+                      <div className="text-xs text-muted-foreground tabular-nums">
+                        Stap {idx + 1}/{sequence.steps.length}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
@@ -190,31 +270,48 @@ export default function EmailPage() {
         </CardContent>
       </Card>
 
-      {/* Sequence Step Performance */}
-      <Card>
+      {/* Recent Replies */}
+      <Card className="border border-border">
         <CardHeader>
-          <CardTitle className="text-base">Sequence Performance</CardTitle>
+          <CardTitle className="text-base">Recente Replies</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            {sequenceSteps.map((step) => (
-              <div key={step.step} className="flex items-center gap-4">
-                <div className="w-20 text-sm font-medium">{step.step}</div>
-                <div className="flex-1">
-                  <div className="flex gap-1 h-6">
-                    <div
-                      className="bg-gray-400 rounded-l"
-                      style={{ width: `${(step.sent / sequenceSteps[0].sent) * 100}%` }}
-                    />
+            {recentReplies.length > 0 ? (
+              recentReplies.map((reply) => (
+                <div
+                  key={reply.id}
+                  className="flex items-start gap-3 p-4 rounded-lg border border-border"
+                >
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#2ECC71]/10 shrink-0">
+                    <Reply className="h-4 w-4 text-[#2ECC71]" />
+                  </div>
+                  <div className="flex-1 min-w-0 space-y-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-medium">
+                        {reply.prospect?.name || "Onbekend"}
+                      </span>
+                      {reply.prospect?.company && (
+                        <span className="text-xs text-muted-foreground">
+                          {reply.prospect.company}
+                        </span>
+                      )}
+                    </div>
+                    {reply.notes && (
+                      <p className="text-sm text-muted-foreground">{reply.notes}</p>
+                    )}
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                      <Clock className="h-3 w-3" />
+                      <span>{formatDate(reply.created_at)}</span>
+                    </div>
                   </div>
                 </div>
-                <div className="flex gap-4 text-sm tabular-nums text-muted-foreground w-64 justify-end">
-                  <span>{formatNumber(step.sent)} sent</span>
-                  <span>{formatNumber(step.opened)} opens</span>
-                  <span className="text-foreground font-medium">{step.rate} reply</span>
-                </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p className="text-sm text-muted-foreground text-center py-4">
+                Nog geen replies ontvangen.
+              </p>
+            )}
           </div>
         </CardContent>
       </Card>

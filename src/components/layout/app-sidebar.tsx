@@ -12,6 +12,9 @@ import {
   Moon,
   Sun,
   LogOut,
+  Zap,
+  Phone,
+  Users,
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
@@ -63,12 +66,15 @@ export function AppSidebar() {
     { title: "Email", icon: Mail, href: "/portal/email" },
     { title: "LinkedIn", icon: Linkedin, href: "/portal/linkedin" },
     { title: "Pipeline", icon: TrendingUp, href: "/portal/pipeline" },
+    { title: "Signalen", icon: Zap, href: "/portal/signals" },
     { title: "Deliverables", icon: FileText, href: "/portal/deliverables" },
     { title: "Acties", icon: CheckSquare, href: "/portal/actions" },
   ]
 
   const adminItems = [
-    { title: "Admin", icon: Shield, href: "/admin" },
+    { title: "Overzicht", icon: Shield, href: "/admin" },
+    { title: "Klanten", icon: Users, href: "/admin/clients" },
+    { title: "Calls", icon: Phone, href: "/admin/calls" },
   ]
 
   return (
