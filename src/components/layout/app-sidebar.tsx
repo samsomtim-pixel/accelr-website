@@ -3,9 +3,11 @@
 import * as React from "react"
 import {
   LayoutDashboard,
+  Mail,
+  Linkedin,
+  TrendingUp,
   FileText,
   CheckSquare,
-  HelpCircle,
   Shield,
   Moon,
   Sun,
@@ -30,6 +32,9 @@ import {
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { clientInfo } from "@/lib/mock-data"
+import { createClient } from "@/lib/supabase/client"
+
+const useMock = process.env.NEXT_PUBLIC_USE_MOCK === "true"
 
 export function AppSidebar() {
   const pathname = usePathname()
@@ -41,35 +46,29 @@ export function AppSidebar() {
     setMounted(true)
   }, [])
 
-  const handleLogout = () => {
-    localStorage.removeItem("accelr_logged_in")
+  const handleLogout = async () => {
+    if (useMock) {
+      localStorage.removeItem("accelr_logged_in")
+      router.push("/portal/login")
+      return
+    }
+
+    const supabase = createClient()
+    await supabase.auth.signOut()
     router.push("/portal/login")
   }
 
   const menuItems = [
-    {
-      title: "Dashboard",
-      icon: LayoutDashboard,
-      href: "/portal",
-    },
-    {
-      title: "Deliverables",
-      icon: FileText,
-      href: "/portal/deliverables",
-    },
-    {
-      title: "Acties",
-      icon: CheckSquare,
-      href: "/portal/actions",
-    },
+    { title: "Dashboard", icon: LayoutDashboard, href: "/portal" },
+    { title: "Email", icon: Mail, href: "/portal/email" },
+    { title: "LinkedIn", icon: Linkedin, href: "/portal/linkedin" },
+    { title: "Pipeline", icon: TrendingUp, href: "/portal/pipeline" },
+    { title: "Deliverables", icon: FileText, href: "/portal/deliverables" },
+    { title: "Acties", icon: CheckSquare, href: "/portal/actions" },
   ]
 
   const adminItems = [
-    {
-      title: "Admin",
-      icon: Shield,
-      href: "/admin",
-    },
+    { title: "Admin", icon: Shield, href: "/admin" },
   ]
 
   return (
@@ -96,8 +95,8 @@ export function AppSidebar() {
                 const isActive = pathname === item.href || pathname?.startsWith(item.href + "/")
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton 
-                      asChild 
+                    <SidebarMenuButton
+                      asChild
                       isActive={isActive}
                       className={isActive ? "border-l-2 border-l-[#2ECC71] bg-[#2ECC71]/10" : ""}
                     >
@@ -120,8 +119,8 @@ export function AppSidebar() {
                 const isActive = pathname?.startsWith(item.href)
                 return (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton 
-                      asChild 
+                    <SidebarMenuButton
+                      asChild
                       isActive={isActive}
                       className={isActive ? "border-l-2 border-l-[#2ECC71] bg-[#2ECC71]/10" : ""}
                     >
