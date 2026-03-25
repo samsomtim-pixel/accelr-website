@@ -1,0 +1,5 @@
+Contact: mailto:tim@accelr.nl
+Expires: 2027-03-24T00:00:00.000Z
+Preferred-Languages: nl, en
+Canonical: https://www.accelr.nl/.well-known/security.txt
+Policy: https://www.accelr.nl/responsible-disclosure
